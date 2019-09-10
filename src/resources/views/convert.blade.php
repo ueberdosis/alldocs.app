@@ -32,8 +32,8 @@
             <input type="submit" value="Convert">
         </form>
 
-        @if(session('conversion'))
-            <a href="{{ route('download', session()->get('conversion')->new_filename) }}">Download File</a>
+        @if(session('hashId'))
+            <a href="{{ route('download', session()->get('hashId')) }}">Download File</a>
         @endif
 
     </div>

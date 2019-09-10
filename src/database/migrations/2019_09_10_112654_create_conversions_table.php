@@ -15,11 +15,13 @@ class CreateConversionsTable extends Migration
     {
         Schema::create('conversions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('hashId');
 
             $table->string('from');
             $table->string('to');
-            $table->string('filename');
-            $table->string('new_filename');
+
+            $table->string('FileOriginalName');
+            $table->string('fileExtension');
 
             $table->timestamps();
             $table->softDeletes();

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Conversion extends Model
 {
     protected $fillable = [
+        'hashId',
         'from',
         'to',
-        'filename',
-        'new_filename',
+        'FileOriginalName',
+        'fileExtension',
     ];
 }

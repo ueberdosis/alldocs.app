@@ -89,10 +89,15 @@ abstract class Pandoc
         "zimwiki", // (ZimWiki markup)
     ];
 
-    public static function convert($file, $from, $to)
+    public static function convert($file, $from, $to, $outputFile = null)
     {
         $inputFile = storage_path('app/public/') . $file;
-        $outputFile = storage_path('app/public/') . explode('.', $file)[0] . '.' . $to;
+
+        if (!$outputFile) {
+            $outputFile = storage_path('app/public/') . explode('.', $file)[0] . '.' . $to;
+        } else {
+            $outputFile = storage_path('app/public/') . $outputFile;
+        }
 
         // Example: pandoc test1.md -f markdown -t html -s -o test1.html
         $command = sprintf("pandoc %s -f %s -t %s -s -o %s", $inputFile, $from, $to, $outputFile);
