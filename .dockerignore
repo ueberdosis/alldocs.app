@@ -1,0 +1,19 @@
+.editorconfig
+.git
+.gitlab-ci.yml
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+README.md
+test.sh
+
+# Laravel
+src/.env
+storage/app/*
+storage/debugbar/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/logs/*
+vendor/

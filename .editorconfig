@@ -1,0 +1,20 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+max_line_length = 100
+
+[*.{php,js,css,scss,vue}]
+trim_trailing_whitespace = true
+
+[*.php]
+indent_style = space
+indent_size = 4
+
+[*.{blade.php,js,css,scss,vue}]
+indent_style = space
+indent_size = 2
