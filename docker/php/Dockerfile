@@ -18,6 +18,12 @@ RUN buildDeps=" \
     apt-get purge -y $buildDeps && \
     rm -r /var/lib/apt/lists/*
 
+# Install pandoc
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb && \
+    dpkg -i pandoc-2.7.3-1-amd64.deb
+
 # Install Redis PECL extension
 RUN pecl install redis && \
     docker-php-ext-enable redis
