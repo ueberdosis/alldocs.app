@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\Pandoc;
 use Illuminate\Console\Command;
 
 class PandocCommand extends Command
@@ -40,17 +41,8 @@ class PandocCommand extends Command
      */
     public function handle()
     {
-        $file = $this->argument('file');
-        $fromFormat = $this->argument('from_format');
-        $toFormat = $this->argument('to_format');
-
-        $inputFile = storage_path('app/public/') . $file;
-        $outputFile = storage_path('app/public/') . explode('.', $file)[0] . '.' . $toFormat;
-
-        // Example: pandoc test1.md -f markdown -t html -s -o test1.html
-        $command = sprintf("pandoc %s -f %s -t %s -s -o %s", $inputFile, $fromFormat, $toFormat, $outputFile);
-        exec(escapeshellcmd($command), $cmdOutput);
-
-        dd($cmdOutput);
+        Pandoc::convert(
+            $this->argument('file'), $this->argument('from_format'), $this->argument('to_format')
+        );
     }
 }

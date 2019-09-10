@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/convert', 'ConvertController@index');
+Route::post('/convert', 'ConvertController@convert')->name('convert');
+
+Route::get('download/{filename}', function($filename) {
+    return response()->download(storage_path('app/public/' . $filename));
+})->name('download');
