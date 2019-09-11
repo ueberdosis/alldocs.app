@@ -54,7 +54,7 @@
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
-            <p>Alldocs is made with ❤ by the people from <a href="https://ueber.io">überdosis</a>.</p>
+            <p>Alldocs is made with ❤ by the people of <a href="https://ueber.io">überdosis</a>.</p>
         </div>
     </footer>
 
