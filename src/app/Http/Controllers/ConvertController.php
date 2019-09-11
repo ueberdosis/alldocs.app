@@ -7,7 +7,6 @@ use App\Services\Pandoc;
 use Carbon\Carbon;
 use Hashids\Hashids;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -15,7 +14,7 @@ class ConvertController extends Controller
 {
     public function index(Request $request)
     {
-        return view('convert');
+        return view('pages.convert.index');
     }
 
     public function convert(Request $request)
