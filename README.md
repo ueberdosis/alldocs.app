@@ -21,5 +21,5 @@ docker-compose build
 docker-compose up -d
 ```
 
-## Open application  
+## Open application
 <http://localhost>
