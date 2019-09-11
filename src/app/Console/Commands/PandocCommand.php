@@ -42,7 +42,9 @@ class PandocCommand extends Command
     public function handle()
     {
         Pandoc::convert(
-            $this->argument('file'), $this->argument('from_format'), $this->argument('to_format')
+            $this->argument('file'),
+            $this->argument('from_format'),
+            $this->argument('to_format')
         );
     }
 }

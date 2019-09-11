@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Conversion;
 use Carbon\Carbon;
+use App\Conversion;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
@@ -44,8 +44,8 @@ class ClearFilesCommand extends Command
 
         foreach ($conversions as $conversion) {
             Storage::delete([
-                'public/' . $conversion->id,
-                'public/' . $conversion->hashId,
+                'public/'.$conversion->id,
+                'public/'.$conversion->hashId,
             ]);
             $conversion->delete();
         }

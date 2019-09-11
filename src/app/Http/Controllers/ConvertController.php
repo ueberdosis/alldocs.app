@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Conversion;
-use App\Services\Pandoc;
 use Carbon\Carbon;
+use App\Conversion;
 use Hashids\Hashids;
-use Illuminate\Http\Request;
+use App\Services\Pandoc;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 class ConvertController extends Controller

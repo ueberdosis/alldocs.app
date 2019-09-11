@@ -17,7 +17,7 @@ return PhpCsFixer\Config::create()
         'array_syntax' => ['syntax' => 'short'],
         'blank_line_after_opening_tag' => true,
         'cast_spaces' => true,
-        'concat_space' => ['spacing' => 'one'],
+        'concat_space' => ['spacing' => 'none'],
         'elseif' => true,
         'no_blank_lines_after_class_opening' => true,
         'no_closing_tag' => true,
