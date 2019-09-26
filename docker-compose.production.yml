@@ -18,7 +18,7 @@ x-laravel-env: &laravel-env
 
 services:
   nginx:
-    image: registry.ueberlab.com/servivum/servivum/nginx:${BRANCH_NAME:-master}
+    image: registry.ueberlab.com/ueberdosis/alldocs/nginx:${BRANCH_NAME:-master}
     deploy:
       labels:
         traefik.enable: "true"
@@ -31,7 +31,7 @@ services:
       - srv-proxy
       - tier1
   php:
-    image: registry.ueberlab.com/servivum/servivum/php:${BRANCH_NAME:-master}
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
     <<: *laravel-env
     deploy:
       <<: *update-config
@@ -41,7 +41,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   scheduler:
-    image: registry.ueberlab.com/servivum/servivum/php:${BRANCH_NAME:-master}
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
     command: ["scheduler"]
     <<: *laravel-env
     deploy:
@@ -52,7 +52,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   worker:
-    image: registry.ueberlab.com/servivum/servivum/php:${BRANCH_NAME:-master}
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
     command: ["worker"]
     <<: *laravel-env
     deploy:
@@ -63,7 +63,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   mysql:
-    image: registry.ueberlab.com/servivum/servivum/mysql:${BRANCH_NAME:-master}
+    image: registry.ueberlab.com/ueberdosis/alldocs/mysql:${BRANCH_NAME:-master}
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
       MYSQL_DATABASE_FILE: /run/secrets/mysql_database
