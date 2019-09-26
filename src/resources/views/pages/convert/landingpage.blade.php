@@ -31,4 +31,14 @@
         </div>
     </div>
 
+    @if(View::exists($path_to_view))
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-12">
+                    @include($path_to_view)
+                </div>
+            </div>
+        </div>
+    @endif
+
 @endsection

@@ -27,23 +27,32 @@ class ConvertController extends Controller
             abort(404);
         }
 
+        if (!in_array($from, Pandoc::$inputFormats)) {
+            abort(404);
+        }
+
+        if (!in_array($to, Pandoc::$outputFormats)) {
+            abort(404);
+        }
+
         return view('pages.convert.landingpage', [
             'from' => $from,
             'to' => $to,
+            'path_to_view' => 'pages.landingpages.' . $from . '-to-' . $to,
         ]);
     }
 
     public function convert(Request $request)
     {
-//        $validated = $this->validate($request, [
-//            'file' => 'required|file',
-//            'from' => Rule::in([
-//                'required', 'string', Rule::in(Pandoc::$inputFormats)
-//            ]),
-//            'to' => Rule::in([
-//                'required', 'string', Rule::in(Pandoc::$outputFormats)
-//            ]),
-//        ]);
+        $this->validate($request, [
+            'file' => 'required|file',
+            'from' => [
+                'required', 'string', Rule::in(Pandoc::$inputFormats)
+            ],
+            'to' => [
+                'required', 'string', Rule::in(Pandoc::$outputFormats)
+            ],
+        ]);
 
         try {
             $file = $request->file('file');
@@ -71,7 +80,11 @@ class ConvertController extends Controller
                 'error' => 'An error occurred while converting the file',
             ]);
         }
+    }
 
-
+    public function download($hashid)
+    {
+        $converstion = Conversion::where('hashId', $hashid)->first();
+        return response()->download(storage_path('app/public/'.$converstion->hashId), $converstion->FileOriginalName.'.'.$converstion->to);
     }
 }
