@@ -1,0 +1,115 @@
+version: "3.7"
+
+x-update-config: &update-config
+  update_config:
+    parallelism: 1
+    failure_action: rollback
+    order: start-first
+    monitor: 120s
+    delay: 30s
+
+x-laravel-env: &laravel-env
+  configs:
+    - source: laravel-env
+      target: /var/www/.env
+      mode: 0440
+      uid: "33"
+      gid: "33"
+
+services:
+  nginx:
+    image: registry.ueberlab.com/ueberdosis/alldocs/nginx:${BRANCH_NAME:-master}
+    deploy:
+      labels:
+        traefik.enable: "true"
+        traefik.port: 80
+        traefik.frontend.rule: "Host:${STACK_DOMAIN}"
+        traefik.frontend.entryPoints: "http,https"
+        traefik.docker.network: "srv-proxy"
+      <<: *update-config
+    networks:
+      - srv-proxy
+      - tier1
+  php:
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
+    <<: *laravel-env
+    deploy:
+      <<: *update-config
+    networks:
+      - tier1
+      - tier2
+    volumes:
+      - laravel-storage:/var/www/storage/
+  scheduler:
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
+    command: ["scheduler"]
+    <<: *laravel-env
+    deploy:
+      <<: *update-config
+    networks:
+      - tier1
+      - tier2
+    volumes:
+      - laravel-storage:/var/www/storage/
+  worker:
+    image: registry.ueberlab.com/ueberdosis/alldocs/php:${BRANCH_NAME:-master}
+    command: ["worker"]
+    <<: *laravel-env
+    deploy:
+      <<: *update-config
+    networks:
+      - tier1
+      - tier2
+    volumes:
+      - laravel-storage:/var/www/storage/
+  mysql:
+    image: registry.ueberlab.com/ueberdosis/alldocs/mysql:${BRANCH_NAME:-master}
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_DATABASE_FILE: /run/secrets/mysql_database
+      MYSQL_USER_FILE: /run/secrets/mysql_user
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+    networks:
+      - tier2
+    secrets:
+      - mysql_root_password
+      - mysql_database
+      - mysql_user
+      - mysql_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+  redis:
+    image: redis:5.0-alpine
+    deploy:
+      <<: *update-config
+    networks:
+      - tier2
+
+configs:
+  laravel-env:
+    name: servivum-app-env-${LARAVEL_ENV_HASH}
+    file: LARAVEL_ENV.txt
+
+networks:
+  srv-proxy:
+    external: true
+  tier1:
+  tier2:
+
+secrets:
+  mysql_root_password:
+    name: servivum_app_mysql_root_password_${MYSQL_ROOT_PASSWORD_HASH}
+    file: MYSQL_ROOT_PASSWORD.txt
+  mysql_database:
+    name: servivum_app_mysql_database_${MYSQL_DATABASE_HASH}
+    file: MYSQL_DATABASE.txt
+  mysql_user:
+    name: servivum_app_mysql_user_${MYSQL_USER_HASH}
+    file: MYSQL_USER.txt
+  mysql_password:
+    name: servivum_app_mysql_password_${MYSQL_PASSWORD_HASH}
+    file: MYSQL_PASSWORD.txt
+
+volumes:
+  mysql-data:
+  laravel-storage:
