@@ -101,23 +101,16 @@ release_mysql:
     - docker image load -i image-mysql.tar
   script:
     - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
-    - docker image tag $IMAGE/nginx:$COMMIT_HASH $IMAGE/nginx:$BRANCH_NAME
-    - docker image tag $IMAGE/php:$COMMIT_HASH $IMAGE/php:$BRANCH_NAME
     - docker image tag $IMAGE/mysql:$COMMIT_HASH $IMAGE/mysql:$BRANCH_NAME
-    - docker image push $IMAGE/nginx:$BRANCH_NAME
-    - docker image push $IMAGE/php:$BRANCH_NAME
     - docker image push $IMAGE/mysql:$BRANCH_NAME
 
 .deploy_template: &deploy_definition
   stage: deploy
   before_script:
-    # Setup SSH client
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh
     - echo "$SSH_FINGERPRINT" > ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
-    # Log into container image registry
-    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
     # Create env vars with hash of configs and secrets
     - |
       export env_vars=( "LARAVEL_ENV" "MYSQL_ROOT_PASSWORD" "MYSQL_DATABASE" "MYSQL_USER" "MYSQL_PASSWORD" )
@@ -126,6 +119,7 @@ release_mysql:
           export "${env_var}_HASH"="$(sha512sum $env_var.txt | awk "{print $1}" | cut -c1-16)"
       done
   script:
+    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
     - docker stack deploy -c $COMPOSE_FILE --with-registry-auth --prune $DOCKER_STACK_NAME
 
 .deploy_dev:
