@@ -45,6 +45,12 @@
         </div>
     </header>
 
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <main role="main">
         @yield('content')
     </main>
