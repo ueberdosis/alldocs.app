@@ -1,0 +1,163 @@
+image: "ueberdosis/build-tools"
+
+variables:
+  BRANCH_NAME: $CI_COMMIT_REF_SLUG
+  IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH
+  COMMIT_HASH: $CI_COMMIT_SHA
+  DOCKER_BUILDKIT: 1
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+build_nginx:
+  stage: build
+  script:
+    - docker image build -f docker/nginx/Dockerfile -t $IMAGE/nginx:$COMMIT_HASH .
+    - docker image save -o image-nginx.tar $IMAGE/nginx:$COMMIT_HASH
+  artifacts:
+    expire_in: "1800"
+    paths:
+      - image-*.tar
+
+build_php:
+  stage: build
+  script:
+    - docker image build -f docker/php/Dockerfile -t $IMAGE/php:$COMMIT_HASH .
+    - docker image save -o image-php.tar $IMAGE/php:$COMMIT_HASH
+  artifacts:
+    expire_in: "1800"
+    paths:
+      - image-*.tar
+
+build_mysql:
+  stage: build
+  script:
+    - docker image build -f docker/mysql/Dockerfile -t $IMAGE/mysql:$COMMIT_HASH .
+    - docker image save -o image-mysql.tar $IMAGE/mysql:$COMMIT_HASH
+  artifacts:
+    expire_in: "1800"
+    paths:
+      - image-*.tar
+
+.phpunit:
+  stage: test
+  variables:
+    COMPOSE_FILE: "docker-compose.test.yml"
+    COMPOSE_PROJECT_NAME: "test-$COMMIT_HASH"
+  before_script:
+    - docker image load -i image-nginx.tar
+    - docker image load -i image-php.tar
+    - docker image load -i image-mysql.tar
+  script:
+    - docker-compose pull redis
+    - docker-compose up -d
+    - sleep 10
+    - docker-compose exec -T php sh -c "wait-for --timeout=240 mysql_test:3306"
+    - docker-compose exec -T php php artisan migrate:fresh --env=testing --seed --quiet
+    - docker-compose exec -T php phpunit
+  after_script:
+    - docker-compose ps
+    - docker-compose logs nginx php mysql mysql_test redis
+    - docker-compose down
+
+.sonarqube:
+  stage: test
+  image:
+    name: ueberdosis/sonar-scanner
+    entrypoint: [""]
+  script:
+    - sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=$SONAR_PROJECT_KEY
+
+release_nginx:
+  stage: release
+  only:
+    - master
+  before_script:
+    - docker image load -i image-nginx.tar
+  script:
+    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    - docker image tag $IMAGE/nginx:$COMMIT_HASH $IMAGE/nginx:$BRANCH_NAME
+    - docker image push $IMAGE/nginx:$BRANCH_NAME
+
+release_php:
+  stage: release
+  only:
+    - master
+  before_script:
+    - docker image load -i image-php.tar
+  script:
+    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    - docker image tag $IMAGE/php:$COMMIT_HASH $IMAGE/php:$BRANCH_NAME
+    - docker image push $IMAGE/php:$BRANCH_NAME
+
+release_mysql:
+  stage: release
+  only:
+    - master
+  before_script:
+    - docker image load -i image-mysql.tar
+  script:
+    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    - docker image tag $IMAGE/nginx:$COMMIT_HASH $IMAGE/nginx:$BRANCH_NAME
+    - docker image tag $IMAGE/php:$COMMIT_HASH $IMAGE/php:$BRANCH_NAME
+    - docker image tag $IMAGE/mysql:$COMMIT_HASH $IMAGE/mysql:$BRANCH_NAME
+    - docker image push $IMAGE/nginx:$BRANCH_NAME
+    - docker image push $IMAGE/php:$BRANCH_NAME
+    - docker image push $IMAGE/mysql:$BRANCH_NAME
+
+.deploy_template: &deploy_definition
+  stage: deploy
+  before_script:
+    # Setup SSH client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - echo "$SSH_FINGERPRINT" > ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+    # Log into container image registry
+    - echo "$CI_BUILD_TOKEN" | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    # Create env vars with hash of configs and secrets
+    - |
+      export env_vars=( "LARAVEL_ENV" "MYSQL_ROOT_PASSWORD" "MYSQL_DATABASE" "MYSQL_USER" "MYSQL_PASSWORD" )
+      for env_var in "${env_vars[@]}"; do
+          echo "${!env_var}" > "$env_var.txt"
+          export "${env_var}_HASH"="$(sha512sum $env_var.txt | awk "{print $1}" | cut -c1-16)"
+      done
+  script:
+    - docker stack deploy -c $COMPOSE_FILE --with-registry-auth --prune $DOCKER_STACK_NAME
+
+.deploy_dev:
+  only:
+    - development
+  variables:
+    COMPOSE_FILE: "docker-compose.development.yml"
+    DOCKER_HOST: "$DEV_DOCKER_HOST"
+    DOCKER_STACK_NAME: "alldocs"
+    STACK_DOMAIN: "dev.alldocs.app"
+    LARAVEL_ENV: "$DEV_LARAVEL_ENV"
+    MYSQL_DATABASE: "$DEV_MYSQL_DATABASE"
+    MYSQL_USER: "$DEV_MYSQL_USER"
+    MYSQL_PASSWORD: "$DEV_MYSQL_PASSWORD"
+    MYSQL_ROOT_PASSWORD: "$DEV_MYSQL_ROOT_PASSWORD"
+    SSH_PRIVATE_KEY: "$DEV_SSH_PRIVATE_KEY"
+    SSH_FINGERPRINT: "$DEV_SSH_FINGERPRINT"
+  <<: *deploy_definition
+
+deploy_prod:
+  only:
+    - master
+  variables:
+    COMPOSE_FILE: "docker-compose.production.yml"
+    DOCKER_HOST: "$PROD_DOCKER_HOST"
+    DOCKER_STACK_NAME: "alldocs"
+    STACK_DOMAIN: "alldocs.app"
+    LARAVEL_ENV: "$PROD_LARAVEL_ENV"
+    MYSQL_DATABASE: "$PROD_MYSQL_DATABASE"
+    MYSQL_USER: "$PROD_MYSQL_USER"
+    MYSQL_PASSWORD: "$PROD_MYSQL_PASSWORD"
+    MYSQL_ROOT_PASSWORD: "$PROD_MYSQL_ROOT_PASSWORD"
+    SSH_PRIVATE_KEY: "$PROD_SSH_PRIVATE_KEY"
+    SSH_FINGERPRINT: "$PROD_SSH_FINGERPRINT"
+  <<: *deploy_definition
