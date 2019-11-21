@@ -71,7 +71,7 @@
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
-            <p>Alldocs is made with ❤ by the people of <a href="https://ueber.io">überdosis</a>.</p>
+            <p>Made with ❤ by <a href="https://twitter.com/_ueberdosis">überclub</a></p>
         </div>
     </footer>
 

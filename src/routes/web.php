@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/', 'pages.home.index');
+Route::get('/', 'PageController@home');
 Route::get('convert', 'ConvertController@index');
 Route::post('convert', 'ConvertController@convert')->name('convert');
 Route::get('download/{hashid}', 'ConvertController@download')->name('download');

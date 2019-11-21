@@ -38,7 +38,7 @@ class ConvertController extends Controller
         return view('pages.convert.landingpage', [
             'from' => $from,
             'to' => $to,
-            'path_to_view' => 'pages.landingpages.' . $from . '-to-' . $to,
+            'path_to_view' => 'pages.landingpages.'.$from.'-to-'.$to,
         ]);
     }
 
@@ -47,10 +47,10 @@ class ConvertController extends Controller
         $this->validate($request, [
             'file' => 'required|file',
             'from' => [
-                'required', 'string', Rule::in(Pandoc::$inputFormats)
+                'required', 'string', Rule::in(Pandoc::$inputFormats),
             ],
             'to' => [
-                'required', 'string', Rule::in(Pandoc::$outputFormats)
+                'required', 'string', Rule::in(Pandoc::$outputFormats),
             ],
         ]);
 
