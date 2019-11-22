@@ -15,7 +15,7 @@ input:
     name: fb2
   - title: GitHub-Flavored Markdown
     name: gfm
-    description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. The only that counts is, that you know what's it all about.
+    description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
   - title: Haddock markup
     name: haddock
   - title: HTML
