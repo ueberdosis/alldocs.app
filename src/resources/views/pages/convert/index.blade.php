@@ -17,14 +17,14 @@
                     @csrf
 
                     <select name="from">
-                        @foreach(\App\Services\Pandoc::$inputFormats as $inputFormat)
-                            <option value="{{ $inputFormat }}" @if($inputFormat == 'markdown') selected @endif>{{ $inputFormat }}</option>
+                        @foreach(\App\Services\Pandoc::inputFormats() as $inputFormat)
+                            <option value="{{ $inputFormat['name'] }}" @if($inputFormat['name'] == 'markdown') selected @endif>{{ $inputFormat['title'] }}</option>
                         @endforeach
                     </select>
 
                     <select name="to">
                         @foreach(\App\Services\Pandoc::$outputFormats as $outputFormat)
-                            <option value="{{ $outputFormat }}" @if($outputFormat == 'html') selected @endif>{{ $outputFormat }}</option>
+                            <option value="{{ $outputFormat['name'] }}" @if($outputFormat['name'] == 'html') selected @endif>{{ $outputFormat['title'] }}</option>
                         @endforeach
                     </select>
 

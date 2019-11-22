@@ -2,9 +2,9 @@
 
 @section('content')
 
-    @foreach ($items as $item)
-        <a href="{{ $item->url }}">
-            {{ $item->inputFormat }} to {{ $item->outputFormat }}
+    @foreach ($conversions as $conversion)
+        <a href="{{ $conversion->url }}">
+            {{ $conversion->inputFormat->title }} to {{ $conversion->outputFormat->title }}
         </a><br />
     @endforeach
 

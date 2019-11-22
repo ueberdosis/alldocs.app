@@ -27,17 +27,13 @@ class ConvertController extends Controller
             abort(404);
         }
 
-        if (!in_array($from, Pandoc::$inputFormats)) {
-            abort(404);
-        }
-
-        if (!in_array($to, Pandoc::$outputFormats)) {
+        if (Pandoc::invalidConversion($from, $to)) {
             abort(404);
         }
 
         return view('pages.convert.landingpage', [
-            'from' => $from,
-            'to' => $to,
+            'from' => Pandoc::inputFormat($from),
+            'to' => Pandoc::outputFormat($to),
             'path_to_view' => 'pages.landingpages.'.$from.'-to-'.$to,
         ]);
     }
@@ -47,10 +43,10 @@ class ConvertController extends Controller
         $this->validate($request, [
             'file' => 'required|file',
             'from' => [
-                'required', 'string', Rule::in(Pandoc::$inputFormats),
+                'required', 'string', Rule::in(Pandoc::inputFormatNames()),
             ],
             'to' => [
-                'required', 'string', Rule::in(Pandoc::$outputFormats),
+                'required', 'string', Rule::in(Pandoc::outputFormatNames()),
             ],
         ]);
 
