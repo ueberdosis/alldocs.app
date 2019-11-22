@@ -132,6 +132,8 @@ output:
     name: opendocument
   - title: Emacs Org mode
     name: org
+  - title: PDF
+    name: pdf
   - title: plain text
     name: plain
   - title: PowerPoint slide show
