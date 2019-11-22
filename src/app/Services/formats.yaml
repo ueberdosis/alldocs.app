@@ -134,6 +134,7 @@ output:
     name: org
   - title: PDF
     name: pdf
+    description: Hey, Portable Document Format. What a name. Sounds like other files are not … portable? It's like it is. It's old, but it works everywhere. Convert to PDF and you can be sure it'll work somehow. But wait, did you download Adobe Acrobat Reader Pro? I remember when websites asked me to download the Flash player. Hopefully it'll be the same with the Adobe Reader at some point.
   - title: plain text
     name: plain
   - title: PowerPoint slide show
