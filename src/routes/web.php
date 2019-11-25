@@ -16,4 +16,6 @@ Route::get('convert', 'ConvertController@index');
 Route::post('convert', 'ConvertController@convert')->name('convert');
 Route::get('download/{hashid}', 'ConvertController@download')->name('download');
 
-Route::get('{convert}', 'ConvertController@landingPage')->where('convert', '[a-z0-9]+-to-[a-z0-9]+');
+Route::get('{convert}', 'ConvertController@landingPage')->where('convert', '[a-z0-9_]+-to-[a-z0-9_]+');
+
+Route::get('sitemap.xml', 'SitemapController@index');
