@@ -49,17 +49,10 @@ abstract class Pandoc
                 ->each(function ($outputFormat) use ($items, $inputFormat) {
                     $inputFormat = self::find($inputFormat);
                     $outputFormat = self::find($outputFormat);
-                    $slug = join('-', [
-                        'convert',
-                        $inputFormat['slug'] ?? $inputFormat['name'],
-                        'to',
-                        $outputFormat['slug'] ?? $outputFormat['name'],
-                    ]);
 
                     $items->push(json_decode(json_encode([
                         'inputFormat' => $inputFormat,
                         'outputFormat' => $outputFormat,
-                        'slug' => $slug,
                         'url' => action('ConvertController@landingPage', [
                             'input' => $inputFormat['slug'] ?? $inputFormat['name'],
                             'output' => $outputFormat['slug'] ?? $outputFormat['name'],
