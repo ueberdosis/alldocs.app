@@ -13,6 +13,7 @@
         "hashids/hashids": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
+        "spatie/once": "^2.1",
         "symfony/yaml": "^5.0"
     },
     "require-dev": {

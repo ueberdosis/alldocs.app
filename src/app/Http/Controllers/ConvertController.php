@@ -17,24 +17,16 @@ class ConvertController extends Controller
         return view('pages.convert.index');
     }
 
-    public function landingPage($convert)
+    public function landingPage($input, $output)
     {
-        try {
-            $convert = explode('-', $convert);
-            $from = $convert[0];
-            $to = $convert[2];
-        } catch (\Exception $exception) {
-            abort(404);
-        }
-
-        if (Pandoc::invalidConversion($from, $to)) {
+        if (Pandoc::invalidConversion($input, $output)) {
+            return 'invalid';
             abort(404);
         }
 
         return view('pages.convert.landingpage', [
-            'from' => Pandoc::inputFormat($from),
-            'to' => Pandoc::outputFormat($to),
-            'path_to_view' => 'pages.landingpages.'.$from.'-to-'.$to,
+            'from' => Pandoc::find($input),
+            'to' => Pandoc::find($output),
         ]);
     }
 
@@ -43,10 +35,10 @@ class ConvertController extends Controller
         $this->validate($request, [
             'file' => 'required|file',
             'from' => [
-                'required', 'string', Rule::in(Pandoc::inputFormatNames()),
+                'required', 'string', Rule::in(Pandoc::inputFormats()),
             ],
             'to' => [
-                'required', 'string', Rule::in(Pandoc::outputFormatNames()),
+                'required', 'string', Rule::in(Pandoc::outputFormats()),
             ],
         ]);
 

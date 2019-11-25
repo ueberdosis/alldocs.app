@@ -1,4 +1,88 @@
 input:
+  - commonmark
+  - creole
+  - docbook
+  - docx
+  - dokuwiki
+  - epub
+  - fb2
+  - gfm
+  - haddock
+  - html
+  - ipynb
+  - jats
+  - json
+  - latex
+  - markdown
+  - markdown_mmd
+  - markdown_phpextra
+  - markdown_strict
+  - mediawiki
+  - man
+  - muse
+  - native
+  - odt
+  - opml
+  - org
+  - rst
+  - t2t
+  - textile
+  - tikiwiki
+  - twiki
+  - vimwiki
+output:
+  - asciidoc
+  - beamer
+  - commonmark
+  - context
+  - docbook
+  - docbook5
+  - docx
+  - dokuwiki
+  - epub
+  - epub2
+  - fb2
+  - gfm
+  - haddock
+  - html
+  - html4
+  - icml
+  - ipynb
+  - jats
+  - jira
+  - json
+  - latex
+  - man
+  - markdown
+  - markdown_mmd
+  - markdown_phpextra
+  - markdown_strict
+  - mediawiki
+  - ms
+  - muse
+  - native
+  - odt
+  - opml
+  - opendocument
+  - org
+  - pdf
+  - plain
+  - pptx
+  - rst
+  - rtf
+  - texinfo
+  - textile
+  - slideous
+  - slidy
+  - dzslides
+  - revealjs
+  - s5
+  - tei
+  - xwiki
+  - zimwiki
+details:
+  - title: AsciiDoc
+    name: asciidoc
   - title: CommonMark Markdown
     name: commonmark
   - title: Creole 1.0
@@ -7,6 +91,7 @@ input:
     name: docbook
   - title: Word docx
     name: docx
+    slug: word-docx
   - title: DokuWiki markup
     name: dokuwiki
   - title: EPUB
@@ -15,6 +100,7 @@ input:
     name: fb2
   - title: GitHub-Flavored Markdown
     name: gfm
+    slug: github-flavored-markdown
     description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
   - title: Haddock markup
     name: haddock
@@ -22,8 +108,10 @@ input:
     name: html
   - title: Jupyter notebook
     name: ipynb
+    slug: jupyter-notebook
   - title: JATS XML
     name: jats
+    slug: jats-xml
   - title: JSON version of native AST
     name: json
   - title: LaTeX
@@ -32,121 +120,84 @@ input:
     name: markdown
   - title: MultiMarkdown
     name: markdown_mmd
+    slug: multi-markdown
   - title: PHP Markdown Extra
     name: markdown_phpextra
+    slug: php-markdown-extra
   - title: original unextended Markdown
     name: markdown_strict
+    slug: strict-markdown
   - title: MediaWiki markup
     name: mediawiki
+    slug: mediawiki-markup
   - title: roff man
     name: man
+    slug: roff-man
   - title: Muse
     name: muse
   - title: native Haskell
     name: native
+    slug: native-haskell
   - title: ODT
     name: odt
   - title: OPML
     name: opml
   - title: Emacs Org mode
     name: org
+    slug: emacs-org-mode
   - title: reStructuredText
     name: rst
+    slug: restructured-text
   - title: txt2tags
     name: t2t
   - title: Textile
     name: textile
   - title: TikiWiki markup
     name: tikiwiki
+    slug: tikiwiki-markup
   - title: TWiki markup
     name: twiki
+    slug: twiki-markup
   - title: Vimwiki
     name: vimwiki
-output:
-  - title: AsciiDoc
-    name: asciidoc
+
   - title: LaTeX beamer slide show
     name: beamer
-  - title: CommonMark Markdown
-    name: commonmark
+    slug: latex-beamer-slide-show
   - title: ConTeXt
     name: context
-  - title: DocBook 4
-    name: docbook
   - title: DocBook 5
     name: docbook5
-  - title: Word docx
-    name: docx
-  - title: DokuWiki markup
-    name: dokuwiki
-  - title: EPUB v3 book
-    name: epub
   - title: EPUB v2
     name: epub2
-  - title: FictionBook2 e-book
-    name: fb2
-  - title: GitHub-Flavored Markdown
-    name: gfm
-  - title: Haddock markup
-    name: haddock
-  - title: HTML, i.e. HTML5/XHTML polyglot markup
-    name: html
   - title: XHTML 1.0 Transitional
     name: html4
   - title: InDesign ICML
     name: icml
-  - title: Jupyter notebook
-    name: ipynb
-  - title: JATS XML
-    name: jats
+    slug: indesign-icml
   - title: Jira wiki markup
     name: jira
+    slug: jira-wiki-markup
     description: You said Jira? Isn't this the japanese name for Godzilla? Never mind. I think you're looking for the software. The one software to rule them all. I'm praying for the souls working at Atlassian. I mean this code base must be … big. And actually, I hope for a future where nobody uses Jira. But seems like you're using Jira. Or you work with someone who is using Jira as a project management tool. Or as a wiki. I don't know what you're doing, but I'll include you in my prayers. Good luck converting to this Jira wiki text thing.
-  - title: JSON version of native AST
-    name: json
-  - title: LaTeX
-    name: latex
-  - title: roff man
-    name: man
-  - title: Pandoc’s Markdown
-    name: markdown
-  - title: MultiMarkdown
-    name: markdown_mmd
-  - title: PHP Markdown Extra
-    name: markdown_phpextra
-  - title: original unextended Markdown
-    name: markdown_strict
-  - title: MediaWiki markup
-    name: mediawiki
   - title: roff ms
     name: ms
-  - title: Muse
-    name: muse
-  - title: native Haskell
-    name: native
-  - title: OpenOffice text document
-    name: odt
-  - title: OPML
-    name: opml
   - title: OpenDocument
     name: opendocument
-  - title: Emacs Org mode
-    name: org
   - title: PDF
     name: pdf
     description: Hey, Portable Document Format. What a name. Sounds like other files are not … portable? It's old, but it works everywhere. Convert to PDF and you can be sure it'll work somehow, even if you the person you're emailing this is 150 years old and has never used a PC before. Good luck with your file!
   - title: plain text
     name: plain
+    slug: plain-text
   - title: PowerPoint slide show
     name: pptx
-  - title: reStructuredText
-    name: rst
+    slug: powerpoint-slide-show
   - title: Rich Text Format
     name: rtf
+    slug: rich-text-format
   - title: GNU Texinfo
     name: texinfo
-  - title: Textile
-    name: textile
+    slug: gnu-texinfo
   - title: Slideous HTML and JavaScript slide show
     name: slideous
   - title: Slidy HTML and JavaScript slide show
@@ -159,7 +210,10 @@ output:
     name: s5
   - title: TEI Simple
     name: tei
+    slug: tei-simple
   - title: XWiki markup
     name: xwiki
+    slug: xwiki-markup
   - title: ZimWiki markup
     name: zimwiki
+    slug: zimwiki-markup

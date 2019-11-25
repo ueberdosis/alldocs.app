@@ -6,21 +6,18 @@ use Symfony\Component\Yaml\Yaml;
 
 abstract class Pandoc
 {
-    private static function formats()
+    private static function config()
     {
-        return Yaml::parseFile(__DIR__.'/formats.yaml');
+        return once(function () {
+            return Yaml::parseFile(__DIR__.'/config.yaml');
+        });
     }
 
     public static function inputFormats()
     {
         return collect(
-            data_get(self::formats(), 'input', [])
+            data_get(self::config(), 'input', [])
         );
-    }
-
-    public static function inputFormatNames()
-    {
-        return self::inputFormats()->pluck('name');
     }
 
     public static function inputFormat($from)
@@ -31,13 +28,8 @@ abstract class Pandoc
     public static function outputFormats()
     {
         return collect(
-            data_get(self::formats(), 'output', [])
+            data_get(self::config(), 'output', [])
         );
-    }
-
-    public static function outputFormatNames()
-    {
-        return self::outputFormats()->pluck('name');
     }
 
     public static function outputFormat($to)
@@ -52,16 +44,26 @@ abstract class Pandoc
         self::inputFormats()->each(function ($inputFormat) use ($items) {
             self::outputFormats()
                 ->reject(function ($outputFormat) use ($inputFormat) {
-                    return $outputFormat['name'] === $inputFormat['name'];
+                    return $outputFormat === $inputFormat;
                 })
                 ->each(function ($outputFormat) use ($items, $inputFormat) {
-                    $slug = "{$inputFormat['name']}-to-{$outputFormat['name']}";
+                    $inputFormat = self::find($inputFormat);
+                    $outputFormat = self::find($outputFormat);
+                    $slug = join('-', [
+                        'convert',
+                        $inputFormat['slug'] ?? $inputFormat['name'],
+                        'to',
+                        $outputFormat['slug'] ?? $outputFormat['name'],
+                    ]);
 
                     $items->push(json_decode(json_encode([
                         'inputFormat' => $inputFormat,
                         'outputFormat' => $outputFormat,
                         'slug' => $slug,
-                        'url' => action('ConvertController@landingPage', $slug),
+                        'url' => action('ConvertController@landingPage', [
+                            'input' => $inputFormat['slug'] ?? $inputFormat['name'],
+                            'output' => $outputFormat['slug'] ?? $outputFormat['name'],
+                        ]),
                     ])));
                 });
         });
@@ -69,9 +71,18 @@ abstract class Pandoc
         return $items;
     }
 
+    public static function find($id)
+    {
+        return collect(self::config()['details'])->first(function ($item) use ($id) {
+            return data_get($item, 'slug') === $id || data_get($item, 'name') === $id;
+        });
+    }
+
     public static function validInputFormat($from)
     {
-        return self::inputFormatNames()->contains($from);
+        $format = self::find($from);
+        
+        return $format && self::inputFormats()->contains($format['name']);
     }
 
     public static function invalidInputFormat($from)
@@ -81,7 +92,9 @@ abstract class Pandoc
 
     public static function validOutputFormat($to)
     {
-        return self::outputFormatNames()->contains($to);
+        $format = self::find($to);
+        
+        return $format && self::outputFormats()->contains($format['name']);
     }
 
     public static function invalidOutputFormat($to)
