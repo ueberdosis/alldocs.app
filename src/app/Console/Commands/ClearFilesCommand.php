@@ -40,9 +40,10 @@ class ClearFilesCommand extends Command
      */
     public function handle()
     {
-        $conversions = Conversion::where('created_at', '<', Carbon::now()->subHours(2))->get();
+        $conversions = Conversion::where('created_at', '<', Carbon::now()->subHours(12))->get();
 
         foreach ($conversions as $conversion) {
+            // TODO: Use public_path() helper
             Storage::delete([
                 'public/'.$conversion->id,
                 'public/'.$conversion->hashId,
