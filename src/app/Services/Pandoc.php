@@ -20,6 +20,13 @@ abstract class Pandoc
         );
     }
 
+    public static function inputFormatsData()
+    {
+        return self::inputFormats()->map(function ($item) {
+            return self::find($item);
+        });
+    }
+
     public static function inputFormat($from)
     {
         return self::inputFormats()->where('name', $from)->first();
@@ -30,6 +37,13 @@ abstract class Pandoc
         return collect(
             data_get(self::config(), 'output', [])
         );
+    }
+
+    public static function outputFormatsData()
+    {
+        return self::outputFormats()->map(function ($item) {
+            return self::find($item);
+        });
     }
 
     public static function outputFormat($to)

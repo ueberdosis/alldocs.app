@@ -5,9 +5,7 @@
     <h1>
         <form action="{{ route('redirect-to-format') }}">
             <select name="format">
-                @foreach(App\Services\Pandoc::outputFormats()->map(function($item) {
-                    return App\Services\Pandoc::find($item);
-                }) as $item)
+                @foreach(App\Services\Pandoc::outputFormatsData() as $item)
                     <option value="{{ $item['name'] }}" {{ $item['name'] === $format['name'] ? 'selected' : '' }}>
                         {{ $item['title'] }}
                     </option>
@@ -30,9 +28,7 @@
     <h2>
         Convert To
     </h2>
-    @foreach (App\Services\Pandoc::outputFormats()->map(function($item) {
-        return App\Services\Pandoc::find($item);
-    }) as $outputFormat)
+    @foreach (App\Services\Pandoc::outputFormatsData() as $outputFormat)
         <a href="{{ action('ConvertController@landingPage', [
             'input' => $format['slug'],
             'output' => $outputFormat['slug'],
@@ -46,9 +42,7 @@
     <h2>
         Convert From
     </h2>
-    @foreach (App\Services\Pandoc::inputFormats()->map(function($item) {
-        return App\Services\Pandoc::find($item);
-    }) as $inputFormat)
+    @foreach (App\Services\Pandoc::inputFormatsData() as $inputFormat)
         <a href="{{ action('ConvertController@landingPage', [
             'input' => $inputFormat['slug'],
             'output' => $format['slug'],

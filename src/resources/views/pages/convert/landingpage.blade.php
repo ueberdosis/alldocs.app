@@ -10,9 +10,7 @@
                         Convert
                         <select name="from">
                             <option value="">Select Format</option>
-                            @foreach(\App\Services\Pandoc::inputFormats()->map(function($item) {
-                                return \App\Services\Pandoc::find($item);
-                            }) as $format)
+                            @foreach(\App\Services\Pandoc::inputFormatsData() as $format)
                                 <option value="{{ $format['name'] ?? '' }}" {{ $from['name'] === $format['name'] ? 'selected' : '' }}>
                                     {{ $format['title'] }}
                                 </option>
@@ -21,9 +19,7 @@
                         to
                         <select name="to">
                             <option value="">Select Format</option>
-                            @foreach(\App\Services\Pandoc::outputFormats()->map(function($item) {
-                                return \App\Services\Pandoc::find($item);
-                            }) as $format)
+                            @foreach(\App\Services\Pandoc::outputFormatsData() as $format)
 
                                 <option value="{{ $format['name'] ?? '' }}" {{ $to['name'] === $format['name'] ? 'selected' : '' }}>
                                     {{ $format['title'] }}
