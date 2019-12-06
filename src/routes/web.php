@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +14,17 @@
 */
 
 Route::get('/', 'PageController@home');
-Route::get('convert', 'ConvertController@index');
-Route::post('convert', 'ConvertController@convert')->name('convert');
-Route::get('download/{hashid}', 'ConvertController@download')->name('download');
-
-Route::get('convert-{input}-to-{output}', 'ConvertController@landingPage')->where([
+Route::get('/redirect-to-convertion', 'ConvertController@redirect')->name('redirect-to-convertion');
+Route::get('/redirect-to-format', 'FormatController@redirect')->name('redirect-to-format');
+Route::get('/convert', 'ConvertController@index');
+Route::post('/convert', 'ConvertController@convert')->name('convert');
+Route::get('/download/{hashid}', 'ConvertController@download')->name('download');
+Route::get('/convert-{input}-to-{output}', 'ConvertController@landingPage')->where([
     'input' => '[a-z0-9_-]+',
     'output' => '[a-z0-9_-]+',
 ]);
+Route::get('/convert-{format}', 'FormatController@show')->where([
+    'format' => '[a-z0-9_-]+',
+]);
 
-Route::get('sitemap.xml', 'SitemapController@index');
+Route::get('/sitemap.xml', 'SitemapController@index');

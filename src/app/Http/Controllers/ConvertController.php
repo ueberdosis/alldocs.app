@@ -17,6 +17,26 @@ class ConvertController extends Controller
         return view('pages.convert.index');
     }
 
+    public function redirect(Request $request)
+    {
+        $request->validate([
+            'from' => [
+                'required', 'string', Rule::in(Pandoc::inputFormats()),
+            ],
+            'to' => [
+                'required', 'string', Rule::in(Pandoc::outputFormats()),
+            ],
+        ]);
+
+        $from = Pandoc::find($request->get('from'));
+        $to = Pandoc::find($request->get('to'));
+
+        return redirect()->action('ConvertController@landingPage', [
+            'input' => $from['slug'],
+            'output' => $to['slug'],
+        ]);
+    }
+
     public function landingPage($input, $output)
     {
         if (Pandoc::invalidConversion($input, $output)) {
@@ -33,7 +53,7 @@ class ConvertController extends Controller
     public function convert(Request $request)
     {
         $this->validate($request, [
-            'file' => 'required|file',
+            'file' => ['required', 'file'],
             'from' => [
                 'required', 'string', Rule::in(Pandoc::inputFormats()),
             ],

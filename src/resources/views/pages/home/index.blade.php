@@ -2,9 +2,54 @@
 
 @section('content')
 
-    @foreach ($conversions as $conversion)
+    <h1>
+        Convert All Docs To All Docs
+    </h1>
+
+    <p>
+        Free, Secure, No Ads
+    </p>
+
+    <h2>
+            <form action="{{ route('redirect-to-convertion') }}">
+                Convert
+                <select name="from">
+                    <option value="">Select Format</option>
+                    @foreach(\App\Services\Pandoc::inputFormats()->map(function($item) {
+                        return \App\Services\Pandoc::find($item);
+                    }) as $format)
+                        <option value="{{ $format['name'] ?? '' }}">
+                            {{ $format['title'] }}
+                        </option>
+                    @endforeach
+                </select>
+                to
+                <select name="to">
+                    <option value="">Select Format</option>
+                    @foreach(\App\Services\Pandoc::outputFormats()->map(function($item) {
+                        return \App\Services\Pandoc::find($item);
+                    }) as $format)
+
+                        <option value="{{ $format['name'] ?? '' }}">
+                            {{ $format['title'] }}
+                        </option>
+                    @endforeach
+                </select>
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+        </h2>
+
+    <h2>
+        Most Used Convertions
+    </h2>
+
+    @foreach ($conversions->shuffle()->take(5) as $conversion)
         <a href="{{ $conversion->url }}">
-            {{ $conversion->inputFormat->title }} to {{ $conversion->outputFormat->title }}
+            {{ $conversion->inputFormat->title }}
+            &gt;
+            {{ $conversion->outputFormat->title }}
         </a><br />
     @endforeach
 

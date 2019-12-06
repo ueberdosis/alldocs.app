@@ -54,8 +54,8 @@ abstract class Pandoc
                         'inputFormat' => $inputFormat,
                         'outputFormat' => $outputFormat,
                         'url' => action('ConvertController@landingPage', [
-                            'input' => $inputFormat['slug'] ?? $inputFormat['name'],
-                            'output' => $outputFormat['slug'] ?? $outputFormat['name'],
+                            'input' => $inputFormat['slug'],
+                            'output' => $outputFormat['slug'],
                         ]),
                     ])));
                 });
@@ -66,15 +66,22 @@ abstract class Pandoc
 
     public static function find($id)
     {
-        return collect(self::config()['details'])->first(function ($item) use ($id) {
+        $item = collect(self::config()['details'])->first(function ($item) use ($id) {
             return data_get($item, 'slug') === $id || data_get($item, 'name') === $id;
         });
+
+        if ($item) {
+            $item['slug'] = $item['slug'] ?? $item['name'];
+            $item['url'] = action('FormatController@show', $item['slug']);
+        }
+
+        return $item;
     }
 
     public static function validInputFormat($from)
     {
         $format = self::find($from);
-        
+
         return $format && self::inputFormats()->contains($format['name']);
     }
 
@@ -86,7 +93,7 @@ abstract class Pandoc
     public static function validOutputFormat($to)
     {
         $format = self::find($to);
-        
+
         return $format && self::outputFormats()->contains($format['name']);
     }
 

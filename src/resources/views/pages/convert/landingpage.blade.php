@@ -5,9 +5,36 @@
     <div class="container">
         <div class="row my-4">
             <div class="col-md-12">
-                <h1 class="h3">
-                    Convert {{ $from['title'] }} to {{ $to['title'] }}
-                </h1>
+                <h2>
+                    <form action="{{ route('redirect-to-convertion') }}">
+                        Convert
+                        <select name="from">
+                            <option value="">Select Format</option>
+                            @foreach(\App\Services\Pandoc::inputFormats()->map(function($item) {
+                                return \App\Services\Pandoc::find($item);
+                            }) as $format)
+                                <option value="{{ $format['name'] ?? '' }}" {{ $from['name'] === $format['name'] ? 'selected' : '' }}>
+                                    {{ $format['title'] }}
+                                </option>
+                            @endforeach
+                        </select>
+                        to
+                        <select name="to">
+                            <option value="">Select Format</option>
+                            @foreach(\App\Services\Pandoc::outputFormats()->map(function($item) {
+                                return \App\Services\Pandoc::find($item);
+                            }) as $format)
+
+                                <option value="{{ $format['name'] ?? '' }}" {{ $to['name'] === $format['name'] ? 'selected' : '' }}>
+                                    {{ $format['title'] }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </h2>
             </div>
         </div>
         <div class="row my-4">
@@ -31,26 +58,32 @@
         </div>
     </div>
 
-    @isset($from['description'])
-        <div class="container">
-            <div class="row my-4">
-                <div class="col-md-12">
-                    <h1>Converting from {{ $from['title'] }}</h1>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-12">
+                <h1>Converting from {{ $from['title'] }}</h1>
+                @isset($from['description'])
                     {{ $from['description'] }}
-                </div>
+                @endisset
+                <a href="{{ $from['url'] }}">
+                    More
+                </a>
             </div>
         </div>
-    @endisset
+    </div>
 
-    @isset($to['description'])
-        <div class="container">
-            <div class="row my-4">
-                <div class="col-md-12">
-                    <h2>Converting to {{ $to['title'] }}</h2>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-12">
+                <h2>Converting to {{ $to['title'] }}</h2>
+                @isset($to['description'])
                     {{ $to['description'] }}
-                </div>
+                @endisset
+                <a href="{{ $to['url'] }}">
+                    More
+                </a>
             </div>
         </div>
-    @endisset
+    </div>
 
 @endsection

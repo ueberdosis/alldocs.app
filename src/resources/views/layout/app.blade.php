@@ -12,66 +12,108 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
-    <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-white">About</h4>
-                    <p class="text-muted">With Alldocs you can convert any text format in any other text format. Sounds amazing? It is amazing. <a href="{{ route('convert') }}">Try it out for free!</a></p>
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Site Notice/Impressum</a></li>
-                            <li><a href="#" class="text-white">Privacy Policy</a></li>
-                            <li><a href="mailto:support@alldocs.app" class="text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="container">
+        <header>
+            <a href="{{ url('/') }}">
+                {{ config('app.name') }}
+            </a>
+        </header>
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
             </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark box-shadow">
-            <div class="container d-flex justify-content-between">
-                <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center">
-                    <strong>
-                        {{ config('app.name') }}
-                    </strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-        </div>
-    </header>
+        @endif
 
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-
-    <main role="main">
-        @yield('content')
-    </main>
+        <main role="main">
+            @yield('content')
+        </main>
+    </div>
 
     <footer class="text-muted">
         <div class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
+            <h3>
+                Alldocs — The text converter for all your documents
+            </h3>
+            <p>
+                This is a super fancy text converter. Wow. Amaze.
             </p>
-            <p>Made with ❤ by <a href="https://twitter.com/_ueberdosis">überclub</a></p>
+            <h4>
+                Free
+            </h4>
+            <p>
+                We thought about making a VERY expensive app with offline support later, but we’re lazy.
+            </p>
+            <h4>
+                No Ads
+            </h4>
+            <p>
+                We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
+            </p>
+            <h4>
+                Secure
+            </h4>
+            <p>
+                After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
+            </p>
+            <h4>
+                Open Startup
+            </h4>
+            <p>
+                We made a public dashboard that has all our numbers. Even the revenue, but surprisingly it’s $0.
+            </p>
+            <h4>
+                Just Works
+            </h4>
+            <p>
+                Upload a file & download the converted file. Like a good joke, it needs no further explanation.
+            </p>
+            <h4>
+                Cool Design
+            </h4>
+            <p>
+                We checked out every post on Dribbble, took the best out and here it is: The perfect design.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        Privacy
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Terms
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ueber.io/impressum">
+                        Impressum
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="https://floatie.app/alldocs">
+                        Public Metrics
+                    </a>
+                </li>
+            </ul>
+
+            <p>Made with 💙 by <a href="https://twitter.com/_ueberdosis">überclub</a></p>
         </div>
     </footer>
 
