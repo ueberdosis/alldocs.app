@@ -1,0 +1,8 @@
+@import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
+
+@mixin fluid-font-size($from: 16px, $to: 16px) {
+	@include poly-fluid-sizing('font-size', (
+		320px: $from,
+		1800px: $to,
+	));
+}

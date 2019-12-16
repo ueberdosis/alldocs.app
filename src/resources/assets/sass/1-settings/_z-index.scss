@@ -1,0 +1,16 @@
+// A map of z layers
+// Used in: 2-utilities/_z-index.scss
+
+$z-layers: (
+	'loader':          10000,
+	'alert':            9500,
+	'dropdown':         9000,
+	'modal':            8000,
+	'overlay':          7000,
+	'navigation':       6000,
+	'footer':           5000,
+	'tooltip':          4000,
+	'header':           1000,
+	'default':             1,
+	'bottomless-pit':  -9000,
+);

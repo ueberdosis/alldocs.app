@@ -1,0 +1,14 @@
+// A map of media query breakpoints
+// Used in: 2-utilities/_breakpoints.scss
+
+$breakpoint-baseline: 16px;
+
+$breakpoints: (
+	x-small:   #{350px / $breakpoint-baseline}em,
+	small:     #{600px / $breakpoint-baseline}em,
+	medium:    #{800px / $breakpoint-baseline}em,
+	large:     #{1000px / $breakpoint-baseline}em,
+	x-large:   #{1400px / $breakpoint-baseline}em,
+	xx-large:  #{1800px / $breakpoint-baseline}em,
+	navigation: #{1020px / $breakpoint-baseline}em,
+);

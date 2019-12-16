@@ -1,0 +1,15 @@
+.u-vertical-align {
+
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+
+	&__inner {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+	}
+
+}

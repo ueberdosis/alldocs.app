@@ -1,0 +1,58 @@
+/**
+ * Breakpoints Mixin
+ *
+ * @author Philipp Kühn
+ * @version 2016-03-27
+ * @param {String} $breakpoint
+ *
+ * @example
+ * .foo {
+ * 	 color: red;
+ *
+ * 	 @include min-width(medium) {
+ *     color: blue;
+ * 	 }
+ *
+ * 	 @include min-width(1000px) {
+ * 		 color: yellow;
+ * 	 }
+ * }
+ */
+
+@mixin min-width($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	@if $raw-query {
+		$query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+		@media (min-width: $query) {
+			@content;
+		}
+	} @elseif type-of($breakpoint) == 'number' {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	} @else {
+		@error 'No value found for `#{$breakpoint}`. '
+			+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+@mixin max-width($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	@if $raw-query {
+		$query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+		@media not all and (min-width: $query) {
+			@content;
+		}
+	} @elseif type-of($breakpoint) == 'number' {
+		@media not all and (min-width: $breakpoint) {
+			@content;
+		}
+	} @else {
+		@error 'No value found for `#{$breakpoint}`. '
+			+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}

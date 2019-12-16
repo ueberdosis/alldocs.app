@@ -1,0 +1,5 @@
+@import 'node_modules/gridilydidily/gridilydidily.scss';
+
+.grid__item:empty {
+	display: none;
+}
