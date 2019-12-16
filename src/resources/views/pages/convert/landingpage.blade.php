@@ -6,26 +6,21 @@
     <h1>
       <form action="{{ route('redirect-to-convertion') }}">
         Convert
-        <select name="from">
-          <option value="">Select Format</option>
-          @foreach(\App\Services\Pandoc::inputFormatsData() as $format)
-            <option value="{{ $format['name'] ?? '' }}" {{ $from['name'] === $format['name'] ? 'selected' : '' }}>
-              {{ $format['title'] }}
-            </option>
-          @endforeach
-        </select>
+        <select-format
+          :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
+          :selected-format="{{ collect($from) }}"
+          name="from"
+        >
+          {{ $from['title'] }}
+        </select-format>
         to
-        <select name="to">
-          <option value="">Select Format</option>
-          @foreach(\App\Services\Pandoc::outputFormatsData() as $format)
-            <option value="{{ $format['name'] ?? '' }}" {{ $to['name'] === $format['name'] ? 'selected' : '' }}>
-              {{ $format['title'] }}
-            </option>
-          @endforeach
-        </select>
-        <button type="submit">
-          Submit
-        </button>
+        <select-format
+          :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
+          :selected-format="{{ collect($to) }}"
+          name="to"
+        >
+          {{ $to['title'] }}
+        </select-format>
       </form>
     </h1>
   @endcomponent
