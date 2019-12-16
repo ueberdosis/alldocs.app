@@ -106,7 +106,7 @@ h3,
 // }
 
 a {
-	color: inherit;
+	color: color(blue);
 	text-decoration: none;
 	transition: color .2s $ease;
 }
@@ -119,7 +119,8 @@ p {
 	}
 }
 
-small {
+small,
+.small {
 	font-size: .85rem;
 }
 
