@@ -1,0 +1,7 @@
+.env
+node_modules
+yarn-error.log
+/src/public/assets
+.idea
+/Icon*
+.tresorit
