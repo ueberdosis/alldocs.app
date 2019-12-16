@@ -3,8 +3,8 @@
 @section('content')
 
   @component('components.section.index')
-    <h1>
-      <form action="{{ route('redirect-to-convertion') }}">
+    <form action="{{ route('redirect-to-convertion') }}">
+      <h1>
         Convert
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
@@ -21,8 +21,8 @@
         >
           {{ $to['title'] }}
         </select-format>
-      </form>
-    </h1>
+      </h1>
+    </form>
   @endcomponent
 
   @component('components.section.index')
