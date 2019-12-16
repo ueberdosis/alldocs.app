@@ -6,39 +6,39 @@
     <p>
       This is a super fancy text converter. Wow. Amaze.
     </p>
-    <h4>
+    <h3>
       Free
-    </h4>
+    </h3>
     <p>
       We thought about making a VERY expensive app with offline support later, but we’re lazy.
     </p>
-    <h4>
+    <h3>
       No Ads
-    </h4>
+    </h3>
     <p>
       We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
     </p>
-    <h4>
+    <h3>
       Secure
-    </h4>
+    </h3>
     <p>
       After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
     </p>
-    <h4>
+    <h3>
       Open Startup
-    </h4>
+    </h3>
     <p>
       We made a public dashboard that has all our numbers. Even the revenue, but surprisingly it’s $0.
     </p>
-    <h4>
+    <h3>
       Just Works
-    </h4>
+    </h3>
     <p>
       Upload a file & download the converted file. Like a good joke, it needs no further explanation.
     </p>
-    <h4>
+    <h3>
       Cool Design
-    </h4>
+    </h3>
     <p>
       We checked out every post on Dribbble, took the best out and here it is: The perfect design.
     </p>
