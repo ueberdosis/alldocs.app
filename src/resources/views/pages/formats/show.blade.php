@@ -3,27 +3,26 @@
 @section('content')
 
   @component('components.section.index')
-    <h1>
-      <form action="{{ route('redirect-to-format') }}">
-        <select name="format">
-          @foreach(App\Services\Pandoc::outputFormatsData() as $item)
-            <option value="{{ $item['name'] }}" {{ $item['name'] === $format['name'] ? 'selected' : '' }}>
-              {{ $item['title'] }}
-            </option>
-          @endforeach
-        </select>
-        <button type="submit">
-          Submit
-        </button>
-      </form>
-    </h1>
+    <form action="{{ route('redirect-to-format') }}">
+      <h1>
+        <select-format
+          :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
+          :selected-format="{{ collect($format) }}"
+          name="format"
+        >
+          {{ $format['title'] }}
+        </select-format>
+      </h1>
+    </form>
+  @endcomponent
 
-    @isset($format['description'])
+  @isset($format['description'])
+    @component('components.section.index')
       <p>
         {{ $format['description'] }}
       </p>
-    @endisset
-  @endcomponent
+    @endcomponent
+  @endisset
 
   @component('components.section.index')
     @if (App\Services\Pandoc::inputFormats()->contains($format['name']))

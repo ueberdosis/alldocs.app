@@ -1,9 +1,17 @@
 <template>
   <div class="c-select-format">
     <div class="c-select-format__title">
-      {{ selectedFormat.title }}
+      <template v-if="selectedFormat">
+        {{ selectedFormat.title }}
+      </template>
+      <template v-else>
+        Select Format
+      </template>
     </div>
     <select :name="name" class="c-select-format__select" @change="onChange($event)" v-model="value">
+      <option value="">
+        Select Format
+      </option>
       <option
         v-for="format in formats"
         :key="format.name"
@@ -33,7 +41,7 @@ export default {
 
   data() {
     return {
-      value: this.selectedFormat.name,
+      value: this.selectedFormat ? this.selectedFormat.name : null,
     }
   },
 

@@ -13,31 +13,22 @@
   @endcomponent
 
   @component('components.section.index')
-    <h2>
-      <form action="{{ route('redirect-to-convertion') }}">
+    <form action="{{ route('redirect-to-convertion') }}">
+      <h2 class="is-h1">
         Convert
-        <select name="from">
-          <option value="">Select Format</option>
-          @foreach(\App\Services\Pandoc::inputFormatsData() as $format)
-              <option value="{{ $format['name'] ?? '' }}">
-                  {{ $format['title'] }}
-              </option>
-          @endforeach
-        </select>
+        <select-format
+          :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
+          name="from"
+        >
+        </select-format>
         to
-        <select name="to">
-          <option value="">Select Format</option>
-          @foreach(\App\Services\Pandoc::outputFormatsData() as $format)
-              <option value="{{ $format['name'] ?? '' }}">
-                  {{ $format['title'] }}
-              </option>
-          @endforeach
-        </select>
-        <button type="submit">
-          Submit
-        </button>
-      </form>
-    </h2>
+        <select-format
+          :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
+          name="to"
+        >
+        </select-format>
+      </h2>
+    </form>
   @endcomponent
 
   @component('components.section.index')
