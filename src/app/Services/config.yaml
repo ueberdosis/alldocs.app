@@ -186,8 +186,15 @@ details:
   - title: roff man
     name: man
     slug: roff-man
+    extensions:
+      - man
+      - mdoc
+      - lb
+      - mandoc
   - title: Muse
     name: muse
+    extensions:
+      - muse
   - title: native Haskell
     name: native
     slug: native-haskell
@@ -213,7 +220,6 @@ details:
     slug: twiki-markup
   - title: Vimwiki
     name: vimwiki
-
   - title: LaTeX beamer slide show
     name: beamer
     slug: latex-beamer-slide-show
