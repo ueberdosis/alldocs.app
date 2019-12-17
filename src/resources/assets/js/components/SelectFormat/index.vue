@@ -7,6 +7,7 @@
       <template v-else>
         Select Format
       </template>
+      <icon name="arrow-down" />
     </div>
     <select :name="name" class="c-select-format__select" @change="onChange($event)" v-model="value">
       <option value="">
@@ -25,8 +26,13 @@
 
 <script>
 import serialize from 'form-serialize'
+import Icon from 'components/Icon'
 
 export default {
+  components: {
+    Icon,
+  },
+
   props: {
     formats: {
       default: () => [],

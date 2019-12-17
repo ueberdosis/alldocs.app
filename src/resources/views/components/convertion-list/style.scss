@@ -29,9 +29,12 @@
   }
 
   &__divider {
+    display: flex;
     width: 2rem;
     flex: 0 0 auto;
     text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
 }
