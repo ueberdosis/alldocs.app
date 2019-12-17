@@ -1,0 +1,14 @@
+$small-shadow:
+  0 0 0 1px rgba(color(black), 0.06),
+  0 4px 6px -4px rgba(color(black), 0.15);
+;
+
+$large-shadow:
+  0 2px 4px 0 rgba(color(black), 0.01),
+  0 4px 20px 0 rgba(color(black), 0.02),
+  0 8px 40px 0 rgba(color(black), 0.04),
+;
+
+$active-shadow:
+  0 0 0 3px rgba(color(blue), 0.3),
+;

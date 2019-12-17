@@ -4,18 +4,22 @@
 .c-select-format {
 
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   padding: 0.2rem 0.55rem;
   background-color: color(white);
   border: none;
-  -webkit-appearance: none;
   border-radius: 0.5rem;
   color: color(blue);
-  box-shadow: 0px 2px 4px rgba(5, 30, 53, 0.06);
+  transition: box-shadow 0.2s $ease;
+  box-shadow: $small-shadow;
   line-height: 1.3;
+  max-width: 100%;
 
   &:focus-within {
-    box-shadow: 0px 0px 0px 3px color(blue);
+    box-shadow:
+      $small-shadow,
+      $active-shadow,
+    ;
   }
 
   &__select {
@@ -27,6 +31,12 @@
     opacity: 0;
     cursor: pointer;
     font-size: 1rem;
+  }
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 }
