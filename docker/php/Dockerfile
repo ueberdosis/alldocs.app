@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-stretch
+FROM php:7.4-fpm-buster
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 # Install PHP dependencies
