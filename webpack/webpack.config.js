@@ -28,7 +28,7 @@ export default {
 
   output: {
     path: `${buildPath}/`,
-    filename: 'assets/js/[name].[hash].js',
+    filename: `assets/js/[name].[${ifDev('hash', 'contenthash')}].js`,
     chunkFilename: 'assets/js/[name].[chunkhash].js',
     publicPath: '/',
   },
@@ -98,7 +98,7 @@ export default {
         use: {
           loader: 'file-loader',
           options: {
-            name: 'assets/images/[name].[hash].[ext]',
+            name: 'assets/images/[name].[contenthash].[ext]',
           },
         },
       },
@@ -107,7 +107,7 @@ export default {
         use: {
           loader: 'file-loader',
           options: {
-            name: 'assets/fonts/[name].[hash].[ext]',
+            name: 'assets/fonts/[name].[contenthash].[ext]',
           },
         },
       },
@@ -169,7 +169,7 @@ export default {
       {
         context: `${srcPath}/assets/static`,
         from: { glob: '**/*', dot: false },
-        to: `${buildPath}/assets/[path][name].[hash].[ext]`,
+        to: `${buildPath}/assets/[path][name].[contenthash].[ext]`,
       },
     ]),
 
@@ -201,8 +201,8 @@ export default {
 
     // create css files
     ifProd(new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].[hash].css',
-      chunkFilename: 'assets/css/[name].[hash].css',
+      filename: 'assets/css/[name].[contenthash].css',
+      chunkFilename: 'assets/css/[name].[contenthash].css',
     })),
 
     // minify css files
