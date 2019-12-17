@@ -1,0 +1,23 @@
+.c-page-footer {
+
+  &__links {
+    font-weight: 600;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: color(blue);
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin: 0.2rem 0;
+    }
+  }
+
+}
