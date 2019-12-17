@@ -1,4 +1,21 @@
-FROM php:7.3-fpm-stretch
+FROM node:13 AS node
+LABEL maintainer "Hans Pagel <hans.pagel@ueber.io>"
+
+WORKDIR /var/www
+
+COPY ./src/resources /var/www/src/resources
+COPY ./webpack /var/www/webpack
+COPY ./.editorconfig /var/www/.editorconfig
+COPY ./.eslintrc.js /var/www/.eslintrc.js
+COPY ./package.json /var/www/package.json
+COPY ./yarn.lock /var/www/yarn.lock
+
+RUN yarn install && \
+    yarn build && \
+    rm -Rf node_modules
+
+
+FROM php:7.4-fpm-buster
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 # Install PHP dependencies
@@ -39,13 +56,6 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 # Override with custom settings
 COPY docker/php/etc/custom.ini $PHP_INI_DIR/conf.d/
 
-# Add German locale
-RUN apt-get update && \
-    apt-get install -y locales && \
-    sed -i 's/^# *\(de_DE.UTF-8\)/\1/' /etc/locale.gen && \
-    locale-gen && \
-    rm -r /var/lib/apt/lists/*
-
 # Add entrypoint script
 COPY docker/php/usr/local/bin/docker-entrypoint.sh /usr/local/bin
 RUN curl -o /usr/local/bin/wait-for https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && \
@@ -78,6 +88,8 @@ RUN cd /var/www/ && \
 
 # Add application & generate classmap
 COPY --chown=www-data:www-data src/ /var/www/
+COPY --from=node /var/www/src/public /var/www/public
+
 RUN cd /var/www/ && \
     composer dump-autoload --no-scripts && \
     chown -R www-data:www-data /var/www/
