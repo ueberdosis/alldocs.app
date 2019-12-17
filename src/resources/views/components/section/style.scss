@@ -1,5 +1,10 @@
 .c-section {
 
+  &--blue {
+    background-color: color(blue);
+    color: color(white);
+  }
+
   &__inner {
     padding: 3rem 1rem;
     max-width: 48rem;
@@ -10,7 +15,15 @@
     }
   }
 
-  & + & &__inner,
+  &--wide &__inner {
+    padding: 4rem 1rem;
+
+    @include min-width(medium) {
+      padding: 6rem 1rem;
+    }
+  }
+
+  &--transparent + &--transparent &__inner,
   .o-page__footer &:first-child &__inner {
     padding-top: 0;
   }

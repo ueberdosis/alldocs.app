@@ -2,14 +2,15 @@
 
 @section('content')
 
-  @component('components.section.index')
-    <h1>
-      Convert All Docs To All Docs
-    </h1>
-
-    <p>
-      Free, Secure, No Ads
-    </p>
+  @component('components.section.index', ['color' => 'blue', 'wide' => true])
+    <div class="u-centered">
+      <h1 class="is-h0">
+        Convert All Docs To All Docs
+      </h1>
+      <p>
+        Free, Secure, No Ads
+      </p>
+    </div>
   @endcomponent
 
   @component('components.section.index')
