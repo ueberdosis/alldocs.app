@@ -4,7 +4,7 @@
 
   @component('components.section.index')
     <form action="{{ route('redirect-to-format') }}">
-      <h1>
+      <h1 class="u-centered">
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
           :selected-format="{{ collect($format) }}"
@@ -18,7 +18,7 @@
 
   @isset($format['description'])
     @component('components.section.index')
-      <p>
+      <p class="u-large">
         {{ $format['description'] }}
       </p>
     @endcomponent

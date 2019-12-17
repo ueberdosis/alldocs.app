@@ -14,7 +14,7 @@
 
   @component('components.section.index')
     <form action="{{ route('redirect-to-convertion') }}">
-      <h2 class="is-h1">
+      <h2 class="is-h1 u-centered">
         Convert
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"

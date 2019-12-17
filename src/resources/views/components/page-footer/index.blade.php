@@ -17,7 +17,7 @@
             <h3>
               Free
             </h3>
-            <p class="small">
+            <p class="u-small">
               We thought about making a VERY expensive app with offline support later, but we’re lazy.
             </p>
           </div>
@@ -26,7 +26,7 @@
             <h3>
               No Ads
             </h3>
-            <p class="small">
+            <p class="u-small">
               We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
             </p>
           </div>
@@ -35,7 +35,7 @@
             <h3>
               Secure
             </h3>
-            <p class="small">
+            <p class="u-small">
               After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
             </p>
           </div>
@@ -44,7 +44,7 @@
             <h3>
               Open Startup
             </h3>
-            <p class="small">
+            <p class="u-small">
               We made a public dashboard that has all our numbers. Even the revenue, but surprisingly it’s $0.
             </p>
           </div>
@@ -53,7 +53,7 @@
             <h3>
               Just Works
             </h3>
-            <p class="small">
+            <p class="u-small">
               Upload a file & download the converted file. Like a good joke, it needs no further explanation.
             </p>
           </div>
@@ -62,7 +62,7 @@
             <h3>
               Cool Design
             </h3>
-            <p class="small">
+            <p class="u-small">
               We checked out every post on Dribbble, took the best out and here it is: The perfect design.
             </p>
           </div>
@@ -76,7 +76,7 @@
     <div class="c-page-footer__links">
       <div class="grid" data-grid="narrow" data-grid--medium="normal">
         <div class="grid__item" data-grid--medium="4/12">
-          <ul class="small">
+          <ul class="u-small">
             <li>
               <a href="#">
                 Privacy
@@ -96,7 +96,7 @@
         </div>
 
         <div class="grid__item" data-grid--medium="4/12">
-          <ul class="small">
+          <ul class="u-small">
             <li>
               <a href="#">
                 About
