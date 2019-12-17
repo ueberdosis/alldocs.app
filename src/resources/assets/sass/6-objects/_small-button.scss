@@ -1,0 +1,11 @@
+.o-small-button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: color(blue);
+
+  &:hover {
+    color: color(blue, dark);
+  }
+}

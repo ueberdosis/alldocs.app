@@ -6,12 +6,19 @@
   background-color: color(blue);
   color: color(white);
   font-weight: 700;
-  transition: background-color 0.2s $ease;
+  transition: background-color 0.1s $ease, box-shadow 0.1s $ease;
   white-space: nowrap;
 
   a:hover &,
   &:hover {
     background-color: color(blue, dark);
+  }
+
+  a:focus &,
+  &:focus {
+    box-shadow:
+      $active-shadow,
+    ;
   }
 
 }

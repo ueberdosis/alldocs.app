@@ -7,10 +7,16 @@
   border-radius: 0.5rem;
   color: color(white);
   font-weight: 700;
-  transition: background-color 0.2s $ease, color 0.2s $ease;
+  transition: background-color 0.1s $ease, color 0.1s $ease, box-shadow 0.1s $ease;
 
   &:hover {
     background-color: color(blue, dark);
+  }
+
+  &:focus {
+    box-shadow:
+      $active-shadow,
+    ;
   }
 
   &--text {
