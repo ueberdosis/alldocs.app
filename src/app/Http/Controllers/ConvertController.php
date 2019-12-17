@@ -9,6 +9,7 @@ use App\Services\Pandoc;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class ConvertController extends Controller
 {
@@ -83,19 +84,28 @@ class ConvertController extends Controller
             $request->file('file')->storeAs('public', $conversion->id);
             Pandoc::convert($conversion->id, $conversion->from, $conversion->to, $hashId);
 
-            return redirect()->back()->with([
-                'hashId' => $hashId,
-            ]);
+            if (!Storage::exists($conversion->storagePath)) {
+                throw new \Exception('Pandoc failed to convert the file');
+            }
+
+            return [
+                'filename' => $conversion->newFileName,
+                'download_url' => route('download', $hashId),
+            ];
         } catch (\Exception $exception) {
-            return redirect()->back()->with([
-                'error' => 'An error occurred while converting the file',
-            ]);
+            return response()->json([
+                'error' => 'An error occurred while converting the file.',
+            ], 500);
         }
     }
 
     public function download($hashid)
     {
-        $converstion = Conversion::where('hashId', $hashid)->first();
-        return response()->download(storage_path('app/public/'.$converstion->hashId), $converstion->FileOriginalName.'.'.$converstion->to);
+        $conversion = Conversion::where('hashId', $hashid)->first();
+
+        return response()->download(
+            $conversion->storagePath,
+            $conversion->newFileName,
+        );
     }
 }
