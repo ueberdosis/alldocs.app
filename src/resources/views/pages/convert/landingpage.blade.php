@@ -8,7 +8,7 @@
         Convert
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
-          :selected-format="{{ collect($from) }}"
+          selected="{{ $from['name'] }}"
           name="from"
         >
           {{ $from['title'] }}
@@ -16,7 +16,7 @@
         to
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
-          :selected-format="{{ collect($to) }}"
+          selected="{{ $to['name'] }}"
           name="to"
         >
           {{ $to['title'] }}

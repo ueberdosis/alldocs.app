@@ -24,13 +24,15 @@
 </template>
 
 <script>
+import serialize from 'form-serialize'
+
 export default {
   props: {
     formats: {
       default: () => [],
     },
 
-    selectedFormat: {
+    selected: {
       default: null,
     },
 
@@ -40,9 +42,17 @@ export default {
   },
 
   data() {
+    const selectedFormat = this.formats.find(format => format.name === this.selected)
+
     return {
-      value: this.selectedFormat ? this.selectedFormat.name : null,
+      value: selectedFormat ? selectedFormat.name : null,
     }
+  },
+
+  computed: {
+    selectedFormat() {
+      return this.formats.find(format => format.name === this.value)
+    },
   },
 
   methods: {
@@ -50,7 +60,12 @@ export default {
       const form = this.$el.closest('form')
 
       if (form) {
-        form.submit()
+        const data = serialize(form, { hash: true, empty: true })
+        const someInputIsEmpty = Object.entries(data).some(([, value]) => value === '')
+
+        if (!someInputIsEmpty) {
+          form.submit()
+        }
       }
     },
   },

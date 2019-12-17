@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "core-js": "3.5.0",
+    "form-serialize": "^0.7.2",
     "gridilydidily": "^3.0.1",
     "poly-fluid-sizing": "^1.1.0",
     "vue": "^2.6.11"
