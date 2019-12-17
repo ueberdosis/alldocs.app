@@ -17,6 +17,7 @@
   &__format {
     flex: 1 1 auto;
     width: 50%;
+    min-width: 0;
 
     &:first-child {
       text-align: right;
