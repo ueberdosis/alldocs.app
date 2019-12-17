@@ -27,6 +27,8 @@
   @endcomponent
 
   @component('components.section.index')
+    <uploader form-action="{{ route('convert') }}"></uploader>
+
     <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
       @csrf
 

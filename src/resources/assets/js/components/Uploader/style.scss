@@ -1,0 +1,25 @@
+@import '~settings';
+@import '~utilityFunctions';
+
+.c-uploader {
+
+  height: 20rem;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin: 0 -2rem;
+  background-color: color(white);
+  box-shadow: 0px 2px 4px rgba(5, 30, 53, 0.05);
+
+  &__dropzone {
+    height: 100%;
+    border-radius: 0.5rem;
+    border: 3px dashed rgba(color(blue), 0.2);
+    transition: border 0.2s $ease;
+
+    &:focus {
+      outline: none;
+      border-color: color(blue);
+    }
+  }
+
+}
