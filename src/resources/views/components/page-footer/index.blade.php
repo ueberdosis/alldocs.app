@@ -1,8 +1,7 @@
 <div class="c-page-footer">
   @component('components.section.index')
-    <div class="grid">
-
-      <div class="grid__item">
+    <div class="c-page-footer__card">
+      <div class="c-page-footer__card-header">
         <h2>
           Alldocs — The text converter for all your documents
         </h2>
@@ -11,35 +10,35 @@
         </p>
       </div>
 
-      <div class="grid__item">
+      <div class="c-page-footer__card-content">
         <div class="grid">
 
-            <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
-              <h3>
-                Free
-              </h3>
-              <p class="small">
-                We thought about making a VERY expensive app with offline support later, but we’re lazy.
-              </p>
-            </div>
+          <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
+            <h3>
+              Free
+            </h3>
+            <p class="small">
+              We thought about making a VERY expensive app with offline support later, but we’re lazy.
+            </p>
+          </div>
 
-            <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
-              <h3>
-                No Ads
-              </h3>
-              <p class="small">
-                We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
-              </p>
-            </div>
+          <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
+            <h3>
+              No Ads
+            </h3>
+            <p class="small">
+              We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
+            </p>
+          </div>
 
-            <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
-              <h3>
-                Secure
-              </h3>
-              <p class="small">
-                After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
-              </p>
-            </div>
+          <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
+            <h3>
+              Secure
+            </h3>
+            <p class="small">
+              After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
+            </p>
+          </div>
 
           <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
             <h3>
