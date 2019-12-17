@@ -7,7 +7,7 @@
       <h1 class="u-centered">
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
-          :selected-format="{{ collect($format) }}"
+          selected="{{ $format['name'] }}"
           name="format"
         >
           {{ $format['title'] }}
