@@ -28,7 +28,7 @@
 		@media (min-width: $query) {
 			@content;
 		}
-	} @elseif type-of($breakpoint) == 'number' {
+	} @else if type-of($breakpoint) == 'number' {
 		@media (min-width: $breakpoint) {
 			@content;
 		}
@@ -47,7 +47,7 @@
 		@media not all and (min-width: $query) {
 			@content;
 		}
-	} @elseif type-of($breakpoint) == 'number' {
+	} @else if type-of($breakpoint) == 'number' {
 		@media not all and (min-width: $breakpoint) {
 			@content;
 		}

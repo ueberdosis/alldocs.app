@@ -24,25 +24,34 @@
             Uploading… {{ progress }}%
           </div>
         </div>
+
         <div v-else-if="isFinished">
-          <div>
-            <a class="o-button" href="#" download>
-              Download
-            </a>
-          </div>
-          <div>
-            <button class="o-button o-button--text" type="button" @click="reset">
-              Upload Another File
-            </button>
+          <div class="grid" data-grid="narrow">
+            <div class="grid__item">
+              <a class="o-button" href="#" download>
+                Download myfile.xyz
+              </a>
+            </div>
+            <div class="grid__item">
+              <button class="o-button o-button--text" type="button" @click="reset">
+                Upload Another File
+              </button>
+            </div>
           </div>
         </div>
+
         <div v-else>
-          <button class="o-button" type="button" ref="button">
-            Drop or Browse File
-          </button>
-          <div class="u-small">
-            {{ acceptedFiles.
-            join(' ') }}
+          <div class="grid" data-grid="narrow">
+            <div class="grid__item">
+              <button class="o-button" type="button" ref="button">
+                Drop or Browse File
+              </button>
+            </div>
+            <div class="grid__item">
+              <small>
+                {{ acceptedFiles.join(' ') }}
+              </small>
+            </div>
           </div>
         </div>
       </div>
