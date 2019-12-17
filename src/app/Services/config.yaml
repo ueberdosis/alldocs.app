@@ -83,10 +83,20 @@ output:
 details:
   - title: AsciiDoc
     name: asciidoc
+    extensions:
+      - asciidoc
+      - adoc
+      - asc
   - title: CommonMark Markdown
     name: commonmark
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: Creole 1.0
     name: creole
+    extensions:
+      - creole
   - title: DocBook
     name: docbook
     extensions:
@@ -96,41 +106,80 @@ details:
   - title: Word docx
     name: docx
     slug: word-docx
+    extensions:
+      - docx
   - title: DokuWiki markup
     name: dokuwiki
+    extension:
+      - txt
   - title: EPUB
     name: epub
+    extensions:
+      - epub
   - title: FictionBook2 e-book
     name: fb2
+    extensions:
+      - fb2
   - title: GitHub-Flavored Markdown
     name: gfm
     slug: github-flavored-markdown
     description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: Haddock markup
     name: haddock
   - title: HTML
     name: html
+    extensions:
+      - html
   - title: Jupyter notebook
     name: ipynb
     slug: jupyter-notebook
+    extensions:
+      - ipynb
   - title: JATS XML
     name: jats
     slug: jats-xml
+    extensions:
+      - xml
   - title: JSON version of native AST
     name: json
+    extensions:
+      - txt
+      - json
   - title: LaTeX
     name: latex
+    extensions:
+      - tex
   - title: Pandoc’s Markdown
     name: markdown
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: MultiMarkdown
     name: markdown_mmd
     slug: multi-markdown
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: PHP Markdown Extra
     name: markdown_phpextra
     slug: php-markdown-extra
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: original unextended Markdown
     name: markdown_strict
     slug: strict-markdown
+    extensions:
+      - txt
+      - md
+      - markdown
   - title: MediaWiki markup
     name: mediawiki
     slug: mediawiki-markup
