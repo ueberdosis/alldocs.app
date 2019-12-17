@@ -8,7 +8,9 @@ export default new Promise((resolve, reject) => {
   spinner.start()
 
   webpack(config, (error, stats) => {
+
     if (error) {
+      console.error(error)
       return reject(error)
     }
 

@@ -39,7 +39,7 @@ middlewares.push(webpackDevMiddleware(bundler, {
 middlewares.push(webpackHotMiddleware(bundler))
 
 // start browsersync
-const url = 'http://local.scrumpy.io'
+const url = 'http://localhost'
 const bs = browserSync.create()
 const server = bs.init({
   proxy: {

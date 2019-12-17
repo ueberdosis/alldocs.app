@@ -37,7 +37,7 @@ export default {
     extensions: ['.js', '.scss', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      modernizr: path.resolve(rootPath, '../.modernizr'),
+      // modernizr: path.resolve(rootPath, '../.modernizr'),
       modules: path.resolve(rootPath, '../node_modules'),
       images: `${srcPath}/assets/images`,
       fonts: `${srcPath}/assets/fonts`,
@@ -55,10 +55,10 @@ export default {
 
   module: {
     rules: [
-      {
-        test: /\.modernizr$/,
-        loader: 'modernizr-loader',
-      },
+      // {
+      //   test: /\.modernizr$/,
+      //   loader: 'modernizr-loader',
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -139,18 +139,18 @@ export default {
     new ManifestPlugin({
       fileName: 'assets/manifest.json',
       writeToFileEmit: true,
-      map: (file, index, array) => {
-        const previousItems = array.slice(0, index)
-        const rawName = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, '$2')
-        const hasFileAlready = !!previousItems.find(item => item.name === rawName)
+      // map: (file, index, array) => {
+      //   const previousItems = array.slice(0, index)
+      //   const rawName = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, '$2')
+      //   const hasFileAlready = !!previousItems.find(item => item.name === rawName)
 
-        if (hasFileAlready) {
-          return {}
-        }
+      //   if (hasFileAlready) {
+      //     return {}
+      //   }
 
-        file.name = rawName
-        return file
-      },
+      //   file.name = rawName
+      //   return file
+      // },
     }),
 
     // define env
