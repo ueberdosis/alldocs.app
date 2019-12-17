@@ -93,4 +93,13 @@
     @endcomponent
   @endif
 
+  @component('components.section.index')
+    <h2 class="u-centered">
+      More nerdy converters
+    </h2>
+    @include('components.convertion-list.index', [
+      'convertions' => $conversions->shuffle()->take(5)
+    ])
+  @endcomponent
+
 @endsection

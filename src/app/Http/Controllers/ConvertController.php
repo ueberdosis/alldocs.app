@@ -44,9 +44,12 @@ class ConvertController extends Controller
             abort(404);
         }
 
+        $conversions = Pandoc::conversions();
+
         return view('pages.convert.landingpage', [
             'from' => Pandoc::find($input),
             'to' => Pandoc::find($output),
+            'conversions' => $conversions,
         ]);
     }
 
