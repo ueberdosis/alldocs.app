@@ -16,4 +16,13 @@ class Conversion extends Model
         'FileOriginalName',
         'fileExtension',
     ];
+    public function getStoragePathAttribute()
+    {
+        return storage_path("app/public/{$this->hashId}");
+    }
+
+    public function getNewFileNameAttribute()
+    {
+        return "{$this->FileOriginalName}.{$this->to}";
+    }
 }
