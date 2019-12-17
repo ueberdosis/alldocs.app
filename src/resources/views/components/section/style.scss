@@ -6,4 +6,9 @@
     margin: 0 auto;
   }
 
+  & + & &__inner,
+  .o-page__footer &:first-child &__inner {
+    padding-top: 0;
+  }
+
 }
