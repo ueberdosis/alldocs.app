@@ -44,37 +44,42 @@
   @if(isset($from['description']) || isset($to['description']))
     @component('components.section.index')
       <div class="grid">
-        <div class="grid__item" data-grid--medium="6/12">
-          <h2>
-            Converting from {{ $from['title'] }}
-          </h2>
 
-          @isset($from['description'])
-            <p>
-              {{ $from['description'] }}
-            </p>
-          @endisset
+        @isset($from['description'])
+          <div class="grid__item" data-grid--medium="6/12">
+            <h2>
+              Converting from {{ $from['title'] }}
+            </h2>
 
-          <a href="{{ $from['url'] }}">
-            More
-          </a>
-        </div>
+            @isset($from['description'])
+              <p>
+                {{ $from['description'] }}
+              </p>
+            @endisset
 
-        <div class="grid__item" data-grid--medium="6/12">
-          <h2>
-            Converting to {{ $to['title'] }}
-          </h2>
+            <a href="{{ $from['url'] }}">
+              More
+            </a>
+          </div>
+        @endisset
 
-          @isset($to['description'])
-            <p>
-              {{ $to['description'] }}
-            </p>
-          @endisset
+        @isset($to['description'])
+          <div class="grid__item" data-grid--medium="6/12">
+            <h2>
+              Converting to {{ $to['title'] }}
+            </h2>
 
-          <a href="{{ $to['url'] }}">
-            More
-          </a>
-        </div>
+            @isset($to['description'])
+              <p>
+                {{ $to['description'] }}
+              </p>
+            @endisset
+
+            <a href="{{ $to['url'] }}">
+              More
+            </a>
+          </div>
+        @endisset
       </div>
     @endcomponent
   @endif
