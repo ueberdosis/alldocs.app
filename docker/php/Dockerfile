@@ -6,7 +6,7 @@ WORKDIR /var/www
 COPY ./src/resources /var/www/src/resources
 COPY ./webpack /var/www/webpack
 COPY ./.editorconfig /var/www/.editorconfig
-COPY ./.eslintrc /var/www/.eslintrc
+COPY ./.eslintrc.js /var/www/.eslintrc.js
 COPY ./package.json /var/www/package.json
 COPY ./yarn.lock /var/www/yarn.lock
 
