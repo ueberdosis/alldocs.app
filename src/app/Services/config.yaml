@@ -89,6 +89,10 @@ details:
     name: creole
   - title: DocBook
     name: docbook
+    extensions:
+      - xml
+      - html
+      - pdf
   - title: Word docx
     name: docx
     slug: word-docx

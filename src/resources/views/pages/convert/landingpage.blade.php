@@ -31,7 +31,7 @@
       action="{{ route('convert') }}"
       from="{{ $from['name'] }}"
       to="{{ $to['name'] }}"
-      :accepted-files="{{ collect(['.md', '.txt', '.markdown']) }}"
+      :accepted-files="{{ collect(data_get($from, 'extensions', 'txt')) }}"
     ></uploader>
     {{-- <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
       @csrf
