@@ -4,6 +4,10 @@
     padding: 3rem 1rem;
     max-width: 48rem;
     margin: 0 auto;
+
+    @include min-width(medium) {
+      padding: 4rem 1rem;
+    }
   }
 
   & + & &__inner,
