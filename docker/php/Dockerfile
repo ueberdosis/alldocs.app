@@ -39,13 +39,6 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 # Override with custom settings
 COPY docker/php/etc/custom.ini $PHP_INI_DIR/conf.d/
 
-# Add German locale
-RUN apt-get update && \
-    apt-get install -y locales && \
-    sed -i 's/^# *\(de_DE.UTF-8\)/\1/' /etc/locale.gen && \
-    locale-gen && \
-    rm -r /var/lib/apt/lists/*
-
 # Add entrypoint script
 COPY docker/php/usr/local/bin/docker-entrypoint.sh /usr/local/bin
 RUN curl -o /usr/local/bin/wait-for https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && \
