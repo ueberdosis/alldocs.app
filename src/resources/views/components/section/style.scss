@@ -23,6 +23,22 @@
     }
   }
 
+  .o-page__content > &:first-child &__inner {
+    padding-top: 5rem;
+
+    @include min-width(medium) {
+      padding-top: 6rem;
+    }
+  }
+
+  .o-page__content > &--wide:first-child &__inner {
+    padding-top: 7rem;
+
+    @include min-width(medium) {
+      padding-top: 8rem;
+    }
+  }
+
   &--transparent + &--transparent &__inner,
   .o-page__footer &:first-child &__inner {
     padding-top: 0;

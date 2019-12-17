@@ -1,11 +1,13 @@
-@extends('layout.app')
+@extends('layout.app', ['navigation_theme' => 'bright'])
 
 @section('content')
 
   @component('components.section.index', ['color' => 'blue', 'wide' => true])
     <div class="u-centered">
       <h1 class="is-h0">
-        Convert All Docs To All Docs
+        Convert All Docs
+        <br>
+        To All Docs
       </h1>
       <p>
         Free, Secure, No Ads

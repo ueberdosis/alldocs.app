@@ -1,8 +1,14 @@
 .o-page {
 
+  position: relative;
   overflow: hidden;
 
   &__header {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
     padding-top: 2rem;
     font-weight: 700;
@@ -12,6 +18,10 @@
       text-transform: uppercase;
       font-weight: 900;
       letter-spacing: 0.5px;
+    }
+
+    &.is-bright a {
+      color: color(white);
     }
   }
 

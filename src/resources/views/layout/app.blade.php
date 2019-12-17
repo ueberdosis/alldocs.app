@@ -5,7 +5,7 @@
 </head>
 <body>
   <div class="o-page" id="app">
-    <header class="o-page__header">
+    <header class="o-page__header is-{{ $navigation_theme ?? 'dark' }}">
       <a href="{{ url('/') }}">
         {{ config('app.name') }}
       </a>
