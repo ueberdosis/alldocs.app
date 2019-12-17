@@ -1,3 +1,20 @@
+FROM node:13 AS node
+LABEL maintainer "Hans Pagel <hans.pagel@ueber.io>"
+
+WORKDIR /var/www
+
+COPY ./src/resources /var/www/src/resources
+COPY ./webpack /var/www/webpack
+COPY ./.editorconfig /var/www/.editorconfig
+COPY ./.eslintrc /var/www/.eslintrc
+COPY ./package.json /var/www/package.json
+COPY ./yarn.lock /var/www/yarn.lock
+
+RUN yarn install && \
+    yarn build && \
+    rm -Rf node_modules
+
+
 FROM php:7.4-fpm-buster
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
@@ -71,6 +88,8 @@ RUN cd /var/www/ && \
 
 # Add application & generate classmap
 COPY --chown=www-data:www-data src/ /var/www/
+COPY --from=node /var/www/src/public /var/www/public
+
 RUN cd /var/www/ && \
     composer dump-autoload --no-scripts && \
     chown -R www-data:www-data /var/www/
