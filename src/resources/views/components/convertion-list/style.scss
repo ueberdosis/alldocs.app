@@ -1,0 +1,36 @@
+.c-convertion-list {
+
+  list-style: none;
+
+  &__item {
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__format {
+    flex: 1 1 auto;
+    width: 50%;
+
+    &:first-child {
+      text-align: right;
+    }
+
+    &:last-child {
+      text-align: left;
+    }
+  }
+
+  &__divider {
+    width: 2rem;
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+}

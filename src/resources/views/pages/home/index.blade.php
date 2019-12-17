@@ -32,17 +32,12 @@
   @endcomponent
 
   @component('components.section.index')
-    <h2>
+    <h2 class="u-centered">
       Most Used Convertions
     </h2>
-
-    @foreach ($conversions->shuffle()->take(5) as $conversion)
-      <a href="{{ $conversion->url }}">
-        {{ $conversion->inputFormat->title }}
-        &gt;
-        {{ $conversion->outputFormat->title }}
-      </a><br />
-    @endforeach
+    @include('components.convertion-list.index', [
+      'convertions' => $conversions->shuffle()->take(5)
+    ])
   @endcomponent
 
 @endsection
