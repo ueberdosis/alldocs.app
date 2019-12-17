@@ -10,4 +10,12 @@
 	<link rel="stylesheet" type="text/css" href="{{ manifest('app.css') }}">
 @endif
 
+<script>
+	window.app = {!! collect([
+		'csrfToken' => csrf_token(),
+		'environment' => config('app.env'),
+		'debug' => config('app.debug'),
+	]) !!}
+</script>
+
 @stack('head')

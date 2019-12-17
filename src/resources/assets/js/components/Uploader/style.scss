@@ -22,4 +22,8 @@
     }
   }
 
+  &.is-drag-over &__dropzone {
+    border-color: color(blue);
+  }
+
 }

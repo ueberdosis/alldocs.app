@@ -27,7 +27,11 @@
   @endcomponent
 
   @component('components.section.index')
-    <uploader form-action="{{ route('convert') }}"></uploader>
+    <uploader
+      action="{{ route('convert') }}"
+      from="{{ $from['name'] }}"
+      to="{{ $to['name'] }}"
+    ></uploader>
 
     <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
       @csrf

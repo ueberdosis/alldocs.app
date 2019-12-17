@@ -1,13 +1,22 @@
 <template>
-  <div class="c-uploader">
+  <div class="c-uploader" :class="{ 'is-loading': isLoading, 'is-drag-over': isDragOver }">
     <form
       class="c-uploader__dropzone"
-      :action="formAction"
+      :action="action"
       method="post"
       enctype="multipart/form-data"
       ref="dropzone"
       tabindex="0"
-    />
+    >
+
+      <input type="hidden" name="from" :value="from">
+      <input type="hidden" name="to" :value="to">
+
+      <button type="button">
+        Drop or Browse File
+      </button>
+
+    </form>
   </div>
 </template>
 
@@ -16,7 +25,17 @@ import Dropzone from 'dropzone'
 
 export default {
   props: {
-    formAction: {
+    action: {
+      required: true,
+      type: String,
+    },
+
+    from: {
+      required: true,
+      type: String,
+    },
+
+    to: {
       required: true,
       type: String,
     },
@@ -45,6 +64,7 @@ export default {
       maxFilesize: 10,
       maxFiles: 1,
       headers: {
+        'X-CSRF-Token': window.app.csrfToken,
         // Authorization: axios.defaults.headers.common.Authorization,
       },
     })
