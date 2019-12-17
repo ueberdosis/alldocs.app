@@ -21,6 +21,7 @@
           name="from"
         >
         </select-format>
+        <br>
         to
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
