@@ -114,7 +114,6 @@ export default {
     Dropzone.autoDiscover = false
 
     const dropzone = new Dropzone(this.$refs.dropzone, {
-      // acceptedFiles: 'image/*',
       acceptedFiles: this.acceptedFiles.join(','),
       maxFilesize: 10,
       maxFiles: 1,
