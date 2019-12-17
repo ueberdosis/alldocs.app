@@ -68,7 +68,8 @@ h3,
 	@include fluid-font-size(14px, 16px);
 	font-weight: 700;
 	text-transform: none;
-	color: color(black);
+  color: color(black);
+  margin-bottom: 0.5rem;
 }
 
 // h4,

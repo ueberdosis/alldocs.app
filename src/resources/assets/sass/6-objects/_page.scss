@@ -2,4 +2,17 @@
 
   overflow: hidden;
 
+  &__header {
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: 700;
+
+    a {
+      color: color(black);
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+  }
+
 }
