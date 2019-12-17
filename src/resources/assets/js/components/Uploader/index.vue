@@ -1,5 +1,12 @@
 <template>
-  <div class="c-uploader" :class="{ 'is-loading': isLoading, 'is-drag-over': isDragOver }">
+  <div
+    class="c-uploader"
+    :class="{
+      'is-loading': isLoading,
+      'is-drag-over': isDragOver,
+      'is-finished': isFinished,
+    }"
+  >
     <form
       class="c-uploader__dropzone"
       :action="action"
@@ -8,14 +15,37 @@
       ref="dropzone"
       tabindex="0"
     >
-
       <input type="hidden" name="from" :value="from">
       <input type="hidden" name="to" :value="to">
 
-      <button type="button">
-        Drop or Browse File
-      </button>
-
+      <div class="c-uploader__content u-centered">
+        <div v-if="isLoading">
+          <div class="c-uploader__progress">
+            Uploading… {{ progress }}%
+          </div>
+        </div>
+        <div v-else-if="isFinished">
+          <div>
+            <a class="o-button" href="#" download>
+              Download
+            </a>
+          </div>
+          <div>
+            <button class="o-button o-button--text" type="button" @click="reset">
+              Upload Another File
+            </button>
+          </div>
+        </div>
+        <div v-else>
+          <button class="o-button" type="button" ref="button">
+            Drop or Browse File
+          </button>
+          <div class="u-small">
+            {{ acceptedFiles.
+            join(' ') }}
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </template>
@@ -39,50 +69,69 @@ export default {
       required: true,
       type: String,
     },
+
+    acceptedFiles: {
+      type: Array,
+      default: () => [],
+    },
   },
 
   data() {
     return {
       isDragOver: false,
       isLoading: false,
-      // defaults: {
-      //   id: null,
-      //   name: null,
-      //   label: null,
-      //   value: null,
-      //   placeholder: 'Drop or Browse Files',
-      //   errors: [],
-      // },
+      progress: 0,
+      error: null,
+      file: null,
     }
+  },
+
+  computed: {
+    isFinished() {
+      return !!this.file
+    },
+  },
+
+  methods: {
+    reset() {
+      this.isLoading = false
+      this.file = null
+      this.progress = 0
+      this.error = null
+    },
   },
 
   mounted() {
     Dropzone.autoDiscover = false
 
     const dropzone = new Dropzone(this.$refs.dropzone, {
-      acceptedFiles: 'image/*',
+      // acceptedFiles: 'image/*',
+      acceptedFiles: this.acceptedFiles.join(','),
       maxFilesize: 10,
       maxFiles: 1,
+      clickable: [this.$refs.dropzone, this.$refs.button],
       headers: {
         'X-CSRF-Token': window.app.csrfToken,
-        // Authorization: axios.defaults.headers.common.Authorization,
       },
     })
 
     dropzone
       .on('processing', () => {
-        // this.field.errors = []
+        this.error = null
         this.isLoading = true
       })
+      .on('totaluploadprogress', progress => {
+        this.progress = progress
+      })
       .on('success', (file, response) => {
-        // this.field.value = response.data
         console.log({ response })
+        this.file = true
         this.isLoading = false
         dropzone.removeAllFiles()
       })
       .on('error', (file, error) => {
         console.log({ error })
-        // this.field.errors = [get(error, 'errors.file.0', error)]
+        this.error = error
         this.isLoading = false
         dropzone.removeAllFiles()
       })

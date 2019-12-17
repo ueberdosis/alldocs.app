@@ -31,9 +31,9 @@
       action="{{ route('convert') }}"
       from="{{ $from['name'] }}"
       to="{{ $to['name'] }}"
+      :accepted-files="{{ collect(['.md', '.txt', '.markdown']) }}"
     ></uploader>
-
-    <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
+    {{-- <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
       @csrf
 
       <input type="hidden" name="from" value="{{ $from['name'] }}">
@@ -45,7 +45,7 @@
 
     @if(session('hashId'))
       <a href="{{ route('download', session()->get('hashId')) }}">Download File</a>
-    @endif
+    @endif --}}
   @endcomponent
 
   @if(isset($from['description']) || isset($to['description']))

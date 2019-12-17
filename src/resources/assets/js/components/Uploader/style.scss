@@ -11,7 +11,11 @@
   box-shadow: 0px 2px 4px rgba(5, 30, 53, 0.05);
 
   &__dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    padding: 2rem;
     border-radius: 0.5rem;
     border: 3px dashed rgba(color(blue), 0.2);
     transition: border 0.2s $ease;
@@ -24,6 +28,20 @@
 
   &.is-drag-over &__dropzone {
     border-color: color(blue);
+  }
+
+  &.is-loading &__dropzone,
+  &.is-finished &__dropzone {
+    border-color: transparent;
+  }
+
+  &__progress {
+    font-weight: 700;
+    color: color(blue);
+  }
+
+  .dz-preview {
+    display: none;
   }
 
 }

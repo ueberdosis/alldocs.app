@@ -1,0 +1,26 @@
+.o-button {
+
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  background-color: color(blue);
+  border: none;
+  border-radius: 0.5rem;
+  color: color(white);
+  font-weight: 700;
+  transition: background-color 0.2s $ease, color 0.2s $ease;
+
+  &:hover {
+    background-color: color(blue, dark);
+  }
+
+  &--text {
+    background-color: transparent;
+    color: color(blue);
+
+    &:hover {
+      background-color: transparent;
+      color: color(blue, dark);
+    }
+  }
+
+}
