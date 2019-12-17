@@ -1,0 +1,8 @@
+.c-format-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    margin: 0 0.25rem 0.25rem 0;
+  }
+}

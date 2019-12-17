@@ -25,32 +25,32 @@
   @endisset
 
   @component('components.section.index')
-    @if (App\Services\Pandoc::inputFormats()->contains($format['name']))
-      <h2>
-        Convert To
-      </h2>
-      @foreach (App\Services\Pandoc::outputFormatsData() as $outputFormat)
-        <a href="{{ action('ConvertController@landingPage', [
-          'input' => $format['slug'],
-          'output' => $outputFormat['slug'],
-        ]) }}">
-          {{ $outputFormat['title'] }}
-        </a>
-      @endforeach
-    @endif
+    <div class="grid">
 
-    @if (App\Services\Pandoc::outputFormats()->contains($format['name']))
-      <h2>
-        Convert From
-      </h2>
-      @foreach (App\Services\Pandoc::inputFormatsData() as $inputFormat)
-        <a href="{{ action('ConvertController@landingPage', [
-          'input' => $inputFormat['slug'],
-          'output' => $format['slug'],
-        ]) }}">
-          {{ $inputFormat['title'] }}
-        </a>
-      @endforeach
-    @endif
+      @if (App\Services\Pandoc::inputFormats()->contains($format['name']))
+        <div class="grid__item" data-grid--medium="6/12">
+          <h2>
+            Convert To
+          </h2>
+          @include('components.format-list.index', [
+            'formats' => App\Services\Pandoc::outputFormatsData(),
+            'input' => $format['slug'],
+          ])
+        </div>
+      @endif
+
+      @if (App\Services\Pandoc::outputFormats()->contains($format['name']))
+        <div class="grid__item" data-grid--medium="6/12">
+          <h2>
+            Convert From
+          </h2>
+          @include('components.format-list.index', [
+            'formats' => App\Services\Pandoc::inputFormatsData(),
+            'output' => $format['slug'],
+          ])
+        </div>
+      @endif
+
+    </div>
   @endcomponent
 @endsection
