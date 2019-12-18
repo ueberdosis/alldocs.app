@@ -3,36 +3,79 @@
 
 .c-uploader {
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   height: 20rem;
-  border-radius: 1.25rem;
-  padding: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
   margin: 0 -2rem;
-  background-color: color(white);
-  box-shadow: $large-shadow;
 
-  &__dropzone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &:focus {
+    outline: none;
+  }
+
+  $size: 80px;
+  $thickness: 15px;
+  $color: color(blue);
+
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border: 3px dashed rgba(color(blue), 0.2);
-    transition: border 0.1s $ease;
+    pointer-events: none;
+    transition: background 1s $ease, opacity 1s $ease;
+    opacity: 0.15;
 
-    &:focus {
-      outline: none;
-      border-color: color(blue);
+    background-image:
+      linear-gradient(90deg, $color 66%, transparent 66%),
+      linear-gradient(90deg, $color 66%, transparent 66%),
+      linear-gradient(0deg, $color 66%, transparent 66%),
+      linear-gradient(0deg, $color 66%, transparent 66%),
+    ;
+    background-repeat:
+      repeat-x,
+      repeat-x,
+      repeat-y,
+      repeat-y,
+    ;
+    background-size:
+      $size $thickness,
+      $size $thickness,
+      $thickness $size,
+      $thickness $size,
+    ;
+    background-position:
+      left top,
+      right bottom,
+      left bottom,
+      right top,
+    ;
+
+    @keyframes border-dance {
+      0% {
+        background-position: left top, right bottom, left bottom, right top;
+      }
+      100% {
+        background-position: left $size top, right $size bottom, left bottom $size, right top $size;
+      }
     }
   }
 
-  &.is-drag-over &__dropzone {
-    border-color: color(blue);
+  // &:hover &__border {
+  //   opacity: 1;
+  // }
+
+  &.is-loading &__border {
+    opacity: 1;
+    animation: border-dance 1s infinite $ease;
   }
 
-  &.is-loading &__dropzone,
-  &.is-finished &__dropzone {
-    border-color: transparent;
+  &.is-drag-over &__border {
+    opacity: 1;
   }
 
   &__progress {

@@ -1,62 +1,59 @@
 <template>
-  <div
+  <form
     class="c-uploader"
-    :class="{
+      :class="{
       'is-loading': isLoading,
       'is-drag-over': isDragOver,
       'is-finished': isFinished,
     }"
+    :action="action"
+    method="post"
+    enctype="multipart/form-data"
+    tabindex="0"
   >
-    <form
-      class="c-uploader__dropzone"
-      :action="action"
-      method="post"
-      enctype="multipart/form-data"
-      ref="dropzone"
-      tabindex="0"
-    >
-      <input type="hidden" name="from" :value="from">
-      <input type="hidden" name="to" :value="to">
+    <input type="hidden" name="from" :value="from">
+    <input type="hidden" name="to" :value="to">
 
-      <div class="c-uploader__content u-centered">
-        <div v-if="isLoading">
-          <div class="c-uploader__progress">
-            Uploading… {{ progress }}%
-          </div>
+    <div class="c-uploader__border"></div>
+
+    <div class="c-uploader__content u-centered">
+      <div v-if="isLoading">
+        <div class="c-uploader__progress">
+          Uploading… {{ progress }}%
         </div>
+      </div>
 
-        <div v-else-if="isFinished">
-          <div class="grid" data-grid="narrow">
-            <div class="grid__item">
-              <a class="o-button" href="#" download>
-                Download myfile.xyz
-              </a>
-            </div>
-            <div class="grid__item">
-              <button class="o-button o-button--text" type="button" @click="reset">
-                Upload Another File
-              </button>
-            </div>
+      <div v-else-if="isFinished">
+        <div class="grid" data-grid="narrow">
+          <div class="grid__item">
+            <a class="o-button" href="#" download>
+              Download myfile.xyz
+            </a>
           </div>
-        </div>
-
-        <div v-else>
-          <div class="grid" data-grid="narrow">
-            <div class="grid__item">
-              <button class="o-button" type="button" ref="button">
-                Drop or Browse File
-              </button>
-            </div>
-            <div class="grid__item">
-              <small>
-                {{ acceptedFiles.join(' ') }}
-              </small>
-            </div>
+          <div class="grid__item">
+            <button class="o-button o-button--text" type="button" @click="reset">
+              Upload Another File
+            </button>
           </div>
         </div>
       </div>
-    </form>
-  </div>
+
+      <div v-else>
+        <div class="grid" data-grid="narrow">
+          <div class="grid__item">
+            <button class="o-button" type="button" ref="button">
+              Drop or Browse File
+            </button>
+          </div>
+          <div class="grid__item">
+            <small>
+              {{ acceptedFiles.join(' ') }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -113,11 +110,11 @@ export default {
   mounted() {
     Dropzone.autoDiscover = false
 
-    const dropzone = new Dropzone(this.$refs.dropzone, {
+    const dropzone = new Dropzone(this.$el, {
       acceptedFiles: this.acceptedFiles.join(','),
       maxFilesize: 10,
       maxFiles: 1,
-      clickable: [this.$refs.dropzone, this.$refs.button],
+      clickable: [this.$el, this.$refs.button],
       headers: {
         'X-CSRF-Token': window.app.csrfToken,
       },
