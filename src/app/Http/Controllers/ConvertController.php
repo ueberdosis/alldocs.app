@@ -84,7 +84,7 @@ class ConvertController extends Controller
             $request->file('file')->storeAs('public', $conversion->id);
             Pandoc::convert($conversion->id, $conversion->from, $conversion->to, $hashId);
 
-            if (!Storage::exists($conversion->storagePath)) {
+            if (!file_exists($conversion->storagePath)) {
                 throw new \Exception('Pandoc failed to convert the file');
             }
 
