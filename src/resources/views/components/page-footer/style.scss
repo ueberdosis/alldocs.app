@@ -1,17 +1,9 @@
 .c-page-footer {
 
-  &__card {
-    border-radius: 1.25rem;
-    padding: 2rem;
-    margin: 0 -2rem;
-    background-color: color(white);
-    box-shadow: $large-shadow;
-  }
-
-  &__card-header {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(color(black), 0.06);
+  &__header {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(color(white), 0.1);
   }
 
   &__links {

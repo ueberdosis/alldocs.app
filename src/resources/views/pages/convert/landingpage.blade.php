@@ -98,7 +98,7 @@
       More nerdy converters
     </h2>
     @include('components.convertion-list.index', [
-      'convertions' => $conversions->shuffle()->take(5)
+      'conversions' => $conversions->shuffle()->take(10)
     ])
   @endcomponent
 

@@ -31,7 +31,7 @@ h6,
   display: block;
   font-size: 2rem;
 	line-height: 1.5;
-	margin: 1rem 0 .75rem 0;
+	margin: 1em 0 0.75em 0;
 
 	&:first-child {
 		margin-top: 0;
@@ -39,17 +39,18 @@ h6,
 
 	&:last-child {
 		margin-bottom: 0;
-	}
+  }
+
+  .c-section--blue &,
+  .c-section--black & {
+    color: color(white);
+  }
 }
 
 .is-h0 {
   @include fluid-font-size(50px, 100px);
   font-weight: 900;
   line-height: 1.1;
-
-  .c-section--blue & {
-    color: color(white);
-  }
 }
 
 h1,
@@ -65,7 +66,7 @@ h1,
 h2,
 .is-h2 {
 	font-family: $font--primary;
-	@include fluid-font-size(18px, 20px);
+	@include fluid-font-size(20px, 24px);
 	font-weight: 700;
 	text-transform: none;
 	line-height: 1.3;

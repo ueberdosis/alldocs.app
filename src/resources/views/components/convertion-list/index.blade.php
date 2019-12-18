@@ -1,5 +1,5 @@
 <ul class="c-convertion-list">
-  @foreach ($conversions->shuffle()->take(5) as $conversion)
+  @foreach ($conversions as $conversion)
     <li class="c-convertion-list__item">
       <a class="c-convertion-list__link" href="{{ $conversion->url }}">
         <span class="c-convertion-list__format">

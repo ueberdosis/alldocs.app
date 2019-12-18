@@ -1,33 +1,42 @@
 .c-section {
 
+  &--white {
+    background-color: color(white);
+  }
+
   &--blue {
     background-color: color(blue);
     color: color(white);
   }
 
+  &--black {
+    background-color: color(black);
+    color: color(white);
+  }
+
   &__inner {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     max-width: 48rem;
     margin: 0 auto;
 
     @include min-width(medium) {
-      padding: 4rem 1rem;
+      padding: 5rem 1rem;
     }
   }
 
   &--wide &__inner {
-    padding: 4rem 1rem;
+    padding: 5rem 1rem;
 
     @include min-width(medium) {
-      padding: 6rem 1rem;
+      padding: 7rem 1rem;
     }
   }
 
   .o-page__content > &:first-child &__inner {
-    padding-top: 5rem;
+    padding-top: 6rem;
 
     @include min-width(medium) {
-      padding-top: 6rem;
+      padding-top: 7rem;
     }
   }
 
@@ -35,12 +44,13 @@
     padding-top: 7rem;
 
     @include min-width(medium) {
-      padding-top: 8rem;
+      padding-top: 9rem;
     }
   }
 
-  &--transparent + &--transparent &__inner,
-  .o-page__footer &:first-child &__inner {
+  &--white + &--white &__inner,
+  &--blue + &--blue &__inner,
+  &--black + &--black &__inner {
     padding-top: 0;
   }
 
