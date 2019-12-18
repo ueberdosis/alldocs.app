@@ -151,6 +151,10 @@ export default {
       //   file.name = rawName
       //   return file
       // },
+      map: file => {
+        file.name = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, '$2')
+        return file
+      },
     }),
 
     // define env
