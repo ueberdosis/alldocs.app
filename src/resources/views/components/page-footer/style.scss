@@ -1,9 +1,15 @@
 .c-page-footer {
 
-  &__header {
+  &__section {
     padding-bottom: 2rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid rgba(color(white), 0.1);
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
   }
 
   &__links {
