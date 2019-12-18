@@ -7,6 +7,8 @@
   border-radius: 0.4rem;
   color: color(white);
   font-weight: 700;
+  white-space: nowrap;
+  max-width: 16rem;
   transition: background-color 0.1s $ease, color 0.1s $ease, box-shadow 0.1s $ease;
 
   &:hover {

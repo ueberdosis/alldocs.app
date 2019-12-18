@@ -9,3 +9,9 @@
 .u-large {
   font-size: 1.25rem;
 }
+
+.u-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

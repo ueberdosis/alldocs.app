@@ -32,7 +32,9 @@
         <div class="grid" data-grid="narrow">
           <div class="grid__item">
             <a class="o-button" :href="file.download_url" download>
-              Download {{ file.filename }}
+              <span class="u-truncate">
+                Download {{ file.filename }}
+              </span>
             </a>
           </div>
           <div class="grid__item">
