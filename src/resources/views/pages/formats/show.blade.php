@@ -13,16 +13,14 @@
           {{ $format['title'] }}
         </select-format>
       </h1>
+
+      @isset($format['description'])
+        <p class="u-large">
+          {{ $format['description'] }}
+        </p>
+      @endisset
     </form>
   @endcomponent
-
-  @isset($format['description'])
-    @component('components.section.index')
-      <p class="u-large">
-        {{ $format['description'] }}
-      </p>
-    @endcomponent
-  @endisset
 
   @component('components.section.index')
     <div class="grid">
