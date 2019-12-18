@@ -26,8 +26,8 @@
       <div v-else-if="isFinished">
         <div class="grid" data-grid="narrow">
           <div class="grid__item">
-            <a class="o-button" href="#" download>
-              Download myfile.xyz
+            <a class="o-button" :href="file.download_url" download>
+              Download {{ file.filename }}
             </a>
           </div>
           <div class="grid__item">
@@ -129,8 +129,7 @@ export default {
         this.progress = progress
       })
       .on('success', (file, response) => {
-        console.log({ response })
-        this.file = true
+        this.file = response
         this.isLoading = false
         dropzone.removeAllFiles()
       })
