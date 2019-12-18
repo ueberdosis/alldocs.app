@@ -14,7 +14,7 @@
         Select Format
       </option>
       <option
-        v-for="format in formats"
+        v-for="format in formattedFormats"
         :key="format.name"
         :value="format.name"
       >
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import collect from 'collect.js'
 import serialize from 'form-serialize'
 import Icon from 'components/Icon'
 
@@ -58,6 +59,12 @@ export default {
   computed: {
     selectedFormat() {
       return this.formats.find(format => format.name === this.value)
+    },
+
+    formattedFormats() {
+      return collect(this.formats)
+        .sortBy(format => format.title.toUpperCase())
+        .toArray()
     },
   },
 
