@@ -3,6 +3,6 @@
 @mixin fluid-font-size($from: 16px, $to: 16px) {
 	@include poly-fluid-sizing('font-size', (
 		320px: $from,
-		1800px: $to,
+		1440px: $to,
 	));
 }
