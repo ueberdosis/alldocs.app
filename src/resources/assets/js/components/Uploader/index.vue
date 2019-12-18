@@ -65,6 +65,14 @@
           </div>
         </div>
       </div>
+
+      <transition name="fade">
+        <div class="c-uploader__error" v-if="error">
+          <div class="c-uploader__error-message u-small">
+            {{ error }}
+          </div>
+        </div>
+      </transition>
     </div>
   </form>
 </template>
@@ -158,8 +166,7 @@ export default {
         this.file = response
       })
       .on('error', (file, error) => {
-        console.log({ error })
-        this.error = error
+        this.error = error.error ? error.error : error
       })
       .on('dragover', () => {
         this.isDragOver = true

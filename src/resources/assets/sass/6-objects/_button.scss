@@ -24,11 +24,15 @@
 
   &--text {
     background-color: transparent;
-    color: color(blue);
+    color: color(grey);
 
     &:hover {
       background-color: transparent;
       color: color(blue, dark);
+    }
+
+    &:focus {
+      box-shadow: none;
     }
   }
 

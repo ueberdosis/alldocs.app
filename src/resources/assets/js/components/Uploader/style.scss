@@ -137,6 +137,33 @@
     color: color(blue);
   }
 
+  &__error {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+    left: 0;
+
+    &.fade-enter-active,
+    &.fade-leave-active {
+      transition: opacity 0.2s $ease, transform 0.2s $ease;
+    }
+
+    &.fade-enter,
+    &.fade-leave-to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  &__error-message {
+    display: inline-flex;
+    background-color: color(red);
+    color: color(white);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+
   .dz-preview {
     display: none;
   }
