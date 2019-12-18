@@ -14,7 +14,12 @@
     <input type="hidden" name="from" :value="from">
     <input type="hidden" name="to" :value="to">
 
-    <div class="c-uploader__border"></div>
+    <div class="c-uploader__border">
+      <div class="c-uploader__border-edge"></div>
+      <div class="c-uploader__border-edge"></div>
+      <div class="c-uploader__border-edge"></div>
+      <div class="c-uploader__border-edge"></div>
+    </div>
 
     <div class="c-uploader__content u-centered">
       <div v-if="isLoading">
