@@ -3,9 +3,9 @@
     <li class="c-convertion-list__item">
       <a class="c-convertion-list__link" href="{{ $conversion->url }}">
         <span class="c-convertion-list__format">
-          <span class="o-format">
+          @component('components.format.index')
             {{ $conversion->inputFormat->title }}
-          </span>
+          @endcomponent
         </span>
         <span class="c-convertion-list__divider">
           <icon name="arrow-right"></icon>
@@ -14,9 +14,9 @@
           </span>
         </span>
         <span class="c-convertion-list__format">
-          <span class="o-format">
+          @component('components.format.index')
             {{ $conversion->outputFormat->title }}
-          </span>
+          @endcomponent
         </span>
       </a>
     </li>
