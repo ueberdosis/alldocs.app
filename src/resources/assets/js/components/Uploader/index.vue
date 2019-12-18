@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div v-else-if="isFinished">
+      <div v-if="isFinished">
         <div class="grid" data-grid="narrow">
           <div class="grid__item">
             <a class="o-button" :href="file.download_url" download>
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div v-else>
+      <div v-show="!isLoading && !isFinished">
         <div class="grid" data-grid="narrow">
           <div class="grid__item">
             <button class="o-button" type="button" ref="button">
