@@ -17,9 +17,10 @@
 
     a {
       color: inherit;
+      border-bottom: 0.1rem solid transparent;
 
       &:hover {
-        color: color(blue);
+        border-color: currentColor;
       }
     }
 
