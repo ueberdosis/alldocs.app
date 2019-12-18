@@ -9,9 +9,7 @@
         <br>
         To All Docs
       </h1>
-      <p>
-        Free, Secure, No Ads
-      </p>
+      @include('components.banner-features.index')
     </div>
   @endcomponent
 

@@ -1,0 +1,12 @@
+.c-banner-features {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    margin: 0 0.75rem;
+    font-weight: 700;
+  }
+
+}
