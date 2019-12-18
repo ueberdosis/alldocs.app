@@ -14,7 +14,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            Free
+            <icon name="money" size="small"></icon>
+            <span>
+              Free
+            </span>
           </h3>
           <p class="u-small">
             We thought about making a VERY expensive app with offline support later, but we’re lazy.
@@ -23,7 +26,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            No Ads
+            <icon name="block" size="small"></icon>
+            <span>
+              No Ads
+            </span>
           </h3>
           <p class="u-small">
             We forgot to install ads. Good for you, there is no real tracking here. Sorry, Google.
@@ -32,7 +38,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            Secure
+            <icon name="shield" size="small"></icon>
+            <span>
+              Secure
+            </span>
           </h3>
           <p class="u-small">
             After 12 hours your files are deleted from our server. We don’t have time to read them anyway.
@@ -41,7 +50,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            Open Startup
+            <icon name="stats" size="small"></icon>
+            <span>
+              Open Startup
+            </span>
           </h3>
           <p class="u-small">
             We made a public dashboard that has all our numbers. Even the revenue, but surprisingly it’s $0.
@@ -50,7 +62,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            Just Works
+            <icon name="check" size="small"></icon>
+            <span>
+              Just Works
+            </span>
           </h3>
           <p class="u-small">
             Upload a file & download the converted file. Like a good joke, it needs no further explanation.
@@ -59,7 +74,10 @@
 
         <div class="grid__item" data-grid--small="6/12" data-grid--medium="4/12">
           <h3>
-            Cool Design
+            <icon name="fire" size="small"></icon>
+            <span>
+              Cool Design
+            </span>
           </h3>
           <p class="u-small">
             We checked out every post on Dribbble, took the best out and here it is: The perfect design.

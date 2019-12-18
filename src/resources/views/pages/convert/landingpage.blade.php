@@ -65,7 +65,9 @@
             @endisset
 
             <a class="o-small-button" href="{{ $from['url'] }}">
-              More
+              <span>
+                More
+              </span>
               <icon name="arrow-right" size="small"></icon>
             </a>
           </div>
@@ -84,7 +86,9 @@
             @endisset
 
             <a class="o-small-button" href="{{ $to['url'] }}">
-              More
+              <span>
+                More
+              </span>
               <icon name="arrow-right" size="small"></icon>
             </a>
           </div>

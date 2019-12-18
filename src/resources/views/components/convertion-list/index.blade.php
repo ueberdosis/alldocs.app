@@ -8,7 +8,7 @@
           @endcomponent
         </span>
         <span class="c-convertion-list__divider">
-          <icon name="arrow-right"></icon>
+          <icon class="c-convertion-list__icon" name="arrow-right"></icon>
           <span class="u-visually-hidden">
             to
           </span>
