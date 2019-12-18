@@ -119,6 +119,10 @@
   //   opacity: 1;
   // }
 
+  &.is-finished &__border {
+    opacity: 1;
+  }
+
   &.is-loading &__border {
     opacity: 1;
     animation: border-dance 1s infinite $ease;

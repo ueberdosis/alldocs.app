@@ -26,6 +26,7 @@
 
   &--wide &__inner {
     padding: 5rem 1rem;
+    max-width: 60rem;
 
     @include min-width(medium) {
       padding: 7rem 1rem;

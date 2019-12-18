@@ -33,7 +33,10 @@
           <div class="grid__item">
             <a class="o-button" :href="file.download_url" download>
               <span class="u-truncate">
-                Download {{ file.filename }}
+                <icon name="download" size="small" />
+                <span>
+                  Download {{ file.filename }}
+                </span>
               </span>
             </a>
           </div>
@@ -49,7 +52,10 @@
         <div class="grid" data-grid="narrow">
           <div class="grid__item">
             <button class="o-button" type="button" ref="button">
-              Drop or Browse File
+              <icon name="file" size="small" />
+              <span>
+                Drop or Browse File
+              </span>
             </button>
           </div>
           <div class="grid__item">
