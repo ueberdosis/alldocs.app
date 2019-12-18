@@ -94,7 +94,7 @@ export default {
 
   computed: {
     isFinished() {
-      return !!this.file
+      return !!this.file && !this.isLoading
     },
   },
 
@@ -105,12 +105,24 @@ export default {
       this.progress = 0
       this.error = null
     },
+
+    checkResponse() {
+      if (this.file || this.error) {
+        this.isLoading = false
+
+        if (this.dropzone) {
+          this.dropzone.removeAllFiles()
+        }
+
+        clearInterval(this.interval)
+      }
+    },
   },
 
   mounted() {
     Dropzone.autoDiscover = false
 
-    const dropzone = new Dropzone(this.$el, {
+    this.dropzone = new Dropzone(this.$el, {
       acceptedFiles: this.acceptedFiles.join(','),
       maxFilesize: 10,
       maxFiles: 1,
@@ -120,8 +132,9 @@ export default {
       },
     })
 
-    dropzone
+    this.dropzone
       .on('processing', () => {
+        this.interval = setInterval(this.checkResponse, 1000)
         this.error = null
         this.isLoading = true
       })
@@ -130,14 +143,10 @@ export default {
       })
       .on('success', (file, response) => {
         this.file = response
-        this.isLoading = false
-        dropzone.removeAllFiles()
       })
       .on('error', (file, error) => {
         console.log({ error })
         this.error = error
-        this.isLoading = false
-        dropzone.removeAllFiles()
       })
       .on('dragover', () => {
         this.isDragOver = true
@@ -148,10 +157,12 @@ export default {
       .on('drop', () => {
         this.isDragOver = false
       })
+  },
 
-    this.$once('hook:beforeDestroy', () => {
-      dropzone.destroy()
-    })
+  beforeDestroy() {
+    if (this.dropzone) {
+      this.dropzone.destroy()
+    }
   },
 }
 </script>
