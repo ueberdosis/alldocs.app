@@ -93,12 +93,12 @@
           <div class="grid__item" data-grid--medium="4/12">
             <ul class="u-small">
               <li>
-                <a href="#">
+                <a href="{{ route('page.privacy') }}">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('page.terms') }}">
                   Terms
                 </a>
               </li>
@@ -113,7 +113,7 @@
           <div class="grid__item" data-grid--medium="4/12">
             <ul class="u-small">
               <li>
-                <a href="#">
+                <a href="{{ route('page.about') }}">
                   About
                 </a>
               </li>

@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@home');
+// Content
+Route::get('/', 'PageController@home')->name('page.home');
+Route::view('/about', 'pages.about.index')->name('page.about');
+Route::view('/privacy', 'pages.privacy.index')->name('page.privacy');
+Route::view('/terms', 'pages.terms.index')->name('page.terms');
+
+// Converters
 Route::get('/redirect-to-convertion', 'ConvertController@redirect')->name('redirect-to-convertion');
 Route::get('/redirect-to-format', 'FormatController@redirect')->name('redirect-to-format');
 Route::get('/convert', 'ConvertController@index');
@@ -27,4 +33,5 @@ Route::get('/convert-{format}', 'FormatController@show')->where([
     'format' => '[a-z0-9_-]+',
 ]);
 
+// Sitemap
 Route::get('/sitemap.xml', 'SitemapController@index');
