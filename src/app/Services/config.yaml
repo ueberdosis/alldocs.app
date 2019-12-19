@@ -83,22 +83,26 @@ output:
 details:
   - title: AsciiDoc
     name: asciidoc
+    default_extension: .asciidoc
     extensions:
       - .asciidoc
       - .adoc
       - .asc
   - title: CommonMark Markdown
     name: commonmark
+    default_extension: .md
     extensions:
       - .txt
       - .md
       - .markdown
   - title: Creole 1.0
     name: creole
+    default_extension: .creole
     extensions:
       - .creole
   - title: DocBook
     name: docbook
+    default_extension: .xml
     extensions:
       - .xml
       - .html
@@ -106,24 +110,29 @@ details:
   - title: Word docx
     name: docx
     slug: word-docx
+    default_extension: .docx
     extensions:
       - .docx
   - title: DokuWiki markup
     name: dokuwiki
+    default_extension: .txt
     extension:
       - .txt
   - title: EPUB
     name: epub
+    default_extension: .epub
     extensions:
       - .epub
   - title: FictionBook2 e-book
     name: fb2
+    default_extension: .fb2
     extensions:
       - .fb2
   - title: GitHub-Flavored Markdown
     name: gfm
     slug: github-flavored-markdown
     description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
+    default_extension: .md
     extensions:
       - .txt
       - .md
@@ -132,29 +141,35 @@ details:
     name: haddock
   - title: HTML
     name: html
+    default_extension: .html
     extensions:
       - .html
   - title: Jupyter notebook
     name: ipynb
     slug: jupyter-notebook
+    default_extension: .ipynb
     extensions:
       - .ipynb
   - title: JATS XML
     name: jats
     slug: jats-xml
+    default_extension: .xml
     extensions:
       - .xml
   - title: JSON version of native AST
     name: json
+    default_extension: .json
     extensions:
       - .txt
       - .json
   - title: LaTeX
     name: latex
+    default_extension: .tex
     extensions:
       - .tex
   - title: Pandoc’s Markdown
     name: markdown
+    default_extension: .md
     extensions:
       - .txt
       - .md
@@ -162,6 +177,7 @@ details:
   - title: MultiMarkdown
     name: markdown_mmd
     slug: multi-markdown
+    default_extension: .md
     extensions:
       - .txt
       - .md
@@ -169,6 +185,7 @@ details:
   - title: PHP Markdown Extra
     name: markdown_phpextra
     slug: php-markdown-extra
+    default_extension: .md
     extensions:
       - .txt
       - .md
@@ -176,6 +193,7 @@ details:
   - title: original unextended Markdown
     name: markdown_strict
     slug: strict-markdown
+    default_extension: .md
     extensions:
       - .txt
       - .md
@@ -186,6 +204,7 @@ details:
   - title: roff man
     name: man
     slug: roff-man
+    default_extension: .man
     extensions:
       - .man
       - .mdoc
@@ -193,6 +212,7 @@ details:
       - .mandoc
   - title: Muse
     name: muse
+    default_extension: .muse
     extensions:
       - .muse
   - title: native Haskell
