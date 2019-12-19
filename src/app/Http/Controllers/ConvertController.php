@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Conversion;
 use Hashids\Hashids;
 use App\Services\Pandoc;
+use App\Models\Conversion;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Storage;
 
 class ConvertController extends Controller
 {

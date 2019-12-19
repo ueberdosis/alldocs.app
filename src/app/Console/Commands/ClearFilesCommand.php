@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Carbon\Carbon;
-use App\Conversion;
+use App\Models\Conversion;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
