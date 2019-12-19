@@ -11,7 +11,7 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "hashids/hashids": "^4.0",
-        "laravel/framework": "^6.0",
+        "laravel/framework": "^6.8",
         "laravel/tinker": "^1.0",
         "spatie/once": "^2.1",
         "symfony/yaml": "^5.0"
