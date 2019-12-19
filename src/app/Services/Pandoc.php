@@ -17,14 +17,14 @@ abstract class Pandoc
     {
         return collect(
             data_get(self::config(), 'input', [])
-        );
+        )->sort()->values();
     }
 
     public static function inputFormatsData()
     {
         return self::inputFormats()->map(function ($item) {
             return self::find($item);
-        });
+        })->sortBy('title')->values();
     }
 
     public static function inputFormat($from)
@@ -36,14 +36,14 @@ abstract class Pandoc
     {
         return collect(
             data_get(self::config(), 'output', [])
-        );
+        )->sort()->values();
     }
 
     public static function outputFormatsData()
     {
         return self::outputFormats()->map(function ($item) {
             return self::find($item);
-        });
+        })->sortBy('title')->values();
     }
 
     public static function outputFormat($to)
