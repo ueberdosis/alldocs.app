@@ -5,9 +5,9 @@
   @component('components.section.index', ['color' => 'blue', 'wide' => true])
     <div class="u-centered">
       <h1 class="is-h0">
-        Convert All Docs
+        Convert Any Text
         <br>
-        To All Docs
+        To Any Format
       </h1>
       @include('components.banner-features.index')
     </div>

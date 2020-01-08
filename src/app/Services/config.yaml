@@ -45,7 +45,6 @@ output:
   - gfm
   - haddock
   - html
-  - html4
   - icml
   - ipynb
   - jats
@@ -82,13 +81,15 @@ output:
   - zimwiki
 details:
   - title: AsciiDoc
+    long_title: AsciiDoc
     name: asciidoc
     default_extension: .asciidoc
     extensions:
       - .asciidoc
       - .adoc
       - .asc
-  - title: CommonMark Markdown
+  - title: Markdown (CommonMark)
+    long_title: CommonMark Markdown
     name: commonmark
     default_extension: .md
     extensions:
@@ -96,39 +97,46 @@ details:
       - .md
       - .markdown
   - title: Creole 1.0
+    long_title: Creole 1.0
     name: creole
     default_extension: .creole
     extensions:
       - .creole
   - title: DocBook
+    long_title: DocBook
     name: docbook
     default_extension: .xml
     extensions:
       - .xml
       - .html
       - .pdf
-  - title: Word docx
+  - title: Word
+    long_title: Word
     name: docx
     slug: word-docx
     default_extension: .docx
     extensions:
       - .docx
-  - title: DokuWiki markup
+  - title: DokuWiki
+    long_title: DokuWiki markup
     name: dokuwiki
     default_extension: .txt
     extension:
       - .txt
   - title: EPUB
+    long_title: EPUB
     name: epub
     default_extension: .epub
     extensions:
       - .epub
-  - title: FictionBook2 e-book
+  - title: FictionBook
+    long_title: FictionBook2 e-book
     name: fb2
     default_extension: .fb2
     extensions:
       - .fb2
-  - title: GitHub-Flavored Markdown
+  - title: Markdown (GitHub)
+    long_title: GitHub-Flavored Markdown
     name: gfm
     slug: github-flavored-markdown
     description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
@@ -137,44 +145,52 @@ details:
       - .txt
       - .md
       - .markdown
-  - title: Haddock markup
+  - title: Haddock
+    long_title: Haddock markup
     name: haddock
   - title: HTML
+    long_title: HTML
     name: html
     default_extension: .html
     extensions:
       - .html
-  - title: Jupyter notebook
+  - title: Jupyter
+    long_title: Jupyter notebook
     name: ipynb
     slug: jupyter-notebook
     default_extension: .ipynb
     extensions:
       - .ipynb
-  - title: JATS XML
+  - title: JATS
+    long_title: Journal Article Tag Suite XML
     name: jats
     slug: jats-xml
     default_extension: .xml
     extensions:
       - .xml
-  - title: JSON version of native AST
+  - title: JSON
+    long_title: JSON version of native AST
     name: json
     default_extension: .json
     extensions:
       - .txt
       - .json
   - title: LaTeX
+    long_title: LaTeX
     name: latex
     default_extension: .tex
     extensions:
       - .tex
-  - title: Pandoc’s Markdown
+  - title: Markdown (Pandoc)
+    long_title: Pandoc’s Markdown
     name: markdown
     default_extension: .md
     extensions:
       - .txt
       - .md
       - .markdown
-  - title: MultiMarkdown
+  - title: Markdown (MultiMarkdown)
+    long_title: MultiMarkdown
     name: markdown_mmd
     slug: multi-markdown
     default_extension: .md
@@ -182,7 +198,8 @@ details:
       - .txt
       - .md
       - .markdown
-  - title: PHP Markdown Extra
+  - title: Markdown (PHP Extra)
+    long_title: PHP Markdown Extra
     name: markdown_phpextra
     slug: php-markdown-extra
     default_extension: .md
@@ -190,7 +207,8 @@ details:
       - .txt
       - .md
       - .markdown
-  - title: original unextended Markdown
+  - title: Markdown (Original)
+    long_title: original unextended Markdown
     name: markdown_strict
     slug: strict-markdown
     default_extension: .md
@@ -198,10 +216,12 @@ details:
       - .txt
       - .md
       - .markdown
-  - title: MediaWiki markup
+  - title: MediaWiki
+    long_title: MediaWiki markup
     name: mediawiki
     slug: mediawiki-markup
-  - title: roff man
+  - title: roff (man)
+    long_title: roff man
     name: man
     slug: roff-man
     default_extension: .man
@@ -211,88 +231,124 @@ details:
       - .lb
       - .mandoc
   - title: Muse
+    long_title: Muse
     name: muse
     default_extension: .muse
     extensions:
       - .muse
-  - title: native Haskell
+  - title: Haskell
+    long_title: native Haskell
     name: native
     slug: native-haskell
-  - title: ODT
+  - title: OpenOffice
+    long_title: OpenOffice ODT
     name: odt
   - title: OPML
+    long_title: OPML
     name: opml
-  - title: Emacs Org mode
+  - title: Emacs
+    long_title: Emacs Org mode
     name: org
     slug: emacs-org-mode
   - title: reStructuredText
+    long_title: reStructuredText
     name: rst
     slug: restructured-text
   - title: txt2tags
+    long_title: txt2tags
     name: t2t
   - title: Textile
+    long_title: Textile
     name: textile
-  - title: TikiWiki markup
+  - title: TikiWiki
+    long_title: TikiWiki markup
     name: tikiwiki
     slug: tikiwiki-markup
-  - title: TWiki markup
+  - title: TWiki
+    long_title: TWiki markup
     name: twiki
     slug: twiki-markup
   - title: Vimwiki
+    long_title: Vimwiki
     name: vimwiki
-  - title: LaTeX beamer slide show
+  - title: LaTeX (Slide Show)
+    long_title: LaTeX beamer slide show
     name: beamer
     slug: latex-beamer-slide-show
   - title: ConTeXt
+    long_title: ConTeXt
     name: context
-  - title: DocBook 5
+  - title: DocBook
+    long_title: DocBook 5
     name: docbook5
-  - title: EPUB v2
+  - title: EPUB 2
+    long_title: EPUB 2
     name: epub2
-  - title: XHTML 1.0 Transitional
-    name: html4
-  - title: InDesign ICML
+  - title: InDesign
+    long_title: InDesign ICML
     name: icml
     slug: indesign-icml
-  - title: Jira wiki markup
+  - title: Jira wiki
+    long_title: Jira wiki markup
     name: jira
     slug: jira-wiki-markup
     description: You said Jira? Isn't this the japanese name for Godzilla? Never mind. I think you're looking for the software. The one software to rule them all. I'm praying for the souls working at Atlassian. I mean this code base must be … big. And actually, I hope for a future where nobody uses Jira. But seems like you're using Jira. Or you work with someone who is using Jira as a project management tool. Or as a wiki. I don't know what you're doing, but I'll include you in my prayers. Good luck converting to this Jira wiki text thing.
-  - title: roff ms
+  - title: roff (ms)
+    long_title: roff ms
     name: ms
   - title: OpenDocument
+    long_title: OpenDocument Format
     name: opendocument
+    default_extension: .odt
+    extensions:
+      - .odt
+      - .ods
+      - .odp
+      - .odm
   - title: PDF
+    long_title: PDF
     name: pdf
     description: Hey, Portable Document Format. What a name. Sounds like other files are not … portable? It's old, but it works everywhere. Convert to PDF and you can be sure it'll work somehow, even if you the person you're emailing this is 150 years old and has never used a PC before. Good luck with your file!
-  - title: plain text
+  - title: Text
+    long_title: Plain Text
     name: plain
     slug: plain-text
-  - title: PowerPoint slide show
+  - title: PowerPoint
+    long_title: PowerPoint slide show
     name: pptx
     slug: powerpoint-slide-show
   - title: Rich Text Format
+    long_title: Rich Text Format
     name: rtf
     slug: rich-text-format
-  - title: GNU Texinfo
+  - title: Texinfo
+    long_title: GNU Texinfo
     name: texinfo
     slug: gnu-texinfo
-  - title: Slideous HTML and JavaScript slide show
+  - title: Slideous
+    long_title: Slideous HTML and JavaScript slide show
     name: slideous
-  - title: Slidy HTML and JavaScript slide show
+  - title: Slidy
+    long_title: Slidy HTML and JavaScript slide show
     name: slidy
-  - title: DZSlides HTML5 + JavaScript slide show
+  - title: DZSlides
+    long_title: DZSlides HTML5 + JavaScript slide show
     name: dzslides
-  - title: reveal.js HTML5 + JavaScript slide show
+  - title: reveal.js
+    long_title: reveal.js HTML5 + JavaScript slide show
     name: revealjs
-  - title: S5 HTML and JavaScript slide show
+  - title: S5
+    long_title: S5 HTML and JavaScript slide show
     name: s5
   - title: TEI Simple
+    long_title: TEI Simple
     name: tei
     slug: tei-simple
-  - title: XWiki markup
+  - title: XWiki
+    long_title: XWiki markup
     name: xwiki
     slug: xwiki-markup
-  - title: ZimWiki markup
+  - title: ZimWiki
+    long_title: ZimWiki markup
     name: zimwiki
     slug: zimwiki-markup
