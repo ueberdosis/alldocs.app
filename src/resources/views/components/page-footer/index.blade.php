@@ -5,7 +5,7 @@
         Alldocs — The text converter for all your documents
       </h2>
       <p>
-        This is a super fancy text converter. Wow. Amaze.
+        The Internet is full of weird text formats, but finally you can convert any format in any other format. That’s worth a bookmark for sure.
       </p>
     </div>
 
@@ -56,7 +56,7 @@
             </span>
           </h3>
           <p class="u-small">
-            We made a public dashboard that has all our numbers. Even the revenue, but surprisingly it’s $0.
+            We made a <a href="https://floatie.app/alldocs">public dashboard</a> that has all our numbers. Even the revenue, but surprisingly it’s $0.
           </p>
         </div>
 

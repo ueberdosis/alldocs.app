@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('page_title', "Convert {$from['long_title']} to {$to['long_title']} for free on " . config('app.name'))
+
 @section('content')
 
   @component('components.section.index')
