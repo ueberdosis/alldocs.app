@@ -1,7 +1,7 @@
 @php
 $open_graph = [
 	'name' => config('app.name'),
-	'description' => 'The text converter for all your documents.',
+	'description' => config('app.description'),
 	'url' => Request::fullUrl(),
 	'image' => manifest('assets/images/opengraph.png'),
 ];
@@ -13,7 +13,7 @@ $open_graph = [
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="format-detection" content="telephone=no">
 
-<title>@yield('page_title', $open_graph['name'])</title>
+<title>@yield('page_title', config('app.description') . ' – ' . config('app.name'))</title>
 <meta name="description" content="{{ $open_graph['description'] }}">
 
 @if (manifest('app.css'))

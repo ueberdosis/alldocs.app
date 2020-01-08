@@ -15,6 +15,8 @@ return [
 
     'name' => 'Alldocs',
 
+    'description' => 'Convert Any Text To Any Format',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
