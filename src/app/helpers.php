@@ -1,6 +1,6 @@
 <?php
 
-function manifest($name = null) {
+function manifest($name = null, $absolute = false) {
 	$manifest_path = public_path('assets/manifest.json');
 
 	if (!file_exists($manifest_path)) {
@@ -18,7 +18,11 @@ function manifest($name = null) {
 
 	if (substr($asset_path, 0, 1) !== '/') {
 		$asset_path = '/' . $asset_path;
-	}
+    }
+
+    if ($absolute) {
+        return config('app.url') . $asset_path;
+    }
 
 	return $asset_path;
 }

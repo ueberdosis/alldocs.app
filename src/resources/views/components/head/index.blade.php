@@ -3,7 +3,7 @@ $open_graph = [
 	'name' => config('app.name'),
 	'description' => 'The text converter for all your documents.',
 	'url' => Request::fullUrl(),
-	'image' => manifest('assets/images/opengraph.png'),
+	'image' => manifest('assets/images/opengraph.png', true),
 ];
 @endphp
 
