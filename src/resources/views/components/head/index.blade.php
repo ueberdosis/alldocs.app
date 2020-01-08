@@ -3,7 +3,7 @@ $open_graph = [
 	'name' => config('app.name'),
 	'description' => config('app.description'),
 	'url' => Request::fullUrl(),
-	'image' => manifest('assets/images/opengraph.png'),
+	'image' => manifest('assets/images/opengraph.png', true),
 ];
 @endphp
 
