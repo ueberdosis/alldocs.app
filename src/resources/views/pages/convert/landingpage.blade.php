@@ -10,6 +10,7 @@
           :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
           selected="{{ $from['name'] }}"
           name="from"
+          label="Input format"
         >
           {{ $from['title'] }}
         </select-format>
@@ -19,6 +20,7 @@
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
           selected="{{ $to['name'] }}"
           name="to"
+          label="Output format"
         >
           {{ $to['title'] }}
         </select-format>

@@ -9,7 +9,13 @@
       </template>
       <icon name="arrow-down" />
     </div>
-    <select :name="name" class="c-select-format__select" @change="onChange($event)" v-model="value">
+    <select
+      :name="name"
+      :id="inputId"
+      class="c-select-format__select"
+      @change="onChange($event)"
+      v-model="value"
+    >
       <option value="">
         Select Format
       </option>
@@ -21,12 +27,16 @@
         {{ format.title }}
       </option>
     </select>
+    <label class="u-visually-hidden" :for="inputId" v-if="label">
+      {{ label }}
+    </label>
   </div>
 </template>
 
 <script>
 import collect from 'collect.js'
 import serialize from 'form-serialize'
+import uuid from 'uuid/v4'
 import Icon from 'components/Icon'
 
 export default {
@@ -46,6 +56,10 @@ export default {
     name: {
       default: null,
     },
+
+    label: {
+      default: null,
+    },
   },
 
   data() {
@@ -53,6 +67,7 @@ export default {
 
     return {
       value: selectedFormat ? selectedFormat.name : null,
+      inputId: `field-${uuid()}`,
     }
   },
 

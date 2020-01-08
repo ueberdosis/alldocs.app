@@ -9,6 +9,7 @@
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
           selected="{{ $format['name'] }}"
           name="format"
+          label="Format"
         >
           {{ $format['title'] }}
         </select-format>

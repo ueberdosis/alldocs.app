@@ -89,6 +89,7 @@
     "form-serialize": "^0.7.2",
     "gridilydidily": "^3.0.1",
     "poly-fluid-sizing": "^1.1.0",
+    "uuid": "^3.3.3",
     "vue": "^2.6.11"
   }
 }

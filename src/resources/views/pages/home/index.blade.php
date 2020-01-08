@@ -20,6 +20,7 @@
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
           name="from"
+          label="Input format"
         >
         </select-format>
         <br>
@@ -27,6 +28,7 @@
         <select-format
           :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
           name="to"
+          label="Output format"
         >
         </select-format>
       </h2>
