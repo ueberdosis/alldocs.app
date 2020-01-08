@@ -15,7 +15,7 @@ return [
 
     'name' => 'Alldocs',
 
-    'description' => 'Convert Any Text To Any Format',
+    'description' => 'The free text converter for all your documents.',
 
     /*
     |--------------------------------------------------------------------------
