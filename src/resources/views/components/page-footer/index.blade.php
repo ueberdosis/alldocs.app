@@ -122,6 +122,11 @@
                   Public Metrics
                 </a>
               </li>
+              <li>
+                <a href="mailto:support@alldocs.app">
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 
