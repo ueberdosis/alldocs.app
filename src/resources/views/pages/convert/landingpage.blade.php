@@ -59,7 +59,7 @@
         @isset($from['description'])
           <div class="grid__item" data-grid--medium="6/12">
             <h2>
-              Converting from {{ $from['title'] }}
+              Converting from {{ $from['long_title'] }}
             </h2>
 
             @isset($from['description'])
@@ -80,7 +80,7 @@
         @isset($to['description'])
           <div class="grid__item" data-grid--medium="6/12">
             <h2>
-              Converting to {{ $to['title'] }}
+              Converting to {{ $to['long_title'] }}
             </h2>
 
             @isset($to['description'])
