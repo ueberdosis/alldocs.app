@@ -96,7 +96,7 @@ details:
       - .txt
       - .md
       - .markdown
-  - title: Creole 1.0
+  - title: Creole
     long_title: Creole 1.0
     name: creole
     default_extension: .creole
