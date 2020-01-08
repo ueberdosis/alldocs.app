@@ -3,7 +3,7 @@ $open_graph = [
 	'name' => config('app.name'),
 	'description' => 'The text converter for all your documents.',
 	'url' => Request::fullUrl(),
-	// 'image' => url('assets/images/opengraph.png?' . md5(config('build.number'))),
+	'image' => manifest('assets/images/opengraph.png'),
 ];
 @endphp
 
@@ -23,14 +23,14 @@ $open_graph = [
 <meta property="og:title" content="@yield('page_title', $open_graph['name'])">
 <meta property="og:description" content="{{ $open_graph['description'] }}">
 <meta property="og:url" content="{{ $open_graph['url'] }}">
-{{-- <meta property="og:image" content="{{ $open_graph['image'] }}"> --}}
+<meta property="og:image" content="{{ $open_graph['image'] }}">
 <meta property="og:site_name" content="@yield('page_title', $open_graph['name'])">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ $open_graph['url'] }}">
 <meta name="twitter:title" content="@yield('page_title', $open_graph['name'])">
 <meta name="twitter:description" content="{{ $open_graph['description'] }}">
-{{-- <meta name="twitter:image" content="{{ $open_graph['image'] }}"> --}}
+<meta name="twitter:image" content="{{ $open_graph['image'] }}">
 
 <script>
 	window.app = {!! collect([
