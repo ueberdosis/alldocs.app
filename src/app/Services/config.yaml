@@ -129,6 +129,7 @@ details:
     default_extension: .epub
     extensions:
       - .epub
+    description: EPUB is an e-book file format that is actually based on a ton of other formats like XML, XHTML, DTBook, SVG, CSS, NCX (What the hell is this?), Dublin Core (sounds bad ass) and Zip.
   - title: FictionBook
     long_title: FictionBook2 e-book
     name: fb2
@@ -313,6 +314,7 @@ details:
     long_title: Plain Text
     name: plain
     slug: plain-text
+    description: Oh, there is nothing better than a good old plain text file. A file that can be opened and read on every system. No rendering issues, no software to download, no parsers, no endianness, no padding bytes. Nothing that can go wrong. Just a .txt file and you. A place for ASCII Art, a whole book, some code snippets, a few notes, a journal or a protocol of strange things that happen in you neighbors garden. Hey, are you watching your neighbor? I thought it's strange to find fun in text formats of any kind, but you're the real stranger. Anyway, we've build this free text converter for you.
   - title: PowerPoint
     long_title: PowerPoint slide show
     name: pptx
