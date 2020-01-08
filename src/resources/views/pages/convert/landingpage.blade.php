@@ -52,54 +52,57 @@
     @endif --}}
   @endcomponent
 
-  @if(isset($from['description']) || isset($to['description']))
-    @component('components.section.index')
-      <div class="grid">
+  @component('components.section.index')
+    <div class="grid">
+      <div class="grid__item" data-grid--medium="6/12">
+        <h2>
+          Converting from {{ $from['long_title'] }}
+        </h2>
 
         @isset($from['description'])
-          <div class="grid__item" data-grid--medium="6/12">
-            <h2>
-              Converting from {{ $from['long_title'] }}
-            </h2>
-
-            @isset($from['description'])
-              <p>
-                {{ $from['description'] }}
-              </p>
-            @endisset
-
-            <a class="o-small-button" href="{{ $from['url'] }}">
-              <span>
-                More
-              </span>
-              <icon name="arrow-right" size="small"></icon>
-            </a>
-          </div>
+          <p>
+            {{ $from['description'] }}
+          </p>
         @endisset
+
+        @isset($from['default_extension'])
+          <p>
+            The files end with <code>{{ $from['default_extension'] }}</code> by default.
+          </p>
+        @endisset
+
+        <a class="o-small-button" href="{{ $from['url'] }}">
+          <span>
+            More
+          </span>
+          <icon name="arrow-right" size="small"></icon>
+        </a>
+      </div>
+
+      <div class="grid__item" data-grid--medium="6/12">
+        <h2>
+          Converting to {{ $to['long_title'] }}
+        </h2>
 
         @isset($to['description'])
-          <div class="grid__item" data-grid--medium="6/12">
-            <h2>
-              Converting to {{ $to['long_title'] }}
-            </h2>
-
-            @isset($to['description'])
-              <p>
-                {{ $to['description'] }}
-              </p>
-            @endisset
-
-            <a class="o-small-button" href="{{ $to['url'] }}">
-              <span>
-                More
-              </span>
-              <icon name="arrow-right" size="small"></icon>
-            </a>
-          </div>
+          <p>
+            {{ $to['description'] }}
+          </p>
         @endisset
+
+        @isset($to['default_extension'])
+          The files end with <code>{{ $to['default_extension'] }}</code> by default.
+        @endisset
+
+        <a class="o-small-button" href="{{ $to['url'] }}">
+          <span>
+            More
+          </span>
+          <icon name="arrow-right" size="small"></icon>
+        </a>
       </div>
-    @endcomponent
-  @endif
+    </div>
+  @endcomponent
 
   @component('components.section.index')
     <h2 class="u-centered">
