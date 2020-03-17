@@ -40,8 +40,8 @@ RUN apt-get update && \
     apt-get install -y wget && \
     mkdir -p /usr/src/pandoc && \
     cd /usr/src/pandoc && \
-    wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb && \
-    dpkg -i pandoc-2.7.3-1-amd64.deb && \
+    wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb && \
+    dpkg -i pandoc-2.9.2-1-amd64.deb && \
     apt-get purge -y wget && \
     rm -rf /usr/src/pandoc && \
     rm -r /var/lib/apt/lists/*
