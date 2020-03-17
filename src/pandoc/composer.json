@@ -1,0 +1,43 @@
+{
+    "name": "ueberdosis/pandoc",
+    "description": "Pandoc PHP Package",
+    "keywords": [
+        "ueberdosis",
+        "pandoc"
+    ],
+    "homepage": "https://github.com/ueberdosis/pandoc",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hans Pagel",
+            "email": "hans.pagel@ueber.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "symfony/process": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ueberdosis\\Pandoc\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ueberdosis\\Pandoc\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

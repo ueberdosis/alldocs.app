@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
 use Carbon\Carbon;
 use Hashids\Hashids;
-use App\Services\Pandoc;
 use App\Models\Conversion;
 use Illuminate\Support\Str;
 use App\Services\FileFormat;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Ueberdosis\Pandoc\Facades\Pandoc;
 
 class ConvertController extends Controller
 {
@@ -78,11 +77,17 @@ class ConvertController extends Controller
             ]);
 
             $request->file('file')->storeAs('public', $conversion->id);
-            Pandoc::convert($conversion->id, $conversion->from, $conversion->to, $hashId);
 
-            if (!file_exists($conversion->storagePath)) {
-                throw new Exception('Pandoc failed to convert the file');
-            }
+            $file = storage_path("app/public/{$conversion->id}");
+            $from = $conversion->from;
+            $to = $conversion->to;
+            $output = storage_path("app/public/{$hashId}");
+
+            Pandoc::file($file)
+                ->from($from)
+                ->to($to)
+                ->output($output)
+                ->convert();
 
             return [
                 'filename' => $conversion->newFileName,
