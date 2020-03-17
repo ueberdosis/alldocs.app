@@ -23,7 +23,7 @@ Route::view('/terms', 'pages.terms.index')->name('page.terms');
 Route::get('/redirect-to-conversion', 'ConvertController@redirect')->name('redirect-to-conversion');
 Route::get('/redirect-to-format', 'FormatController@redirect')->name('redirect-to-format');
 Route::post('/convert', 'ConvertController@convert')->name('convert');
-Route::get('/download/{hashid}', 'ConvertController@download')->name('download');
+Route::get('/download/{hashId}', 'ConvertController@download')->name('download');
 Route::get('/convert-{input}-to-{output}', 'ConvertController@landingPage')->where([
     'input' => '[a-z0-9_-]+',
     'output' => '[a-z0-9_-]+',

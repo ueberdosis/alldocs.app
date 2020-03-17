@@ -11,23 +11,23 @@ class Conversion extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'hashId',
+        'hash_id',
         'from',
         'to',
-        'FileOriginalName',
-        'fileExtension',
+        'file_original_name',
+        'file_extension',
         'archived_at',
     ];
 
     public function getStoragePathAttribute()
     {
-        return storage_path("app/public/{$this->hashId}");
+        return storage_path("app/public/{$this->hash_id}");
     }
 
     public function getNewFileNameAttribute()
     {
         // TODO: Should pick file extension from config
-        return "{$this->FileOriginalName}.{$this->to}";
+        return "{$this->file_original_name}.{$this->to}";
     }
 
     public function scopeUnarchived($query)
@@ -39,12 +39,12 @@ class Conversion extends Model
     {
         Storage::delete([
             "public/{$this->id}",
-            "public/{$this->hashId}",
+            "public/{$this->hash_id}",
         ]);
 
         $this->update([
             'archived_at' => now(),
-            'FileOriginalName' => null,
+            'file_original_name' => null,
         ]);
     }
 }

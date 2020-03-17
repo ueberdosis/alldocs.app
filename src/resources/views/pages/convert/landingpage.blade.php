@@ -40,19 +40,6 @@
       to="{{ $to['name'] }}"
       :accepted-files="{{ collect(data_get($from, 'extensions', ['.txt'])) }}"
     ></uploader>
-    {{-- <form class="form" action="{{ route('convert') }}" method="post" enctype="multipart/form-data">
-      @csrf
-
-      <input type="hidden" name="from" value="{{ $from['name'] }}">
-      <input type="hidden" name="to" value="{{ $to['name'] }}">
-
-      <input type="file" name="file">
-      <input type="submit" value="Convert">
-    </form>
-
-    @if(session('hashId'))
-      <a href="{{ route('download', session()->get('hashId')) }}">Download File</a>
-    @endif --}}
   @endcomponent
 
   @component('components.section.index')

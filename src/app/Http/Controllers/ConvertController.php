@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Carbon\Carbon;
 use Hashids\Hashids;
 use App\Services\Pandoc;
@@ -68,18 +69,18 @@ class ConvertController extends Controller
             $hashId = $hashIds->encode(Carbon::now()->timestamp);
 
             $conversion = Conversion::create([
-                'hashId' => $hashId,
+                'hash_id' => $hashId,
                 'from' => $request->input('from'),
                 'to' => $request->input('to'),
-                'FileOriginalName' => $fileInfo['filename'],
-                'fileExtension' => $fileInfo['extension'],
+                'file_original_name' => $fileInfo['filename'],
+                'file_extension' => $fileInfo['extension'],
             ]);
 
             $request->file('file')->storeAs('public', $conversion->id);
             Pandoc::convert($conversion->id, $conversion->from, $conversion->to, $hashId);
 
             if (!file_exists($conversion->storagePath)) {
-                throw new \Exception('Pandoc failed to convert the file');
+                throw new Exception('Pandoc failed to convert the file');
             }
 
             return [
@@ -93,9 +94,9 @@ class ConvertController extends Controller
         }
     }
 
-    public function download($hashid)
+    public function download($hashId)
     {
-        $conversion = Conversion::where('hashId', $hashid)->first();
+        $conversion = Conversion::where('hash_id', $hashId)->firstOrFail();
 
         return response()->download(
             $conversion->storagePath,
