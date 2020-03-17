@@ -132,7 +132,7 @@
 
           <div class="grid__item" data-grid--medium="4/12">
             <small>
-              Made with 💙 by <a href="https://twitter.com/_ueberdosis">überclub</a>
+              Made with 💙 by <a href="https://twitter.com/_ueberdosis">überdosis</a>
             </small>
           </div>
         </div>
