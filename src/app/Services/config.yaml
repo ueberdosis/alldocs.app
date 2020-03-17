@@ -88,6 +88,7 @@ details:
       - .asciidoc
       - .adoc
       - .asc
+    description: AsciiDoc is like the older brother of Markdown. It’s human-readable without any special tools. It’s like DocBook XML, but based on plain-text mark-up (instead of XML). Add an = in front of a line to mark it as headline. It’s easy like that. Wondering who uses this text format? Wikipedia states that the Git documentation is written in AsciiDoc. I’m not Wikipedia or near as clever, but you landed here and chances are high that you are in the club of people using AsciiDoc. Or maybe you just have to use this format. No matter what, just upload the file and convert it to any other format. Hope it helps!
   - title: Markdown (CommonMark)
     long_title: CommonMark Markdown
     name: commonmark
@@ -244,6 +245,8 @@ details:
   - title: OpenOffice
     long_title: OpenOffice ODT
     name: odt
+    extensions:
+      - .odt
   - title: OPML
     long_title: OPML
     name: opml
