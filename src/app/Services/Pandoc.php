@@ -131,6 +131,8 @@ abstract class Pandoc
         $inputFile = storage_path("app/public/{$file}");
 
         if (!$outputFile) {
+            // TODO: This takes only part of the filename for filenames with multiple dots
+            // e.g. test.file.with.dots.pdf => test.pdf
             $outputFilename = explode('.', $file)[0].'.'.$to;
             $outputFile = storage_path("app/public/{$outputFilename}");
         } else {
