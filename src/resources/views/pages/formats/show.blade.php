@@ -6,7 +6,7 @@
     <form action="{{ route('redirect-to-format') }}">
       <h1 class="u-centered">
         <select-format
-          :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
+          :formats="{{ collect(\App\Services\FileFormat::outputFormatsData()) }}"
           selected="{{ $format['name'] }}"
           name="format"
           label="Format"
@@ -26,25 +26,25 @@
   @component('components.section.index')
     <div class="grid">
 
-      @if (App\Services\Pandoc::inputFormats()->contains($format['name']))
+      @if (App\Services\FileFormat::inputFormats()->contains($format['name']))
         <div class="grid__item" data-grid--medium="6/12">
           <h2>
             Convert To
           </h2>
           @include('components.format-list.index', [
-            'formats' => App\Services\Pandoc::outputFormatsData(),
+            'formats' => App\Services\FileFormat::outputFormatsData(),
             'input' => $format['slug'],
           ])
         </div>
       @endif
 
-      @if (App\Services\Pandoc::outputFormats()->contains($format['name']))
+      @if (App\Services\FileFormat::outputFormats()->contains($format['name']))
         <div class="grid__item" data-grid--medium="6/12">
           <h2>
             Convert From
           </h2>
           @include('components.format-list.index', [
-            'formats' => App\Services\Pandoc::inputFormatsData(),
+            'formats' => App\Services\FileFormat::inputFormatsData(),
             'output' => $format['slug'],
           ])
         </div>

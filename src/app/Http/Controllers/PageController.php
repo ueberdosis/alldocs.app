@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Pandoc;
+use App\Services\FileFormat;
 
 class PageController extends Controller
 {
@@ -13,7 +13,7 @@ class PageController extends Controller
      */
     public function home()
     {
-        $conversions = Pandoc::conversions();
+        $conversions = FileFormat::conversions();
 
         return view('pages.home.index', [
             'conversions' => $conversions,

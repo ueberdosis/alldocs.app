@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Pandoc;
+use App\Services\FileFormat;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -12,18 +12,18 @@ class FormatController extends Controller
     {
         $request->validate([
             'format' => [
-                'required', 'string', Rule::in(Pandoc::outputFormats()),
+                'required', 'string', Rule::in(FileFormat::outputFormats()),
             ],
         ]);
 
         return redirect(
-            Pandoc::find($request->get('format'))['url']
+            FileFormat::find($request->get('format'))['url']
         );
     }
 
     public function show($format)
     {
-        $format = Pandoc::find($format);
+        $format = FileFormat::find($format);
 
         if (!$format) {
             abort(404);

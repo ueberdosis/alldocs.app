@@ -8,6 +8,7 @@ use Hashids\Hashids;
 use App\Services\Pandoc;
 use App\Models\Conversion;
 use Illuminate\Support\Str;
+use App\Services\FileFormat;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -17,15 +18,15 @@ class ConvertController extends Controller
     {
         $request->validate([
             'from' => [
-                'required', 'string', Rule::in(Pandoc::inputFormats()),
+                'required', 'string', Rule::in(FileFormat::inputFormats()),
             ],
             'to' => [
-                'required', 'string', Rule::in(Pandoc::outputFormats()),
+                'required', 'string', Rule::in(FileFormat::outputFormats()),
             ],
         ]);
 
-        $from = Pandoc::find($request->get('from'));
-        $to = Pandoc::find($request->get('to'));
+        $from = FileFormat::find($request->get('from'));
+        $to = FileFormat::find($request->get('to'));
 
         return redirect()->action('ConvertController@landingPage', [
             'input' => $from['slug'],
@@ -35,16 +36,16 @@ class ConvertController extends Controller
 
     public function landingPage($input, $output)
     {
-        if (Pandoc::invalidConversion($input, $output)) {
+        if (FileFormat::invalidConversion($input, $output)) {
             return 'invalid';
             abort(404);
         }
 
-        $conversions = Pandoc::conversions();
+        $conversions = FileFormat::conversions();
 
         return view('pages.convert.landingpage', [
-            'from' => Pandoc::find($input),
-            'to' => Pandoc::find($output),
+            'from' => FileFormat::find($input),
+            'to' => FileFormat::find($output),
             'conversions' => $conversions,
         ]);
     }
@@ -54,10 +55,10 @@ class ConvertController extends Controller
         $this->validate($request, [
             'file' => ['required', 'file'],
             'from' => [
-                'required', 'string', Rule::in(Pandoc::inputFormats()),
+                'required', 'string', Rule::in(FileFormat::inputFormats()),
             ],
             'to' => [
-                'required', 'string', Rule::in(Pandoc::outputFormats()),
+                'required', 'string', Rule::in(FileFormat::outputFormats()),
             ],
         ]);
 

@@ -7,7 +7,7 @@
     </h1>
 
     <p>
-      Alldocs is a free online text converter that converts any text document format to any text document format. To be precise, we support not less than {{ \App\Services\Pandoc::conversions()->count() }} ways to convert files.
+      Alldocs is a free online text converter that converts any text document format to any text document format. To be precise, we support not less than {{ \App\Services\FileFormat::conversions()->count() }} ways to convert files.
     </p>
 
     <h2>

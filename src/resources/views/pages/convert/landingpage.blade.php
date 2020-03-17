@@ -9,7 +9,7 @@
       <h1 class="u-centered">
         Convert
         <select-format
-          :formats="{{ collect(\App\Services\Pandoc::inputFormatsData()) }}"
+          :formats="{{ collect(\App\Services\FileFormat::inputFormatsData()) }}"
           selected="{{ $from['name'] }}"
           name="from"
           label="Input format"
@@ -19,7 +19,7 @@
         <br>
         to
         <select-format
-          :formats="{{ collect(\App\Services\Pandoc::outputFormatsData()) }}"
+          :formats="{{ collect(\App\Services\FileFormat::outputFormatsData()) }}"
           selected="{{ $to['name'] }}"
           name="to"
           label="Output format"

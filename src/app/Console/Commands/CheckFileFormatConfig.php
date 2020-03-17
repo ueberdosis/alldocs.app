@@ -2,24 +2,24 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Pandoc;
+use App\Services\FileFormat;
 use Illuminate\Console\Command;
 
-class CheckPandocConfig extends Command
+class CheckFileFormatConfig extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'pandoc:check';
+    protected $signature = 'formats:check';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Check Pandoc configuration';
+    protected $description = 'Check file formats configuration';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,7 @@ class CheckPandocConfig extends Command
      */
     public function handle()
     {
-        $formats = collect(data_get(Pandoc::config(), 'details'));
+        $formats = collect(data_get(FileFormat::config(), 'details'));
 
         $formatsTotal = $formats->count();
         $formatsTotalStatus = $formatsTotal ? '✅' : '❌';
