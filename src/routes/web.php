@@ -22,7 +22,6 @@ Route::view('/terms', 'pages.terms.index')->name('page.terms');
 // Converters
 Route::get('/redirect-to-convertion', 'ConvertController@redirect')->name('redirect-to-convertion');
 Route::get('/redirect-to-format', 'FormatController@redirect')->name('redirect-to-format');
-Route::get('/convert', 'ConvertController@index');
 Route::post('/convert', 'ConvertController@convert')->name('convert');
 Route::get('/download/{hashid}', 'ConvertController@download')->name('download');
 Route::get('/convert-{input}-to-{output}', 'ConvertController@landingPage')->where([

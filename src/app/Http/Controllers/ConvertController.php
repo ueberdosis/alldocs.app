@@ -12,11 +12,6 @@ use Illuminate\Validation\Rule;
 
 class ConvertController extends Controller
 {
-    public function index(Request $request)
-    {
-        return view('pages.convert.index');
-    }
-
     public function redirect(Request $request)
     {
         $request->validate([
