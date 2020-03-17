@@ -5,7 +5,7 @@
 @section('content')
 
   @component('components.section.index')
-    <form action="{{ route('redirect-to-convertion') }}">
+    <form action="{{ route('redirect-to-conversion') }}">
       <h1 class="u-centered">
         Convert
         <select-format
@@ -111,7 +111,7 @@
     <h2 class="u-centered">
       More nerdy converters
     </h2>
-    @include('components.convertion-list.index', [
+    @include('components.conversion-list.index', [
       'conversions' => $conversions->shuffle()->take(10)
     ])
   @endcomponent

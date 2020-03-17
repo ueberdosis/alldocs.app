@@ -5,7 +5,10 @@
         Alldocs — The text converter for all your documents
       </h2>
       <p>
-        The Internet is full of weird text formats, but finally you can convert any format in any other format. That’s worth a bookmark for sure.
+        The internet is full of weird text formats, but finally you can convert any format in any other format. That’s worth a bookmark for sure.
+      </p>
+      <p>
+        Converted {{ \App\Models\Conversion::count() }} files.
       </p>
     </div>
 
@@ -119,7 +122,7 @@
               </li>
               <li>
                 <a href="https://floatie.app/alldocs">
-                  Public Metrics
+                  Open Startup
                 </a>
               </li>
               <li>

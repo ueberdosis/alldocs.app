@@ -1,19 +1,19 @@
-<ul class="c-convertion-list">
+<ul class="c-conversion-list">
   @foreach ($conversions as $conversion)
-    <li class="c-convertion-list__item">
-      <a class="c-convertion-list__link" href="{{ $conversion->url }}">
-        <span class="c-convertion-list__format">
+    <li class="c-conversion-list__item">
+      <a class="c-conversion-list__link" href="{{ $conversion->url }}">
+        <span class="c-conversion-list__format">
           @component('components.format.index')
             {{ $conversion->inputFormat->title }}
           @endcomponent
         </span>
-        <span class="c-convertion-list__divider">
-          <icon class="c-convertion-list__icon" name="arrow-right"></icon>
+        <span class="c-conversion-list__divider">
+          <icon class="c-conversion-list__icon" name="arrow-right"></icon>
           <span class="u-visually-hidden">
             to
           </span>
         </span>
-        <span class="c-convertion-list__format">
+        <span class="c-conversion-list__format">
           @component('components.format.index')
             {{ $conversion->outputFormat->title }}
           @endcomponent

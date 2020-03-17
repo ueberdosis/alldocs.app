@@ -20,7 +20,7 @@ Route::view('/privacy', 'pages.privacy.index')->name('page.privacy');
 Route::view('/terms', 'pages.terms.index')->name('page.terms');
 
 // Converters
-Route::get('/redirect-to-convertion', 'ConvertController@redirect')->name('redirect-to-convertion');
+Route::get('/redirect-to-conversion', 'ConvertController@redirect')->name('redirect-to-conversion');
 Route::get('/redirect-to-format', 'FormatController@redirect')->name('redirect-to-format');
 Route::post('/convert', 'ConvertController@convert')->name('convert');
 Route::get('/download/{hashid}', 'ConvertController@download')->name('download');
