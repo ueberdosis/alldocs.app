@@ -2,8 +2,8 @@
 
 namespace App\Console;
 
-use App\Console\Commands\ClearFilesCommand;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\ArchiveConversionsCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -25,8 +25,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(ClearFilesCommand::class)
-            ->everyMinute();
+        $schedule
+            ->command(ArchiveConversionsCommand::class)
+            ->everyFifteenMinutes();
     }
 
     /**
