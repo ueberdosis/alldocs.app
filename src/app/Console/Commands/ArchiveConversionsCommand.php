@@ -4,23 +4,22 @@ namespace App\Console\Commands;
 
 use App\Models\Conversion;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
-class ClearFilesCommand extends Command
+class ArchiveConversionsCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'files:clear';
+    protected $signature = 'conversions:archive';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Clears files, which are older than two hours.';
+    protected $description = 'Deletes files, which are older than 24 hours, archives conversions.';
 
     /**
      * Create a new command instance.
@@ -39,16 +38,11 @@ class ClearFilesCommand extends Command
      */
     public function handle()
     {
-        $conversions = Conversion::where('created_at', '<', now()->subHours(12))->get();
+        $conversions = Conversion::query()
+            ->unarchived()
+            ->where('created_at', '<', now()->subHours(12))
+            ->get();
 
-        foreach ($conversions as $conversion) {
-            // TODO: Use public_path() helper
-            Storage::delete([
-                'public/'.$conversion->id,
-                'public/'.$conversion->hashId,
-            ]);
-
-            $conversion->delete();
-        }
+        $conversions->each->archive();
     }
 }
