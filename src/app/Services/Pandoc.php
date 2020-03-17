@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 abstract class Pandoc
 {
-    private static function config()
+    public static function config()
     {
         return once(function () {
             return Yaml::parseFile(__DIR__.'/config.yaml');
