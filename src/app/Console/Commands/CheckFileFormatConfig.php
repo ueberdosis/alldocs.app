@@ -64,7 +64,7 @@ class CheckFileFormatConfig extends Command
             return count(explode(' ', $item['description'])) < 200;
         });
         if ($formatsWithShortDescription->count()) {
-            $this->info('❌ The following formats have a description that’s shorter than 300 words: '.$formatsWithShortDescription->pluck('name')->implode(', '));
+            $this->info('❌ The following formats have a description that’s shorter than 200 words: '.$formatsWithShortDescription->pluck('name')->implode(', '));
         }
 
         $formatsWithDefaultExtension = $formats->whereNotNull('default_extension')->count();

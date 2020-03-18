@@ -1,0 +1,35 @@
+#+TITLE:       Die Vorzüge von Org-mode
+#+AUTHOR:      Otto Normalverbraucher
+#+EMAIL:       otto@normalverbraucher-wikipedia.org
+#+DATE:        <2018-05-02 Wed>
+#+DESCRIPTION: ein Beispieldokument
+#+KEYWORDS:    orgmode, wikipedia
+#+LANGUAGE:    de
+
+* Eine Überschrift erster Ebene
+
+** Eine Überschrift zweiter Ebene
+
+- Und hier folgen nun die Gliederungspunkte.
+- Einer nach dem anderen.
+  - Gliederungen können auch
+  - geschachtelt
+    - werden.
+    - Bei Bedarf: Immer weiter einrücken.
+
+** Eine weitere Überschrift zweiter Ebene
+
+Auch Zitate können als solche ausgezeichnet werden:
+
+#+BEGIN_QUOTE
+Pageviews of Hawking’s article led the Top-10 across all language
+Wikipedias and was the most popular of the month on the Spanish,
+German, French, Portuguese, Arabic, Polish, and Farsi Wikipedias (and
+probably more). ([[https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost/2018-04-26/News_and_notes#Death_of_Stephen_Hawking][Wikipedia Signpost]], 26. April 2018)
+#+END_QUOTE
+
+* Nächster Abschnitt
+
+Der Text kann auch als Fließtext ausformuliert werden. Auf diese Weise
+kann man ganze Bücher schreiben, die später aus Org-mode in
+Zielformate exportiert und gesetzt werden können.

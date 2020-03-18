@@ -29,7 +29,7 @@
       </h1>
     </form>
     <p>
-      Looking for a free text converter? Look no more, upload your {{ $from['long_title'] }} files and convert them to {{ $to['long_title'] }}. No strings attached.
+      Looking for a free text converter? Look no more, upload your {{ $from['long_title'] }} files and convert them to {{ $to['long_title'] }}. Yes, it’s that easy.
     </p>
   @endcomponent
 

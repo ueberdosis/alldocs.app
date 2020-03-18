@@ -118,6 +118,7 @@ details:
     default_extension: .docx
     extensions:
       - .docx
+    description: "Not sure if the world would be a better place without Microsoft Word, but I guess we’ll never find out. It’s here and it’s here to stay. Every fricking office computer has Word on it. Techies hate it, because it’s not really machine-readable, it’s proprietary and there is no documented standard. Office people love it though. There are not limits. Put text in it, fine. Add images, no problem. Want to switch the font to Comic Sans? Sure! Make a creative layout, amazing! Do whatever you like. But don’t forget to convert it to a proper file format before you send it to a techie."
   - title: DokuWiki
     long_title: DokuWiki markup
     name: dokuwiki
@@ -250,10 +251,18 @@ details:
   - title: OPML
     long_title: OPML
     name: opml
+    default_extension: .xml
+    extensions:
+      - .xml
+    description: "The Outline Processor Markup Language (OPML) is an XML format for outlines, that is mostly used to exchange lists of web feeds between web feed aggregrators. It uses the RFC 822 date format, which is considered obsolete. Fans of the RFC 822 date think it’s a good idea to have only two digits to represent a year. But I have no idea if they were born 1900 or 2000 or if they’ve ever heard of the much cooler RFC 3339. Or how they would call it: RF 39. Anyway. You’re here because you want to use this format. Or you have to. My condolences."
   - title: Emacs
     long_title: Emacs Org mode
     name: org
     slug: emacs-org-mode
+    default_extension: .txt
+    extensions:
+      - .txt
+    description: "Oh man, we really learned a lot about text formats already, but Emacs Org mode is the nerdiest thing ever. It’s like a note keeping app and a todo app, like a project management tool and a book authoring tool. But all that based on a plain-text file. That’s real digital minimalism. No cloud, no binary data, no proprietary file formats, just a simple, good old plain-text file. Add headlines, lists, paragraphs, tasks, time tracking, agendas, tables. Thank you, Carsten Dominik, for developing such a great file format. By the way, the logo is a unicorn and that’s fair, after all it’s very unique."
   - title: reStructuredText
     long_title: reStructuredText
     name: rst
