@@ -63,7 +63,7 @@
 
         <a class="o-small-button" href="{{ $from['url'] }}">
           <span>
-            More
+            More about {{ $from['long_title'] }}
           </span>
           <icon name="arrow-right" size="small"></icon>
         </a>
@@ -86,7 +86,7 @@
 
         <a class="o-small-button" href="{{ $to['url'] }}">
           <span>
-            More
+            More about {{ $to['long_title'] }}
           </span>
           <icon name="arrow-right" size="small"></icon>
         </a>

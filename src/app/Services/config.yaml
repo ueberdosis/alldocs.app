@@ -131,7 +131,7 @@ details:
     default_extension: .epub
     extensions:
       - .epub
-    description: EPUB is an e-book file format that is actually based on a ton of other formats like XML, XHTML, DTBook, SVG, CSS, NCX (What the hell is this?), Dublin Core (sounds bad ass) and Zip.
+    description: EPUB is an e-book file format that is actually based on a ton of other formats like XML, XHTML, DTBook, SVG, CSS, NCX (What the hell is this?), Dublin Core (sounds bad ass) and Zip. Oh man, I’m not sure if there is a text format that is a combination of more formats than EPUB. It’s like someone tried to combine every fricking format out there. Couldn’t they stick with fewer file formats? Anyway, we have this free online converter here. Not sure if it works, but just upload your file and we’ll see what we can do. I have to google if there is a book about EPUB. This history of the greatest text format of all times. Or something like that.
   - title: FictionBook
     long_title: FictionBook2 e-book
     name: fb2
@@ -142,7 +142,7 @@ details:
     long_title: GitHub-Flavored Markdown
     name: gfm
     slug: github-flavored-markdown
-    description: We love Markdown, it's just text. It's so simple and so powerful at the same time. Pure beauty. It's this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don't we? Actually, I'm not sure what's so special about this MD standard, but never mind. Hopefully you know what's it all about.
+    description: We love Markdown, because it’s just plain text. It’s simple and powerful at the same time. Pure beauty. It’s this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don’t we? Actually, I’m not sure what’s so special about this MD standard, but never mind. Hopefully you know what’s it all about. Anyway, here is your free online converter for GitHub-flavored Markdown. Just upload your file, cross fingers and download the result. Hope it works.
     default_extension: .md
     extensions:
       - .txt
@@ -164,6 +164,7 @@ details:
     default_extension: .ipynb
     extensions:
       - .ipynb
+    description: "Jupyter Notebook are the perfect playground for every nerd. The documents are based on JSON, but they follow a versioned schema, and contain ordered lists of input/output cells which can contain code, Markdown text, mathematics, plots and rich media. See what I mean? Jupyter Notebook provides a browser-based interactive interface that let’s you make those files. The whole Jupyter universe is huge. But you’re here, so I suppose you already know more about this stuff than me. You’re probably only looking for a nice and free converter and what should I say? I’ve never used Jupyter, but I built this free online converter you’re looking for. Happy converting!"
   - title: JATS
     long_title: Journal Article Tag Suite XML
     name: jats
@@ -321,7 +322,7 @@ details:
   - title: PDF
     long_title: PDF
     name: pdf
-    description: Hey, Portable Document Format. What a name. Sounds like other files are not … portable? It's old, but it works everywhere. Convert to PDF and you can be sure it'll work somehow, even if you the person you're emailing this is 150 years old and has never used a PC before. Good luck with your file!
+    description: Hey, Portable Document Format. What a name. Sounds like other files are not … portable? It’s old, but it works everywhere. Convert your files to PDF and you can be sure it’ll work somehow, even if the person you’re emailing this is 150 years old and has never used a PC before. To be honest, there are tons of PDF converters online, but this might be the only one that’s free and doesn’t have ads. Sounds good to you? Good luck with your file! We’ll do our best to convert it to PDF, for free. If you’re not happy with the result, I don’t know if we can do something about that though. I mean, it’s free at least, right?
   - title: Text
     long_title: Plain Text
     name: plain
