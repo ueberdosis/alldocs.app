@@ -40,7 +40,7 @@
       Most Used Conversions
     </h2>
     @include('components.conversion-list.index', [
-      'conversions' => $conversions->shuffle()->take(10)
+      'conversions' => $mostUsedConversions,
     ])
   @endcomponent
 
