@@ -83,11 +83,11 @@ class ConvertController extends Controller
             $to = $conversion->to;
             $output = storage_path("app/public/{$hashId}");
 
-            Pandoc::file($file)
+            Pandoc::inputFile($file)
                 ->from($from)
                 ->to($to)
                 ->output($output)
-                ->convert();
+                ->run();
 
             return [
                 'filename' => $conversion->newFileName,

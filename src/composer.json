@@ -7,12 +7,6 @@
         "laravel"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "pandoc"
-        }
-    ],
     "require": {
         "php": "^7.2",
         "doctrine/dbal": "^2.10",
@@ -23,7 +17,7 @@
         "sentry/sentry-laravel": "^1.5",
         "spatie/once": "^2.1",
         "symfony/yaml": "^5.0",
-        "ueberdosis/pandoc": "@dev"
+        "ueberdosis/pandoc": "0.1.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

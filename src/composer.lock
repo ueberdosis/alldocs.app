@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6890a67debec02cf76fc29d8a0940e09",
+    "content-hash": "b2f8379cf9e549a5dd8e79d0dc536eb2",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -4675,14 +4675,21 @@
         },
         {
             "name": "ueberdosis/pandoc",
-            "version": "dev-master",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ueberdosis/pandoc.git",
+                "reference": "8dfb9c9b16c120423588c21897677b4fd385e1c2"
+            },
             "dist": {
-                "type": "path",
-                "url": "pandoc",
-                "reference": "e6903cf6354f1f5197babcb23bd45c9f90654287"
+                "type": "zip",
+                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/8dfb9c9b16c120423588c21897677b4fd385e1c2",
+                "reference": "8dfb9c9b16c120423588c21897677b4fd385e1c2",
+                "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.1",
+                "symfony/process": ">4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.0"
@@ -4693,19 +4700,7 @@
                     "Ueberdosis\\Pandoc\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Ueberdosis\\Pandoc\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4721,7 +4716,8 @@
             "keywords": [
                 "pandoc",
                 "ueberdosis"
-            ]
+            ],
+            "time": "2020-03-18T12:48:05+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -6773,9 +6769,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ueberdosis/pandoc": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
