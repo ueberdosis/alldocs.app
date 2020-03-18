@@ -32,6 +32,8 @@ $open_graph = [
 <meta name="twitter:description" content="{{ $open_graph['description'] }}">
 <meta name="twitter:image" content="{{ $open_graph['image'] }}">
 
+<link href="https://alldocs.app/favicon.ico" rel="shortcut icon" type="image/x-icon" >
+
 <script>
 	window.app = {!! collect([
 		'csrfToken' => csrf_token(),
