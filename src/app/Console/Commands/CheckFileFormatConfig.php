@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Services\FileFormat;
 use Illuminate\Console\Command;
+use Ueberdosis\Pandoc\Facades\Pandoc;
 
 class CheckFileFormatConfig extends Command
 {
@@ -68,5 +69,24 @@ class CheckFileFormatConfig extends Command
         $formatsWithExtensionsPercentage = number_format(100/$formatsTotal * $formatsWithExtensions, 1);
         $formatsWithExtensionsStatus = $formatsWithExtensions === $formatsTotal ? '✅' : '❌';
         $this->info("{$formatsWithExtensionsStatus} {$formatsWithExtensionsPercentage} % ({$formatsWithExtensions}/{$formatsTotal}) have allowed extensions.");
+
+        $availableInputFileFormats = collect(
+            Pandoc::listInputFormats(),
+            Pandoc::listOutputFormats()
+        );
+
+        $deprecatedFileFormats = ['markdown_github'];
+        $configuredFileFormats = $formats->pluck('name');
+        $missingFileFormats = $availableInputFileFormats
+            ->diff($configuredFileFormats)
+            ->reject(function ($item) use ($deprecatedFileFormats) {
+                return in_array($item, $deprecatedFileFormats);
+            });
+
+        if ($missingFileFormats->isEmpty()) {
+            $this->info('✅ All available file formats are configured.');
+        } else {
+            $this->info('❌ The following file formats are not configured: '.$missingFileFormats->implode(', '));
+        }
     }
 }
