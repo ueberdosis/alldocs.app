@@ -61,7 +61,7 @@ class CheckFileFormatConfig extends Command
         $this->info("{$formatsWithDescriptionStatus} {$formatsWithDescriptionPercentage} % ({$formatsWithDescription}/{$formatsTotal}) have a description.");
 
         $formatsWithShortDescription = $formats->whereNotNull('description')->filter(function ($item) {
-            return count(explode(' ', $item['description'])) < 300;
+            return count(explode(' ', $item['description'])) < 200;
         });
         if ($formatsWithShortDescription->count()) {
             $this->info('❌ The following formats have a description that’s shorter than 300 words: '.$formatsWithShortDescription->pluck('name')->implode(', '));
