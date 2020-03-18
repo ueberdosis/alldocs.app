@@ -146,7 +146,7 @@ deploy_prod:
     COMPOSE_FILE: "docker-compose.production.yml"
     DOCKER_HOST: "$PROD_DOCKER_HOST"
     DOCKER_STACK_NAME: "alldocs"
-    STACK_DOMAIN: "alldocs.app"
+    STACK_DOMAIN: "alldocs.app,www.alldocs.app"
     LARAVEL_ENV: "$PROD_LARAVEL_ENV"
     MYSQL_DATABASE: "$PROD_MYSQL_DATABASE"
     MYSQL_USER: "$PROD_MYSQL_USER"
