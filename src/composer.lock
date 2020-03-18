@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2f8379cf9e549a5dd8e79d0dc536eb2",
+    "content-hash": "0fe849f259e5e9dfbd6a760d376bd72e",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -4681,16 +4681,16 @@
         },
         {
             "name": "ueberdosis/pandoc",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ueberdosis/pandoc.git",
-                "reference": "8dfb9c9b16c120423588c21897677b4fd385e1c2"
+                "reference": "9dabfcf329ef72a7c0478a2470c05f6d25ed666e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/8dfb9c9b16c120423588c21897677b4fd385e1c2",
-                "reference": "8dfb9c9b16c120423588c21897677b4fd385e1c2",
+                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/9dabfcf329ef72a7c0478a2470c05f6d25ed666e",
+                "reference": "9dabfcf329ef72a7c0478a2470c05f6d25ed666e",
                 "shasum": ""
             },
             "require": {
@@ -4723,7 +4723,7 @@
                 "pandoc",
                 "ueberdosis"
             ],
-            "time": "2020-03-18T12:48:05+00:00"
+            "time": "2020-03-18T15:28:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
