@@ -302,6 +302,10 @@ details:
     long_title: InDesign ICML
     name: icml
     slug: indesign-icml
+    default_extension: .icml
+    extensions:
+      - .icml
+    description: "An ICML file contains Adobe InCopy stories. This is the file format you want to use to collaborate with a designer that uses Adobe Indesign. I have no idea why you should use this file format instead. There are so many free, open, documented, better text formats out there. An Adobe file format would be the least I’d use to store relevant information. But I don’t want to stop you. If you are here to convert a few files online, you have probably a reason already. At least it’s free to convert the files here. So good luck with your project! Keep up the good work!"
   - title: Jira wiki
     long_title: Jira wiki markup
     name: jira
