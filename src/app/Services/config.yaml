@@ -157,6 +157,7 @@ details:
     default_extension: .html
     extensions:
       - .html
+    description: "HTML has a real badass name. Hypertext markup language. I mean, it starts with Hyper, right? HTML is the most important language for websites. The internet would be just text without it. HTML has the structure of the content, the hierarchy, the images and all the good stuff. And the bad stuff (e. g. tracking) too. Convert all your text files to HTML and slap them on a webserver to get a website. The most simple workflow to make a blog. Did you know that you can view the HTML of every website you visit? Just do a right-click and view the source. Feel like a hacker now? Congratulations. That’s how I fell in love with HTML and the web. Don’t wait no more, convert all your files to HTML, for free."
   - title: Jupyter
     long_title: Jupyter notebook
     name: ipynb
