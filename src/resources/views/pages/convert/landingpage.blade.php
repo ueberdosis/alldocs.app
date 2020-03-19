@@ -96,7 +96,7 @@
 
   @component('components.section.index')
     <h2 class="u-centered">
-      More nerdy converters
+      Other free online converters
     </h2>
     @include('components.conversion-list.index', [
       'conversions' => $conversions->shuffle()->take(10)
