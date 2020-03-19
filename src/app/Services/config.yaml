@@ -106,11 +106,11 @@ details:
   - title: DocBook
     long_title: DocBook
     name: docbook
-    default_extension: .xml
+    default_extension: .dbk
     extensions:
+      - .dbk
       - .xml
-      - .html
-      - .pdf
+    description: "DocBook is a really good file format for writing technical books, that’s based on XML. It’s an open standard and widely used for open-source projects. It captures the logical structure of the content and can be published to many formats. Write the content in DocBook without thinking about the visual representation. Normally this is the part where I say something bad about the file format, but to be honest, I really like DocBook. Oh, just one thing: It’s very old. But that shouldn’t stop you from using the nice file format. Convert all your files to DocBook and convert them from DocBook to any other format. Just upload your file and we’ll see what we can do."
   - title: Word
     long_title: Word
     name: docx
