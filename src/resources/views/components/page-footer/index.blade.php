@@ -59,7 +59,7 @@
             </span>
           </h3>
           <p class="u-small">
-            We made a <a href="https://floatie.app/alldocs">public dashboard</a> that has all our numbers. Even the revenue, but surprisingly it’s $0.
+            We made a <a href="https://floatie.app/alldocs">public dashboard</a> that has all our numbers. Not the revenue, but surprisingly it’s $0 anyway.
           </p>
         </div>
 
