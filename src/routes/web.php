@@ -32,5 +32,8 @@ Route::get('/convert-{format}', 'FormatController@show')->where([
     'format' => '[a-z0-9_-]+',
 ]);
 
+// Examples
+Route::get('/examples/{file}', 'ExampleController@show')->where('file', '.*')->name('example.show');
+
 // Sitemap
 Route::get('/sitemap.xml', 'SitemapController@index');
