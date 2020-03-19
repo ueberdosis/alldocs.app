@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use App\Services\FileFormat;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Ueberdosis\Pandoc\Facades\Pandoc;
+use Pandoc\Facades\Pandoc;
 
 class ConvertController extends Controller
 {

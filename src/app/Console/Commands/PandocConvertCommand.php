@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ueberdosis\Pandoc\Facades\Pandoc;
+use Pandoc\Facades\Pandoc;
 
 class PandocConvertCommand extends Command
 {

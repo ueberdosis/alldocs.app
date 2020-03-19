@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Ueberdosis\Pandoc\Facades\Pandoc;
+use Pandoc\Facades\Pandoc;
 use Illuminate\Support\Facades\Storage;
 
 class ExampleController extends Controller
@@ -17,7 +17,8 @@ class ExampleController extends Controller
 
         $content = Storage::get($path);
 
-        return Pandoc::from('markdown')
+        return Pandoc::dataDir(storage_path('app/data'))
+            ->from('markdown')
             ->input($content)
             ->to('html')
             ->run();

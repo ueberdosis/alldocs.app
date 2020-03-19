@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Services\FileFormat;
 use Illuminate\Console\Command;
-use Ueberdosis\Pandoc\Facades\Pandoc;
+use Pandoc\Facades\Pandoc;
 
 class CheckFileFormatConfig extends Command
 {
