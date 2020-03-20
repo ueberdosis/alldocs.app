@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Hashids\Hashids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,12 +20,25 @@ class Conversion extends Model
         'archived_at',
     ];
 
-    public function getStoragePathAttribute()
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function ($model) {
+            $model->hash_id = (new Hashids('conversion', 5))->encode(now()->timestamp);
+        });
+    }
+
+    public function getOriginalFileAttribute()
+    {
+        return storage_path("app/public/{$this->id}");
+    }
+
+    public function getConvertedFileAttribute()
     {
         return storage_path("app/public/{$this->hash_id}");
     }
 
-    public function getNewFileNameAttribute()
+    public function getConvertedFileNameAttribute()
     {
         // TODO: Should pick file extension from config
         return "{$this->file_original_name}.{$this->to}";

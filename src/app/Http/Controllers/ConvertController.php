@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use Hashids\Hashids;
 use App\Models\Conversion;
-use Illuminate\Support\Str;
+use Pandoc\Facades\Pandoc;
 use App\Services\FileFormat;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Pandoc\Facades\Pandoc;
 
 class ConvertController extends Controller
 {
@@ -62,36 +59,31 @@ class ConvertController extends Controller
         ]);
 
         try {
-            $file = $request->file('file');
-            $fileInfo = pathinfo($file->getClientOriginalName());
-
-            $hashIds = new Hashids(Str::random(5), 5);
-            $hashId = $hashIds->encode(Carbon::now()->timestamp);
+            list(
+                'filename' => $filename,
+                'extension' => $extension
+            ) = pathinfo(
+                $request->file('file')->getClientOriginalName()
+            );
 
             $conversion = Conversion::create([
-                'hash_id' => $hashId,
                 'from' => $request->input('from'),
                 'to' => $request->input('to'),
-                'file_original_name' => $fileInfo['filename'],
-                'file_extension' => $fileInfo['extension'],
+                'file_original_name' => $filename,
+                'file_extension' => $extension,
             ]);
 
             $request->file('file')->storeAs('public', $conversion->id);
 
-            $file = storage_path("app/public/{$conversion->id}");
-            $from = $conversion->from;
-            $to = $conversion->to;
-            $output = storage_path("app/public/{$hashId}");
-
-            Pandoc::inputFile($file)
-                ->from($from)
-                ->to($to)
-                ->output($output)
+            Pandoc::inputFile($conversion->originalFile)
+                ->from($conversion->from)
+                ->to($conversion->to)
+                ->output($conversion->convertedFile)
                 ->run();
 
             return [
-                'filename' => $conversion->newFileName,
-                'download_url' => route('download', $hashId),
+                'filename' => $conversion->convertedFileName,
+                'download_url' => route('download', $conversion->hash_id),
             ];
         } catch (\Exception $exception) {
             return response()->json([
@@ -105,8 +97,8 @@ class ConvertController extends Controller
         $conversion = Conversion::where('hash_id', $hashId)->firstOrFail();
 
         return response()->download(
-            $conversion->storagePath,
-            $conversion->newFileName,
+            $conversion->convertedFile,
+            $conversion->convertedFileName,
         );
     }
 }
