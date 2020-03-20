@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "762f3fee32ab49799e795c8ed8d4bce2",
+    "content-hash": "1dc61c802373800d2f2b83077e9aa725",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1445,12 +1445,6 @@
                 "s3",
                 "sftp",
                 "storage"
-            ],
-            "funding": [
-                {
-                    "url": "https://offset.earth/frankdejonge",
-                    "type": "other"
-                }
             ],
             "time": "2020-03-17T18:58:12+00:00"
         },
@@ -4681,16 +4675,16 @@
         },
         {
             "name": "ueberdosis/pandoc",
-            "version": "0.2.1",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ueberdosis/pandoc.git",
-                "reference": "5dbc590fcee4ebc0dc61cc33dbcdd7e081469a76"
+                "reference": "de4745292bed1950554719cb6166925378595d87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/5dbc590fcee4ebc0dc61cc33dbcdd7e081469a76",
-                "reference": "5dbc590fcee4ebc0dc61cc33dbcdd7e081469a76",
+                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/de4745292bed1950554719cb6166925378595d87",
+                "reference": "de4745292bed1950554719cb6166925378595d87",
                 "shasum": ""
             },
             "require": {
@@ -4723,7 +4717,7 @@
                 "pandoc",
                 "ueberdosis"
             ],
-            "time": "2020-03-19T10:02:06+00:00"
+            "time": "2020-03-20T10:40:36+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -6781,6 +6775,5 @@
     "platform": {
         "php": "^7.2"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
