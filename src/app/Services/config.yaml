@@ -125,6 +125,7 @@ details:
     default_extension: .txt
     extension:
       - .txt
+    description: "DokuWiki is basically the Mediawiki syntax. And Mediawiki powers Wikipedia, so I think it’s fair to say it’s a widely used format. The DokuWiki system is based on PHP and uses plain text files, instead of a database. With DokuWiki you can structure those text files, e. g. put headlines above a paragraph, add links and so on. If you want to convert those DokuWiki files to another format (to migrate to another system for example) or want to convert your files to DokuWiki files, we got you covered. Upload all your wisdom and we spit out the format you’re looking for, for free."
   - title: EPUB
     long_title: EPUB
     name: epub
