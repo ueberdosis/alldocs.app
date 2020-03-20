@@ -15,7 +15,7 @@ class Conversion extends Model
         'hash_id',
         'from',
         'to',
-        'file_original_name',
+        'original_file_name',
         'file_extension',
         'archived_at',
     ];
@@ -41,7 +41,7 @@ class Conversion extends Model
     public function getConvertedFileNameAttribute()
     {
         // TODO: Should pick file extension from config
-        return "{$this->file_original_name}.{$this->to}";
+        return "{$this->original_file_name}.{$this->to}";
     }
 
     public function scopeUnarchived($query)
@@ -58,7 +58,7 @@ class Conversion extends Model
 
         $this->update([
             'archived_at' => now(),
-            'file_original_name' => null,
+            'original_file_name' => null,
         ]);
     }
 }

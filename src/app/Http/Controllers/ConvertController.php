@@ -69,7 +69,7 @@ class ConvertController extends Controller
             $conversion = Conversion::create([
                 'from' => $request->input('from'),
                 'to' => $request->input('to'),
-                'file_original_name' => $filename,
+                'original_file_name' => $filename,
                 'file_extension' => $extension,
             ]);
 
