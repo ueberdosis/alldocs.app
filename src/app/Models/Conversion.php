@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Hashids\Hashids;
+use App\Services\FileFormat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -40,8 +41,12 @@ class Conversion extends Model
 
     public function getConvertedFileNameAttribute()
     {
-        // TODO: Should pick file extension from config
-        return "{$this->original_file_name}.{$this->to}";
+        $extension = data_get(
+            FileFormat::find($this->to),
+            'default_extension',
+            '.txt'
+        );
+        return $this->original_file_name.$extension;
     }
 
     public function scopeUnarchived($query)
