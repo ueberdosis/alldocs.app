@@ -190,6 +190,7 @@ details:
   - title: Markdown (Pandoc)
     long_title: Pandoc’s Markdown
     name: markdown
+    slug: pandoc-markdown
     default_extension: .md
     extensions:
       - .txt
@@ -369,6 +370,10 @@ details:
     long_title: XWiki markup
     name: xwiki
     slug: xwiki-markup
+    default_extension: .txt
+    extensions:
+      - .txt
+    description: "Let’s start with the good parts: XWiki is a free and open source software platform. The idea behing XWiki is to build a software that’s easily extensible. It comes with a Wiki (surprise!), a search, a blog, a file manager, a calendar, forums and tasks. A real jack of all trades. The text markup language looks like the MediaWiki syntax, but a few extra features. You can even add CSS to parts of your document (not sure if that’s a good idea though), or even complex things like a filterable table. Unfortunately the XWiki platform is written in Java. You should probably have some experience with Java to extend it’s functionality. That’s definitely not for me."
   - title: ZimWiki
     long_title: ZimWiki markup
     name: zimwiki
