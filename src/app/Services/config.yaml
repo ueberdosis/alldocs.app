@@ -136,9 +136,13 @@ details:
   - title: FictionBook
     long_title: FictionBook2 e-book
     name: fb2
+    slug: fictionbook2-e-book
     default_extension: .fb2
     extensions:
       - .fb2
+      - .fb2.zip
+      - .fbz
+    description: "FictionBook is an open (nice!) XML-based e-book format, that’s pretty popular in Russia. The format doesn’t specify the appearance of the document, it describes it’s structure. There are special tags for epigraphs, verses, quotations and a few more. It also contains the ebook metadata (author name, title, publisher) and is great for automatic processing and indexing. And the best thing: It’s DRM-free. In contrast to ePub it’s a single XML file, even images are embedded (as Base64). That’s how e-books should work I guess. If you’re wondering how e-books should not work, read a little bit about how ePub works."
   - title: Markdown (GitHub)
     long_title: GitHub-Flavored Markdown
     name: gfm
