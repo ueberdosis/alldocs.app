@@ -97,6 +97,7 @@ details:
       - .txt
       - .md
       - .markdown
+    description: "Markdown was developed in 2004, with a spec and an implementation in Perl. Over the years implementations for more and more programming languages evolved. Unfortunately the specification was ambiguous in some points, so some implementations did things differently. CommonMark was developed 10 years later, in 2014, with an unambiguous spec and tests to see if new implementations are correct according to the spec. A few big players (GitHub, GitLab, Reddit, Swift and many more) adopted this common standard. So it’s basically the standard you might know already. Upload your CommonMark Markdown files and convert them for free, to any other text format! Or upload your text files and convert them all to CommonMark Markdown, for free!"
   - title: Creole
     long_title: Creole 1.0
     name: creole
