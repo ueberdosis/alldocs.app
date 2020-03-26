@@ -178,13 +178,15 @@ details:
     default_extension: .xml
     extensions:
       - .xml
-  - title: JSON
-    long_title: JSON version of native AST
+  - title: JSON (Pandoc)
+    long_title: Pandoc JSON
+    slug: pandoc-json
     name: json
     default_extension: .json
     extensions:
       - .txt
       - .json
+    description: "This free online converter is based on Pandoc, a command-line tool that is capable of converting nearly any text format to any other text format. Under the hood Pandoc converts text formats to an abstract tree. Pandoc uses the abstract tree to generate your desired format. That abstract tree can be stored as JSON, so that’s what we do here. Not sure why anybody would want a JSON file with a Pandoc AST, but probably you just need any JSON (JavaScript object notation) represenation. Try Pandoc JSON, it’s good to parse in any language. Hope that helps! At least it’s free."
   - title: LaTeX
     long_title: LaTeX
     name: latex
