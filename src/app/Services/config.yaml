@@ -142,7 +142,7 @@ details:
   - title: Markdown (GitHub)
     long_title: GitHub-Flavored Markdown
     name: gfm
-    slug: github-flavored-markdown
+    slug: markdown
     description: We love Markdown, because it’s just plain text. It’s simple and powerful at the same time. Pure beauty. It’s this one standard that works everywhere. Okay, it works a little bit different depending on the platform you are using, but we all agree that the GH flavor is the one and only Markdown flavor, don’t we? Actually, I’m not sure what’s so special about this MD standard, but never mind. Hopefully you know what’s it all about. Anyway, here is your free online converter for GitHub-flavored Markdown. Just upload your file, cross fingers and download the result. Hope it works.
     default_extension: .md
     extensions:
