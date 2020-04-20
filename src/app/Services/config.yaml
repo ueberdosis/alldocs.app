@@ -366,7 +366,7 @@ details:
       - .ppsm
       - .ppsx
       - .pptm
-    description: "Sorry, this site converts a lot of valuable file formats into a lot of other valuable file formats for free. And there are tons of file formats out there. I wrote for every single format a text, but I refuse to write a text about PowerPoint files. I googled and found a few shitty infographics with fun facts about PowerPoint, maybe I just put them here and call it a day: PowerPoint was originally called Presenter. It was originally created for Macintosh. Microsoft bought PowerPoint for $14.000.000. Approximately 35 million PowerPoint presentations are given each day. Most people tune out of a presentation within 10 minutes. Okay, that’s not what I laugh about."
+    description: "This site converts a lot of valuable file formats into a lot of other valuable file formats for free. And there are tons of file formats out there. I wrote for every single format a text, but I refuse to write a text about PowerPoint files. Sorry. I googled PowerPoint and found a few shitty infographics with fun facts about PowerPoint, maybe I just put them here and call it a day: PowerPoint was originally called Presenter. It was originally created for Macintosh. Microsoft bought PowerPoint for $14.000.000. Approximately 35 million PowerPoint presentations are given each day. Most people tune out of a presentation within 10 minutes. Okay, that’s not what I laugh about."
   - title: Rich Text Format
     long_title: Rich Text Format
     name: rtf
