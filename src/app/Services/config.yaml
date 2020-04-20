@@ -295,6 +295,12 @@ details:
   - title: Vimwiki
     long_title: Vimwiki
     name: vimwiki
+    slug: vimwiki
+    default_extension: .wiki
+    extensions:
+      - .wiki
+      - .txt
+    description: "For people that think Vim is not confusing enough: Let me introduce you to VimWiki. A personal wiki inside of Vim. Maxim Kim, the developer of VimWiki, was stuck in Vim for years. After trying to exit Vim for a while, he tried to accept his fate and used the time behind bars to invent something new. VimWiki was born. It consists of a number of linked text files that have their own syntax highlighting. Use it to organize notes, manage to-dos, write documentation or maintain a diary (nobody will expect your diary inside of Vim). I wonder if someone already invented "
   - title: LaTeX (Slide Show)
     long_title: LaTeX beamer slide show
     name: beamer
