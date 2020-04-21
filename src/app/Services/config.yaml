@@ -179,7 +179,7 @@ details:
     default_extension: .xml
     extensions:
       - .xml
-    description: "The Journal Article Tag Suite (JATS) is an XML format, mostly used to describe scientific literature. The JATS provides XML elements and attributes for describing the textual and graphical content of journal articles and some non-article material such as letters, editorials, and book and product reviews. It is a technical standard developed by the National Information Standards Organization (NISO) and approved by the American National Standards Institute with the code Z39.96-2012. If you see someone on the street wearing a Z39.96-2012 T-shirt, it’s probably a big fan of JATS. Though, I’m not sure if those shirts exist."
+    description: "The Journal Article Tag Suite (JATS) is an XML format, mostly used to describe scientific literature. The JATS provides XML elements and attributes for describing the textual and graphical content of journal articles and some non-article material such as letters, editorials, and book and product reviews. It is a technical standard developed by the National Information Standards Organization (NISO) and approved by the American National Standards Institute with the code Z39.96-2012. If you see someone on the street wearing a Z39.96-2012 T-shirt, it’s probably a big fan of JATS. Though, I’m not sure if those shirts exist. Maybe we should print those."
   - title: JSON (Pandoc)
     long_title: Pandoc JSON
     slug: pandoc-json
@@ -258,8 +258,11 @@ details:
   - title: OpenOffice
     long_title: OpenOffice ODT
     name: odt
+    slug: openoffice-odt
+    default_extension: .odt
     extensions:
       - .odt
+    description: "Having office files in a proprietary format is a big risk, that you should avoid. Thanks to OpenOffice it’s not even hard to do. With the OpenOffice ODT format we’ve got an open format, that is based on other open formats. Every ODT file is a Zip file, that contains at least a content.xml (an XML file) with the — you might have guessed it already - the content. You can open the XML file in the program of your liking, update the content and re-open it in your office program without worrying to break the file. This enables you to interact with your office files through code. And even more important, you can be pretty sure there will always be software to open and edit those files. That’s a big plus, isn’t it?"
   - title: OPML
     long_title: OPML
     name: opml
