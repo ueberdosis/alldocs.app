@@ -179,6 +179,7 @@ details:
     default_extension: .xml
     extensions:
       - .xml
+    description: "The Journal Article Tag Suite (JATS) is an XML format, mostly used to describe scientific literature. The JATS provides XML elements and attributes for describing the textual and graphical content of journal articles and some non-article material such as letters, editorials, and book and product reviews. It is a technical standard developed by the National Information Standards Organization (NISO) and approved by the American National Standards Institute with the code Z39.96-2012. If you see someone on the street wearing a Z39.96-2012 T-shirt, it’s probably a big fan of JATS. Though, I’m not sure if those shirts exist."
   - title: JSON (Pandoc)
     long_title: Pandoc JSON
     slug: pandoc-json
