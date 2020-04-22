@@ -192,9 +192,11 @@ details:
   - title: LaTeX
     long_title: LaTeX
     name: latex
+    slug: latex
     default_extension: .tex
     extensions:
       - .tex
+    description: "LaTeX was developed in 1984 and no, that’s not a typo. It’s nearly 40 years old. It started as a writing tool for mathematicians and computer scientists, but has quickly been taken up by scholars who wanted to write documents with math expressions or non-Latin scripts (Arabic or Chinese for example). As with a lot of other text document formats, it’s used to structure the content, not style it. LaTeX is used directly or as an intermediate format to produce files for printing or digital distribution. It supports highlighting (such as bold or italic), citations and cross-references. Or to make it short: It’s the most powerful format to structure your texts. Convert all your files to LaTeX."
   - title: Markdown (Pandoc)
     long_title: Pandoc’s Markdown
     name: markdown
