@@ -233,6 +233,7 @@ details:
       - .txt
       - .md
       - .markdown
+    description: "The original unextended Markdown is based on the syntax outlined in John Gruber’s original design document. It already has many elements, but missed features like tables, code blocks, syntax highlighting, URL auto-linking and footnotes. Things that most of us take for granted today. I don’t know why anyone would stick with the original Markdown format, but I guess it’s something for purists. Or maybe you have a legacy system that only supports the original Markdown format. Anyway, have fun and convert to or from the strict version, the original Markdown format. We are happy to support the free conversion from and to it."
   - title: MediaWiki
     long_title: MediaWiki markup
     name: mediawiki
