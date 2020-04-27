@@ -71,16 +71,17 @@ else
 
     echo "Waiting for DB …"
     wait-for "$DB_HOST":"$DB_PORT" --timeout="$DB_TIMEOUT"
-    
+
     echo "Running migrations …"
     php artisan migrate --force
 
     echo "Clearing cache …"
     su -c "php /var/www/artisan cache:clear" -s /bin/sh www-data
 
-    # echo "Optimizing config and route loading …"
-    # su -c "php /var/www/artisan config:cache" -s /bin/sh www-data
-    # su -c "php /var/www/artisan route:cache" -s /bin/sh www-data
+    echo "Optimizing config and route loading …"
+    su -c "php /var/www/artisan config:cache" -s /bin/sh www-data
+    su -c "php /var/www/artisan route:cache" -s /bin/sh www-data
+    su -c "php /var/www/artisan view:cache" -s /bin/sh www-data
 
     exec "$@"
 fi
