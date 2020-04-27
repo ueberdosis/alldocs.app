@@ -27,7 +27,8 @@ class PageController extends Controller
                         ->where('inputFormat.name', $item->from)
                         ->where('outputFormat.name', $item->to)
                         ->first();
-                });
+                })
+                ->filter();
         });
 
         return view('pages.home.index', [
