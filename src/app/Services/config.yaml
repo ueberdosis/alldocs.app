@@ -392,6 +392,11 @@ details:
   - title: Slidy
     long_title: Slidy HTML and JavaScript slide show
     name: slidy
+    slug: slidy
+    default_extension: .html
+    extensions:
+      .html
+    description: "Slidy is a Web-based slideshow created by the W3C, so it doesn’t get more official. The output is accessible and can be viewed with every web browser. Pretty cool, huh? It’s nothing for people that like their presentations styled though. Yes, you can add a little bit CSS. But come on, if you want a beautiful slideshow, I don’t think that’s the easiest way to go. If you want to invest literally no time, then it’s probably a good solution. You can use a Markdown file that contains your notes and generate a slideshow from it. Just put a few dashes between the sections to have multiple slides. Easy as that."
   - title: DZSlides
     long_title: DZSlides HTML5 + JavaScript slide show
     name: dzslides
