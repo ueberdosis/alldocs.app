@@ -378,6 +378,10 @@ details:
     long_title: Rich Text Format
     name: rtf
     slug: rich-text-format
+    default_extension: .rtf
+    extensions:
+      - .rtf
+    description: "The Rich Text Format originated in the Microsoft Word Development team in 1987. It was developed for cross-platform document interchange with other products from Microsoft. You could say it’s the light version of Word files. Still proprietary, but less feature rich. It has more features than a plain text file, that’s why it has rich in the name though. There hasn’t been a change since 2008 (Version 1.9.1). It’s not dead though. Every once in a while there comes a small file with a .rtf extension. When you see such a file, you know it’s a Rich Text Format file. One cool thing: RTF files are human-readable. It’s not some binary file, it’s a plain text based markup format."
   - title: Texinfo
     long_title: GNU Texinfo
     name: texinfo
