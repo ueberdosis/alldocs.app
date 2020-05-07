@@ -105,6 +105,7 @@ details:
     default_extension: .creole
     extensions:
       - .creole
+      - .txt
     description: "Creole is a markup language, aimed at being a common markup language for wikis. It’s lightweight and tries to enable and simplify the transfer of content between different wiki engines. The design is based on a comparision of different major wiki engines and using the most common markup. But to be honest, the adoption is limited. Many systems offer it as an option, but only few use it by default. And why should they? They can come here and convert any text format in any other text format for free anyway. If you want to use it though, go for it! Happy converting!"
   - title: DocBook
     long_title: DocBook
@@ -293,6 +294,12 @@ details:
   - title: Textile
     long_title: Textile
     name: textile
+    slug: textile
+    default_extension: .textile
+    extensions:
+      - .textile
+      - .txt
+    description: "Textile is a lightweight markup language to convert text to HTML. 2002, Dean Allen developed the format to use it in his own content management system called Textpattern. It was originally written in PHP, like Textpattern was, but has been translated to Perl, Python, Ruby, JavaScript, and C#. There is no standard nor a working specification. Though, there are a handful of tools that use or used Textile. JIRA, Jekyll, Qt, Redmine, Salesforce too only name a few. Not sure why someone would want to work with it, but I bet there are reasons. Dean Allen called it “a humane web text generator”, sounds nice, doesn’t it?"
   - title: TikiWiki
     long_title: TikiWiki markup
     name: tikiwiki
