@@ -101,9 +101,11 @@ details:
   - title: Creole
     long_title: Creole 1.0
     name: creole
+    slug: creole
     default_extension: .creole
     extensions:
       - .creole
+    description: "Creole is a markup language, aimed at being a common markup language for wikis. It’s lightweight and tries to enable and simplify the transfer of content between different wiki engines. The design is based on a comparision of different major wiki engines and using the most common markup. But to be honest, the adoption is limited. Many systems offer it as an option, but only few use it by default. And why should they? They can come here and convert any text format in any other text format for free anyway. If you want to use it though, go for it! Happy converting!"
   - title: DocBook
     long_title: DocBook
     name: docbook
