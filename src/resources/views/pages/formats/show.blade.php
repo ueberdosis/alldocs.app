@@ -29,7 +29,7 @@
       @if (App\Services\FileFormat::inputFormats()->contains($format['name']))
         <div class="grid__item" data-grid--medium="6/12">
           <h2>
-            Convert To
+            Convert {{ $format['title'] }} to …
           </h2>
           @include('components.format-list.index', [
             'formats' => App\Services\FileFormat::outputFormatsData(),
@@ -41,7 +41,7 @@
       @if (App\Services\FileFormat::outputFormats()->contains($format['name']))
         <div class="grid__item" data-grid--medium="6/12">
           <h2>
-            Convert From
+            Convert {{ $format['title'] }} from …
           </h2>
           @include('components.format-list.index', [
             'formats' => App\Services\FileFormat::inputFormatsData(),
