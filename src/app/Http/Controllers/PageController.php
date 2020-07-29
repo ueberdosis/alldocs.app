@@ -21,6 +21,7 @@ class PageController extends Controller
         $mostUsedConversions = Cache::remember('mostUsedConversions', now()->addMinutes(15), function () use ($conversions) {
             return Conversion::groupBy(DB::raw("CONCAT(`from`, '-', `to`)"))
                 ->orderBy(DB::raw('COUNT(*)'), 'desc')
+                ->take(15)
                 ->get(['from', 'to'])
                 ->map(function ($item) use ($conversions) {
                     return $conversions
