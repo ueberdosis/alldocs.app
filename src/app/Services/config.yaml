@@ -160,6 +160,11 @@ details:
   - title: Haddock
     long_title: Haddock markup
     name: haddock
+    slug: haddock-markup
+    description: Haddock is a nice tool to automatically generate documentation from annotated Haskell source code. I’ve never used Haskell and have no idea what it’s for, but I like automatically generated things. BTW this text is handwritten, but I probably should have set up a machine learning deep learning thing to generate those. I bet no one reads them anyway. If you do, clap your hands twice so I know you’re out there. Anyway, let’s get back to Haddock. It’s intended for documenting libraries, but it should be useful for any other kind of Haskell code. Documentations can then be generated to HTML or LaTeX. Or you use Alldocs to convert it to many other text formats for free. Cool, right?
+    default_extension: .txt
+    extensions:
+      - .txt
   - title: HTML
     long_title: HTML
     name: html
