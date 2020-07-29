@@ -74,7 +74,7 @@ build_mysql:
 release_nginx:
   stage: release
   only:
-    - master
+    - main
   before_script:
     - docker image load -i image-nginx.tar
   script:
@@ -85,7 +85,7 @@ release_nginx:
 release_php:
   stage: release
   only:
-    - master
+    - main
   before_script:
     - docker image load -i image-php.tar
   script:
@@ -96,7 +96,7 @@ release_php:
 release_mysql:
   stage: release
   only:
-    - master
+    - main
   before_script:
     - docker image load -i image-mysql.tar
   script:
@@ -141,7 +141,7 @@ release_mysql:
 
 deploy_prod:
   only:
-    - master
+    - main
   variables:
     COMPOSE_FILE: "docker-compose.production.yml"
     DOCKER_HOST: "$PROD_DOCKER_HOST"
