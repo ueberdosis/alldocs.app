@@ -209,6 +209,7 @@ details:
     long_title: Pandoc’s Markdown
     name: markdown
     slug: pandoc-markdown
+    description: Oh man, there are way too many markdown flavors out there. Pandoc’s Markdown is just another one of those flavors and honestly don’t know what’s different with this format. I guess there is some special syntax allowed that helps Pandoc to transform texts into other formats, but I have no idea. Oh, you don’t know what Pandoc is? I’m sorry. Pandoc is THE command line to convert texts from one format to any other text format. And it’s what we based this site on. But I guess if you’re using Pandoc you knew this already. Actually, we built this site for people that are not able to use Pandoc or don’t want to install it to convert some files. Anyway, upload your file and convert it (for free).
     default_extension: .md
     extensions:
       - .txt
