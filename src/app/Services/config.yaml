@@ -219,10 +219,12 @@ details:
     long_title: MultiMarkdown
     name: markdown_mmd
     slug: multi-markdown
-    default_extension: .md
+    description: Markdown is amazing, and MultiMarkdown is a multitude of amazing. It’s like the original Markdown but enriched with more features (tables, footnotes, citations …). It helps to keep your text structured with minimally marked-up plain text, like other Markdown flavors too. It’s great to convert it to PDF, HTML and LaTeX or other formats. People even use it to write books and stuff. I have no idea what’s different to other formats, but if you’re here you probably have some MultiMarkdown files and want to convert them. Or you really need those MultiMarkdown files but have other source files, both ways work here. Upload your file and convert it. To be honest, I prefer the GitHub flavor, but that’s just me. (Don’t trust me, I’m the lonely soul writing those texts here.)
+    default_extension: .mmd
     extensions:
       - .txt
       - .md
+      - .mmd
       - .markdown
   - title: Markdown (PHP Extra)
     long_title: PHP Markdown Extra
