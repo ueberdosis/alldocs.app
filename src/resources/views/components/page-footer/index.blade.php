@@ -8,7 +8,7 @@
         The internet is full of weird text formats, but finally you can convert any format in any other format. That’s worth a bookmark for sure.
       </p>
       <p>
-        Converted {{ \App\Models\Conversion::count() }} files.
+        Converted {{ number_format(\App\Models\Conversion::count()) }} files.
       </p>
     </div>
 
