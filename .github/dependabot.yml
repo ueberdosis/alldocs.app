@@ -1,0 +1,27 @@
+version: 2
+
+updates:
+
+  - commit-message:
+        include: "scope"
+        prefix: "github-actions"
+      directory: "/"
+      labels:
+        - "dependency"
+      open-pull-requests-limit: 10
+      package-ecosystem: "github-actions"
+      schedule:
+        interval: "weekly"
+
+
+  - commit-message:
+      include: "scope"
+      prefix: "composer"
+    directory: "/src"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "composer"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: "increase"
