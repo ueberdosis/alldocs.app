@@ -27,3 +27,7 @@ docker-compose up -d
 
 ## Open application
 <http://localhost>
+
+## Related repositories
+
+* [ueberdosis/pandoc](https://github.com/ueberdosis/pandoc)
