@@ -15,7 +15,7 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "composer"
-    directory: "/"
+    directory: "/src"
     labels:
       - "dependency"
     open-pull-requests-limit: 10
