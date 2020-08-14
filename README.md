@@ -9,6 +9,7 @@ This is an online converter for text files, based on [pandoc](https://github.com
 - PHP
 - Laravel
 - MySQL
+- Pandoc
 
 ## Dependencies
 
@@ -30,4 +31,4 @@ docker-compose up -d
 
 ## Related repositories
 
-* [ueberdosis/pandoc](https://github.com/ueberdosis/pandoc)
+* [ueberdosis/pandoc](https://github.com/ueberdosis/pandoc) (Pandoc PHP wrapper)

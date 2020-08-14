@@ -67,11 +67,11 @@
           <h3>
             <icon name="check" size="small"></icon>
             <span>
-              Just Works
+              Open Source
             </span>
           </h3>
           <p class="u-small">
-            Upload a file & download the converted file. Like a good joke, it needs no further explanation.
+            You probably think it’s too good to be true, but yes, <a href="https://github.com/ueberdosis/alldocs">this website is open source</a>.
           </p>
         </div>
 
