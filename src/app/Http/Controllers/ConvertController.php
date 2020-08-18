@@ -82,11 +82,13 @@ class ConvertController extends Controller
                 ->run();
 
             return [
+                'success' => true,
                 'filename' => $conversion->convertedFileName,
                 'download_url' => route('download', $conversion->hash_id),
             ];
         } catch (\Exception $exception) {
             return response()->json([
+                'success' => false,
                 'error' => 'An error occurred while converting the file.',
             ], 500);
         }
