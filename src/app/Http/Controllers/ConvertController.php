@@ -58,40 +58,40 @@ class ConvertController extends Controller
             ],
         ]);
 
-        try {
-            list(
+        // try {
+        list(
                 'filename' => $filename,
                 'extension' => $extension
             ) = pathinfo(
                 $request->file('file')->getClientOriginalName()
             );
 
-            $conversion = Conversion::create([
-                'from' => $request->input('from'),
-                'to' => $request->input('to'),
-                'original_file_name' => $filename,
-                'file_extension' => $extension,
-            ]);
+        $conversion = Conversion::create([
+            'from' => $request->input('from'),
+            'to' => $request->input('to'),
+            'original_file_name' => $filename,
+            'file_extension' => $extension,
+        ]);
 
-            $request->file('file')->storeAs('public', $conversion->id);
+        $request->file('file')->storeAs('public', $conversion->id);
 
-            Pandoc::inputFile($conversion->originalFile)
+        Pandoc::inputFile($conversion->originalFile)
                 ->from($conversion->from)
                 ->to($conversion->to)
                 ->output($conversion->convertedFile)
                 ->run();
 
-            return [
-                'success' => true,
-                'filename' => $conversion->convertedFileName,
-                'download_url' => route('download', $conversion->hash_id),
-            ];
-        } catch (\Exception $exception) {
-            return response()->json([
-                'success' => false,
-                'error' => 'An error occurred while converting the file.',
-            ], 500);
-        }
+        return [
+            'success' => true,
+            'filename' => $conversion->convertedFileName,
+            'download_url' => route('download', $conversion->hash_id),
+        ];
+        // } catch (\Exception $exception) {
+        //     return response()->json([
+        //         'success' => false,
+        //         'error' => 'An error occurred while converting the file.',
+        //     ], 500);
+        // }
     }
 
     public function download($hashId)
