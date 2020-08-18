@@ -41,6 +41,7 @@ jobs:
 
   to_gitlab:
     runs-on: ubuntu-latest
+    needs: tests
     steps:
     - uses: actions/checkout@v1
 
