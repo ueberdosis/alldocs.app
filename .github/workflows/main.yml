@@ -14,6 +14,15 @@ jobs:
         coverage: "none"
         php-version: "7.4"
 
+    - name: Install Pandoc
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget
+        sudo mkdir -p /usr/src/pandoc
+        cd /usr/src/pandoc
+        sudo wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb
+        sudo dpkg -i pandoc-2.9.2-1-amd64.deb
+
     - name: Copy ENV Laravel Configuration for CI
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       working-directory: ./src
