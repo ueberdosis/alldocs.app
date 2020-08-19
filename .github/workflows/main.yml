@@ -17,12 +17,12 @@ jobs:
     - name: Shutdown default MySQL in Ubuntu (SUDO)
       run: sudo service mysql stop
 
-    - name: "Install MySQL"
-      uses: mirromutth/mysql-action@v1.1
+    - name: "Install MariaDB"
+      uses: getong/mariadb-action@v1.1
       with:
         character set server: 'utf8'
         collation server: 'utf8_general_ci'
-        mysql version: '8.0'
+        mariadb version: '10.4.10'
         mysql database: 'db'
         mysql user: 'db'
         mysql password: 'db'
