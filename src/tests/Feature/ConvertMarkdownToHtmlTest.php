@@ -4,12 +4,9 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ConvertMarkdownToHtmlTest extends TestCase
 {
-    use DatabaseMigrations;
-
     /** @test */
     public function convert_markdown_to_html()
     {
