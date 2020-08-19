@@ -8,12 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: "Install PHP"
-      uses: "shivammathur/setup-php@2.4.2"
-      with:
-        coverage: "none"
-        php-version: "7.4"
-
     - name: Shutdown default MySQL in Ubuntu (SUDO)
       run: sudo service mysql stop
 
@@ -26,6 +20,12 @@ jobs:
         mysql database: 'db'
         mysql user: 'db'
         mysql password: 'db'
+
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@2.4.2"
+      with:
+        coverage: "none"
+        php-version: "7.4"
 
     - name: Install Pandoc
       run: |
