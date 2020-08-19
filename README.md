@@ -1,5 +1,6 @@
 # Alldocs
 
+[![Build Status](https://github.com/ueberdosis/alldocs.app/workflows/build/badge.svg)](https://github.com/ueberdosis/alldocs.app/actions)
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
 
 This is an online converter for text files, based on [pandoc](https://github.com/jgm/pandoc). It’s free and open source.
