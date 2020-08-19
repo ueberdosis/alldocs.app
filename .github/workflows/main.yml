@@ -14,7 +14,7 @@ jobs:
         coverage: "none"
         php-version: "7.4"
 
-    - name: Shutdown Ubuntu MySQL (SUDO)
+    - name: Shutdown default MySQL in Ubuntu (SUDO)
       run: sudo service mysql stop
 
     - name: "Install MySQL"
@@ -36,17 +36,20 @@ jobs:
         sudo wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb
         sudo dpkg -i pandoc-2.9.2-1-amd64.deb
 
-    - name: Copy .env Laravel Configuration for CI
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      working-directory: ./src
-
     - name: Install Dependencies (PHP vendors)
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      working-directory: ./src
+
+    - name: Copy .env Laravel Configuration for CI
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       working-directory: ./src
 
     - name: Generate key
       run: php artisan key:generate
       working-directory: ./src
+
+    - name: Migrate database
+      run: php artisan migrate
 
     - name: Execute tests
       run: php artisan test
