@@ -14,6 +14,19 @@ jobs:
         coverage: "none"
         php-version: "7.4"
 
+    - name: Shutdown Ubuntu MySQL (SUDO)
+      run: sudo service mysql stop
+
+    - name: "Install MySQL"
+      uses: mirromutth/mysql-action@v1.1
+      with:
+        character set server: 'utf8'
+        collation server: 'utf8_general_ci'
+        mysql version: '8.0'
+        mysql database: 'db'
+        mysql user: 'db'
+        mysql password: 'db'
+
     - name: Install Pandoc
       run: |
         sudo apt-get update
@@ -23,7 +36,7 @@ jobs:
         sudo wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb
         sudo dpkg -i pandoc-2.9.2-1-amd64.deb
 
-    - name: Copy ENV Laravel Configuration for CI
+    - name: Copy .env Laravel Configuration for CI
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       working-directory: ./src
 
