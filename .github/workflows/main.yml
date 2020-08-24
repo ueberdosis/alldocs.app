@@ -22,7 +22,7 @@ jobs:
         mysql password: 'db'
 
     - name: "Install PHP"
-      uses: "shivammathur/setup-php@2.4.2"
+      uses: "shivammathur/setup-php@2.4.3"
       with:
         coverage: "none"
         php-version: "7.4"
