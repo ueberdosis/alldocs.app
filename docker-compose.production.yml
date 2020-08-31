@@ -16,6 +16,15 @@ x-laravel-env: &laravel-env
       uid: "33"
       gid: "33"
 
+x-resources: &resources
+  resources:
+    limits:
+      cpus: "2.0"
+      memory: 2G
+    reservations:
+      cpus: "0.5"
+      memory: 1G
+
 services:
   nginx:
     image: registry.ueberlab.com/ueberdosis/alldocs.app/nginx:${BRANCH_NAME:-master}
@@ -26,6 +35,7 @@ services:
         traefik.frontend.rule: "Host:${STACK_DOMAIN}"
         traefik.frontend.entryPoints: "http,https"
         traefik.docker.network: "srv-proxy"
+      <<: *resources
       <<: *update-config
     networks:
       - srv-proxy
@@ -34,6 +44,7 @@ services:
     image: registry.ueberlab.com/ueberdosis/alldocs.app/php:${BRANCH_NAME:-master}
     <<: *laravel-env
     deploy:
+      <<: *resources
       <<: *update-config
     networks:
       - tier1
@@ -45,6 +56,7 @@ services:
     command: ["scheduler"]
     <<: *laravel-env
     deploy:
+      <<: *resources
       <<: *update-config
     networks:
       - tier1
@@ -56,6 +68,7 @@ services:
     command: ["worker"]
     <<: *laravel-env
     deploy:
+      <<: *resources
       <<: *update-config
     networks:
       - tier1
@@ -64,6 +77,8 @@ services:
       - laravel-storage:/var/www/storage/
   mysql:
     image: registry.ueberlab.com/ueberdosis/alldocs.app/mysql:${BRANCH_NAME:-master}
+    deploy:
+      <<: *resources
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
       MYSQL_DATABASE_FILE: /run/secrets/mysql_database
@@ -81,6 +96,7 @@ services:
   redis:
     image: redis:5.0-alpine
     deploy:
+      <<: *resources
       <<: *update-config
     networks:
       - tier2
