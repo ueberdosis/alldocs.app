@@ -12,7 +12,7 @@
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
         "hashids/hashids": "^4.0",
-        "laravel/framework": "^7.27",
+        "laravel/framework": "^7.28",
         "laravel/tinker": "^2.4",
         "sentry/sentry-laravel": "^1.5",
         "spatie/once": "^2.1",
