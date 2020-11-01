@@ -15,7 +15,7 @@
         "laravel/framework": "^7.28",
         "laravel/tinker": "^2.4",
         "sentry/sentry-laravel": "^1.9",
-        "spatie/once": "^2.1",
+        "spatie/once": "^2.2",
         "symfony/yaml": "^5.1",
         "ueberdosis/pandoc": "^0.5.0"
     },
