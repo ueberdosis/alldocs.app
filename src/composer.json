@@ -13,7 +13,7 @@
         "fideloper/proxy": "^4.0",
         "hashids/hashids": "^4.0",
         "laravel/framework": "^7.28",
-        "laravel/tinker": "^2.4",
+        "laravel/tinker": "^2.5",
         "sentry/sentry-laravel": "^1.9",
         "spatie/once": "^2.1",
         "symfony/yaml": "^5.1",
