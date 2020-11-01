@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44ec0da6d42a5aee9a8860a533d60a56",
+    "content-hash": "1e82b9dab6da6ed6afaa294590f6b172",
     "packages": [
         {
             "name": "brick/math",
@@ -684,30 +684,29 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v2.3.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "65b2d8ee1f10915efb3b55597da3404f096acba2"
+                "reference": "48212cdc0a79051d50d7fc2f0645c5a321caf926"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/65b2d8ee1f10915efb3b55597da3404f096acba2",
-                "reference": "65b2d8ee1f10915efb3b55597da3404f096acba2",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/48212cdc0a79051d50d7fc2f0645c5a321caf926",
+                "reference": "48212cdc0a79051d50d7fc2f0645c5a321caf926",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0|^8.0"
+                "php": "^7.1|^8.0"
+            },
+            "replace": {
+                "mtdowling/cron-expression": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.4|^7.0|^8.0|^9.0"
+                "phpstan/phpstan": "^0.11|^0.12",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Cron\\": "src/Cron/"
@@ -718,11 +717,6 @@
                 "MIT"
             ],
             "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                },
                 {
                     "name": "Chris Tankersley",
                     "email": "chris@ctankersley.com",
@@ -740,7 +734,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-13T00:52:37+00:00"
+            "time": "2020-10-13T01:26:01+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -853,6 +847,68 @@
                 "trusted proxy"
             ],
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "graham-campbell/result-type",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Result-Type.git",
+                "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/7e279d2cd5d7fbb156ce46daada972355cea27bb",
+                "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0",
+                "phpoption/phpoption": "^1.7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5|^7.5|^8.5|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\ResultType\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "An Implementation Of The Result Type",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Result Type",
+                "Result-Type",
+                "result"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/result-type",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-13T13:17:36+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1146,21 +1202,21 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.29.2",
+            "version": "v8.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0fb15ae253c3a043f2c5cbf9641427a7646ea77a"
+                "reference": "6707480c5f0db7aa07537f9ad93255b64b65b85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0fb15ae253c3a043f2c5cbf9641427a7646ea77a",
-                "reference": "0fb15ae253c3a043f2c5cbf9641427a7646ea77a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6707480c5f0db7aa07537f9ad93255b64b65b85e",
+                "reference": "6707480c5f0db7aa07537f9ad93255b64b65b85e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.4|^2.0",
-                "dragonmantank/cron-expression": "^2.3.1",
+                "dragonmantank/cron-expression": "^3.0.2",
                 "egulias/email-validator": "^2.1.10",
                 "ext-json": "*",
                 "ext-mbstring": "*",
@@ -1170,23 +1226,22 @@
                 "monolog/monolog": "^2.0",
                 "nesbot/carbon": "^2.31",
                 "opis/closure": "^3.6",
-                "php": "^7.2.5|^8.0",
+                "php": "^7.3|^8.0",
                 "psr/container": "^1.0",
                 "psr/simple-cache": "^1.0",
-                "ramsey/uuid": "^3.7|^4.0",
+                "ramsey/uuid": "^4.0",
                 "swiftmailer/swiftmailer": "^6.0",
-                "symfony/console": "^5.0",
-                "symfony/error-handler": "^5.0",
-                "symfony/finder": "^5.0",
-                "symfony/http-foundation": "^5.0",
-                "symfony/http-kernel": "^5.0",
-                "symfony/mime": "^5.0",
-                "symfony/polyfill-php73": "^1.17",
-                "symfony/process": "^5.0",
-                "symfony/routing": "^5.0",
-                "symfony/var-dumper": "^5.0",
+                "symfony/console": "^5.1",
+                "symfony/error-handler": "^5.1",
+                "symfony/finder": "^5.1",
+                "symfony/http-foundation": "^5.1",
+                "symfony/http-kernel": "^5.1",
+                "symfony/mime": "^5.1",
+                "symfony/process": "^5.1",
+                "symfony/routing": "^5.1",
+                "symfony/var-dumper": "^5.1",
                 "tijsverkoyen/css-to-inline-styles": "^2.2.2",
-                "vlucas/phpdotenv": "^4.0",
+                "vlucas/phpdotenv": "^5.2",
                 "voku/portable-ascii": "^1.4.8"
             },
             "conflict": {
@@ -1200,6 +1255,7 @@
                 "illuminate/broadcasting": "self.version",
                 "illuminate/bus": "self.version",
                 "illuminate/cache": "self.version",
+                "illuminate/collections": "self.version",
                 "illuminate/config": "self.version",
                 "illuminate/console": "self.version",
                 "illuminate/container": "self.version",
@@ -1212,6 +1268,7 @@
                 "illuminate/hashing": "self.version",
                 "illuminate/http": "self.version",
                 "illuminate/log": "self.version",
+                "illuminate/macroable": "self.version",
                 "illuminate/mail": "self.version",
                 "illuminate/notifications": "self.version",
                 "illuminate/pagination": "self.version",
@@ -1230,15 +1287,14 @@
                 "aws/aws-sdk-php": "^3.0",
                 "doctrine/dbal": "^2.6",
                 "filp/whoops": "^2.8",
-                "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
+                "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
                 "league/flysystem-cached-adapter": "^1.0",
-                "mockery/mockery": "~1.3.3|^1.4.2",
-                "moontoast/math": "^1.1",
-                "orchestra/testbench-core": "^5.8",
+                "mockery/mockery": "^1.4.2",
+                "orchestra/testbench-core": "^6.5",
                 "pda/pheanstalk": "^4.0",
-                "phpunit/phpunit": "^8.4|^9.3.3",
+                "phpunit/phpunit": "^8.5.8|^9.3.3",
                 "predis/predis": "^1.1.1",
-                "symfony/cache": "^5.0"
+                "symfony/cache": "^5.1"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).",
@@ -1251,37 +1307,42 @@
                 "ext-redis": "Required to use the Redis cache and queue drivers (^4.0|^5.0).",
                 "fakerphp/faker": "Required to use the eloquent factory builder (^1.9.1).",
                 "filp/whoops": "Required for friendly error pages in development (^2.8).",
-                "guzzlehttp/guzzle": "Required to use the HTTP Client, Mailgun mail driver and the ping methods on schedules (^6.3.1|^7.0.1).",
+                "guzzlehttp/guzzle": "Required to use the HTTP Client, Mailgun mail driver and the ping methods on schedules (^6.5.5|^7.0.1).",
                 "laravel/tinker": "Required to use the tinker console command (^2.0).",
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
                 "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
-                "mockery/mockery": "Required to use mocking (~1.3.3|^1.4.2).",
-                "moontoast/math": "Required to use ordered UUIDs (^1.1).",
+                "mockery/mockery": "Required to use mocking (^1.4.2).",
                 "nyholm/psr7": "Required to use PSR-7 bridging features (^1.2).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^4.0).",
-                "phpunit/phpunit": "Required to use assertions and run tests (^8.4|^9.3.3).",
+                "phpunit/phpunit": "Required to use assertions and run tests (^8.5.8|^9.3.3).",
                 "predis/predis": "Required to use the predis connector (^1.1.2).",
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
-                "symfony/cache": "Required to PSR-6 cache bridge (^5.0).",
-                "symfony/filesystem": "Required to create relative storage directory symbolic links (^5.0).",
+                "symfony/cache": "Required to PSR-6 cache bridge (^5.1).",
+                "symfony/filesystem": "Required to enable support for relative symbolic links (^5.1).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.x-dev"
+                    "dev-master": "8.x-dev"
                 }
             },
             "autoload": {
                 "files": [
+                    "src/Illuminate/Collections/helpers.php",
+                    "src/Illuminate/Events/functions.php",
                     "src/Illuminate/Foundation/helpers.php",
                     "src/Illuminate/Support/helpers.php"
                 ],
                 "psr-4": {
-                    "Illuminate\\": "src/Illuminate/"
+                    "Illuminate\\": "src/Illuminate/",
+                    "Illuminate\\Support\\": [
+                        "src/Illuminate/Macroable/",
+                        "src/Illuminate/Collections/"
+                    ]
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1300,7 +1361,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-10-29T18:57:35+00:00"
+            "time": "2020-10-29T22:01:29+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -5754,37 +5815,39 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v4.1.8",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "572af79d913627a9d70374d27a6f5d689a35de32"
+                "reference": "fba64139db67123c7a57072e5f8d3db10d160b66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/572af79d913627a9d70374d27a6f5d689a35de32",
-                "reference": "572af79d913627a9d70374d27a6f5d689a35de32",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/fba64139db67123c7a57072e5f8d3db10d160b66",
+                "reference": "fba64139db67123c7a57072e5f8d3db10d160b66",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9 || ^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.7.3",
-                "symfony/polyfill-ctype": "^1.17"
+                "ext-pcre": "*",
+                "graham-campbell/result-type": "^1.0.1",
+                "php": "^7.1.3 || ^8.0",
+                "phpoption/phpoption": "^1.7.4",
+                "symfony/polyfill-ctype": "^1.17",
+                "symfony/polyfill-mbstring": "^1.17",
+                "symfony/polyfill-php80": "^1.17"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-                "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
             },
             "suggest": {
-                "ext-filter": "Required to use the boolean validator.",
-                "ext-pcre": "Required to use most of the library."
+                "ext-filter": "Required to use the boolean validator."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -5824,7 +5887,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-14T19:22:52+00:00"
+            "time": "2020-09-14T15:57:31+00:00"
         },
         {
             "name": "voku/portable-ascii",
@@ -6258,6 +6321,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
