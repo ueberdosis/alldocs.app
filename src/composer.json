@@ -20,7 +20,7 @@
         "ueberdosis/pandoc": "^0.5.0"
     },
     "require-dev": {
-        "facade/ignition": "^2.3",
+        "facade/ignition": "^2.5",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^4.2",
