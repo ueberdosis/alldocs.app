@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.2",
         "doctrine/dbal": "^2.11",
-        "fideloper/proxy": "^4.0",
+        "fideloper/proxy": "^4.4",
         "hashids/hashids": "^4.0",
         "laravel/framework": "^7.28",
         "laravel/tinker": "^2.4",
