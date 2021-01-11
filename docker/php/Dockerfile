@@ -70,15 +70,15 @@ RUN apt-get update && \
 HEALTHCHECK --interval=30s --start-period=120s --timeout=5s --retries=3 \
     CMD ps aux | egrep '[s]chedule' || ps aux | egrep '[q]ueue' || ps aux | egrep '[f]pm'
 
-# Install Composer, utilities & Parallel Install Plugin
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+# Install Composer
+ENV PATH="/composer/vendor/bin:$PATH"
 ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV COMPOSER_HOME /tmp
-ENV PATH="/var/www/vendor/bin:$PATH"
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends git unzip zip && \
-    rm -r /var/lib/apt/lists/* && \
-    composer global require hirak/prestissimo
+ENV COMPOSER_MEMORY_LIMIT=-1
+ENV COMPOSER_HOME /composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git unzip \
+    && rm -r /var/lib/apt/lists/*
 
 # Install app dependencies
 COPY --chown=www-data:www-data src/composer.* /var/www/
