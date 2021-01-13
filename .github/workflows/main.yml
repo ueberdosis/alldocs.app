@@ -41,7 +41,7 @@ jobs:
       working-directory: ./src
 
     - name: Migrate database
-      run: php artisan migrate
+      run: php artisan migrate --no-interaction
       working-directory: ./src
 
     - name: Execute tests
