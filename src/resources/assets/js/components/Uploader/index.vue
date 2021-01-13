@@ -160,7 +160,7 @@ export default {
         this.isLoading = true
       })
       .on('totaluploadprogress', progress => {
-        this.progress = progress
+        this.progress = progress.toFixed(2)
       })
       .on('success', (file, response) => {
         this.file = response
