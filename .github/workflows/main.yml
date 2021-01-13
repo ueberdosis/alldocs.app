@@ -41,7 +41,7 @@ jobs:
       working-directory: ./src
 
     - name: Copy .env Laravel Configuration for CI
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
       working-directory: ./src
 
     - name: Generate key
