@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "doctrine/dbal": "^2.11",
+        "doctrine/dbal": "^3.0",
         "fideloper/proxy": "^4.0",
         "hashids/hashids": "^4.1",
         "laravel/framework": "^8.0",
