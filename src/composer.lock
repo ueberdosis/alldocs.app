@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0542f8c1d7cc368a247ae67cca697939",
+    "content-hash": "4d1ecde093d575e29e2240202e4c4843",
     "packages": [
         {
             "name": "brick/math",
@@ -5240,7 +5240,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.22.0",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -5303,7 +5303,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.22.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.22.1"
             },
             "funding": [
                 {
@@ -5402,7 +5402,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -5444,7 +5444,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.2.2"
+                "source": "https://github.com/symfony/process/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -6103,16 +6103,16 @@
         },
         {
             "name": "ueberdosis/pandoc",
-            "version": "0.5.0",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ueberdosis/pandoc.git",
-                "reference": "149921ad1543309391d6fa79a972a3f2a33f729f"
+                "reference": "77f2d1caaabfe31597e3bbc72b219c72591ba4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/149921ad1543309391d6fa79a972a3f2a33f729f",
-                "reference": "149921ad1543309391d6fa79a972a3f2a33f729f",
+                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/77f2d1caaabfe31597e3bbc72b219c72591ba4fe",
+                "reference": "77f2d1caaabfe31597e3bbc72b219c72591ba4fe",
                 "shasum": ""
             },
             "require": {
@@ -6120,7 +6120,7 @@
                 "symfony/process": ">4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "autoload": {
@@ -6147,9 +6147,15 @@
             ],
             "support": {
                 "issues": "https://github.com/ueberdosis/pandoc/issues",
-                "source": "https://github.com/ueberdosis/pandoc/tree/master"
+                "source": "https://github.com/ueberdosis/pandoc/tree/0.6.0"
             },
-            "time": "2020-03-20T12:01:54+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/ueberdosis/",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-08T21:53:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
