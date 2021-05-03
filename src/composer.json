@@ -17,7 +17,7 @@
         "sentry/sentry-laravel": "^1.9",
         "spatie/once": "^2.1",
         "symfony/yaml": "^5.2",
-        "ueberdosis/pandoc": "^0.5.0"
+        "ueberdosis/pandoc": "^0.7.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
