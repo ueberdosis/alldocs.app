@@ -16,7 +16,7 @@
         "laravel/tinker": "^2.4",
         "sentry/sentry-laravel": "^1.9",
         "spatie/once": "^2.1",
-        "symfony/yaml": "^5.2",
+        "symfony/yaml": "^5.3",
         "ueberdosis/pandoc": "^0.5.0"
     },
     "require-dev": {
