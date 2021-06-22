@@ -135,7 +135,7 @@
 
           <div class="grid__item" data-grid--medium="4/12">
             <small>
-              Made with 💙 by <a href="https://twitter.com/_ueberdosis">überdosis</a>
+              Made with 💙 by <a href="https://ueberdosis.io">überdosis</a>
             </small>
           </div>
         </div>
