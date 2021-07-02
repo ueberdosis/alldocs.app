@@ -12,15 +12,15 @@ updates:
     schedule:
       interval: "monthly"
 
-  - commit-message:
-      include: "scope"
-      prefix: "composer"
-    directory: "/src"
-    labels:
-      - "dependency"
-    open-pull-requests-limit: 10
-    package-ecosystem: "composer"
-    schedule:
-      interval: "monthly"
-    versioning-strategy: "increase"
+#  - commit-message:
+#      include: "scope"
+#      prefix: "composer"
+#    directory: "/src"
+#    labels:
+#      - "dependency"
+#    open-pull-requests-limit: 10
+#    package-ecosystem: "composer"
+#    schedule:
+#      interval: "monthly"
+#    versioning-strategy: "increase"
 
