@@ -1,5 +1,5 @@
 FROM node:13 AS node
-LABEL maintainer "Hans Pagel <hans.pagel@ueber.io>"
+LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 WORKDIR /var/www
 
