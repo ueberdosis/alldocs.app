@@ -1,4 +1,4 @@
-FROM node:13 AS node
+FROM --platform=amd64 node:13 AS node
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 WORKDIR /var/www
@@ -15,7 +15,7 @@ RUN yarn install && \
     rm -Rf node_modules
 
 
-FROM php:7.4-fpm-buster
+FROM --platform=amd64 php:7.4-fpm-buster
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 # Install PHP dependencies
@@ -40,8 +40,8 @@ RUN apt-get update && \
     apt-get install -y wget && \
     mkdir -p /usr/src/pandoc && \
     cd /usr/src/pandoc && \
-    wget https://github.com/jgm/pandoc/releases/download/2.9.2/pandoc-2.9.2-1-amd64.deb && \
-    dpkg -i pandoc-2.9.2-1-amd64.deb && \
+    wget https://github.com/jgm/pandoc/releases/download/2.15/pandoc-2.15-1-amd64.deb && \
+    dpkg -i pandoc-2.15-1-amd64.deb && \
     apt-get purge -y wget && \
     rm -rf /usr/src/pandoc && \
     rm -r /var/lib/apt/lists/*

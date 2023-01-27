@@ -1,4 +1,4 @@
-FROM node:13 AS node
+FROM --platform=amd64 node:13 AS node
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 WORKDIR /var/www
@@ -14,7 +14,7 @@ RUN yarn install && \
     yarn build && \
     rm -Rf node_modules
 
-FROM nginx:1.17-alpine
+FROM --platform=amd64 nginx:1.17-alpine
 LABEL maintainer "Patrick Baber <patrick.baber@ueber.io>"
 
 COPY docker/nginx/etc/default.conf /etc/nginx/conf.d/default.conf
