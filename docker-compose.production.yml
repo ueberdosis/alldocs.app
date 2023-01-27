@@ -27,7 +27,7 @@ x-resources: &resources
 
 services:
   nginx:
-    image: registry.ueberlab.com/ueberdosis/alldocs.app/nginx:${BRANCH_NAME:-master}
+    image: ${IMAGE}/nginx:${BRANCH_NAME:-master}
     deploy:
       labels:
         - "traefik.enable=true"
@@ -45,7 +45,7 @@ services:
       - srv-proxy
       - tier1
   php:
-    image: registry.ueberlab.com/ueberdosis/alldocs.app/php:${BRANCH_NAME:-master}
+    image: ${IMAGE}/php:${BRANCH_NAME:-master}
     <<: *laravel-env
     deploy:
       <<: *resources
@@ -56,7 +56,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   scheduler:
-    image: registry.ueberlab.com/ueberdosis/alldocs.app/php:${BRANCH_NAME:-master}
+    image: ${IMAGE}/php:${BRANCH_NAME:-master}
     command: ["scheduler"]
     <<: *laravel-env
     deploy:
@@ -68,7 +68,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   worker:
-    image: registry.ueberlab.com/ueberdosis/alldocs.app/php:${BRANCH_NAME:-master}
+    image: ${IMAGE}/php:${BRANCH_NAME:-master}
     command: ["worker"]
     <<: *laravel-env
     deploy:
@@ -80,7 +80,7 @@ services:
     volumes:
       - laravel-storage:/var/www/storage/
   mysql:
-    image: registry.ueberlab.com/ueberdosis/alldocs.app/mysql:${BRANCH_NAME:-master}
+    image: ${IMAGE}/mysql:${BRANCH_NAME:-master}
     deploy:
       <<: *resources
     environment:

@@ -63,14 +63,6 @@ build_mysql:
     - docker-compose logs nginx php mysql mysql_test redis
     - docker-compose down
 
-.sonarqube:
-  stage: test
-  image:
-    name: ueberdosis/sonar-scanner
-    entrypoint: [""]
-  script:
-    - sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=$SONAR_PROJECT_KEY
-
 release_nginx:
   stage: release
   only:

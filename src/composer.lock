@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e1dfc3b3b1dea66ecc80526be4fa541",
+    "content-hash": "3e9ace3e2261b98eb9bfecce18f69abe",
     "packages": [
         {
             "name": "brick/math",
@@ -6097,24 +6097,24 @@
         },
         {
             "name": "ueberdosis/pandoc",
-            "version": "0.5.0",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ueberdosis/pandoc.git",
-                "reference": "149921ad1543309391d6fa79a972a3f2a33f729f"
+                "reference": "fa1a575f5580cd7cfcfc0245c69562e11644b671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/149921ad1543309391d6fa79a972a3f2a33f729f",
-                "reference": "149921ad1543309391d6fa79a972a3f2a33f729f",
+                "url": "https://api.github.com/repos/ueberdosis/pandoc/zipball/fa1a575f5580cd7cfcfc0245c69562e11644b671",
+                "reference": "fa1a575f5580cd7cfcfc0245c69562e11644b671",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": "^7.1|^8.0",
                 "symfony/process": ">4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "autoload": {
@@ -6141,9 +6141,15 @@
             ],
             "support": {
                 "issues": "https://github.com/ueberdosis/pandoc/issues",
-                "source": "https://github.com/ueberdosis/pandoc/tree/master"
+                "source": "https://github.com/ueberdosis/pandoc/tree/0.8.0"
             },
-            "time": "2020-03-20T12:01:54+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/ueberdosis/",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-01-27T11:05:07+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9117,5 +9123,5 @@
         "php": "^7.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
