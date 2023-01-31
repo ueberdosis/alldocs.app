@@ -59,7 +59,7 @@
             </span>
           </h3>
           <p class="u-small">
-            Check out our other open-source software frameworks <a href="https://tiptap.dev/">Tiptap</a> and <a href="https://tiptap.dev/hocuspocus">Hocuspocus</a>.
+            Check out our open-source software frameworks <a href="https://tiptap.dev/">Tiptap</a> and <a href="https://tiptap.dev/hocuspocus">Hocuspocus</a>.
           </p>
         </div>
 

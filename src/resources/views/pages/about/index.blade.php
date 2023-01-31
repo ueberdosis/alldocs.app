@@ -36,7 +36,7 @@
       You’re awesome. How can I support you?
     </h2>
     <p>
-      Have a look at our other apps (<a href="https://mouseless.app">Mouseless</a>, <a href="https://www.glyphfinder.com">Glyphfinder</a>, <a href="https://skara.io">Skara</a> & <a href="https://scrumpy.io">Scrumpy</a>), maybe there is one for you.
+      Check out our open-source software frameworks <a href="https://tiptap.dev/">Tiptap</a> and <a href="https://tiptap.dev/hocuspocus">Hocuspocus</a>.
     </p>
   @endcomponent
 @endsection
