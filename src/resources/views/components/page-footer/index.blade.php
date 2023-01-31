@@ -55,11 +55,11 @@
           <h3>
             <icon name="stats" size="small"></icon>
             <span>
-              Open Startup
+              Promotions
             </span>
           </h3>
           <p class="u-small">
-            We made a <a href="https://floatie.app/alldocs">public dashboard</a> that has all our numbers. Not the revenue, but surprisingly it’s $0 anyway.
+            Check out our other open-source software frameworks <a href="https://tiptap.dev/">Tiptap</a> and <a href="https://tiptap.dev/hocuspocus">Hocuspocus</a>.
           </p>
         </div>
 
@@ -118,11 +118,6 @@
               <li>
                 <a href="{{ route('page.about') }}">
                   About
-                </a>
-              </li>
-              <li>
-                <a href="https://floatie.app/alldocs">
-                  Open Startup
                 </a>
               </li>
               <li>
